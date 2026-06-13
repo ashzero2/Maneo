@@ -2,7 +2,7 @@
   {
     "id": "v001",
     "reference": "Matthew 11:28",
-    "text": "Come to me, all you who labor and are heavily burdened, and I will give you rest.",
+    "text": "“Come to me, all you who labor and are heavily burdened, and I will give you rest.",
     "slots": [
       "intercept",
       "morning"
@@ -14,7 +14,7 @@
   {
     "id": "v002",
     "reference": "Matthew 11:29",
-    "text": "Take my yoke upon you and learn from me, for I am gentle and humble in heart; and you will find rest for your souls.",
+    "text": "Take my yoke upon you, and learn from me, for I am gentle and humble in heart; and you will find rest for your souls.",
     "slots": [
       "intercept",
       "morning"
@@ -26,7 +26,7 @@
   {
     "id": "v003",
     "reference": "John 15:4",
-    "text": "Remain in me, and I in you. As the branch can't bear fruit by itself unless it remains in the vine, so neither can you, unless you remain in me.",
+    "text": "Remain in me, and I in you. As the branch can’t bear fruit by itself, unless it remains in the vine, so neither can you, unless you remain in me.",
     "slots": [
       "intercept",
       "morning"
@@ -38,7 +38,7 @@
   {
     "id": "v004",
     "reference": "John 15:5",
-    "text": "I am the vine. You are the branches. He who remains in me and I in him bears much fruit, for apart from me you can do nothing.",
+    "text": "I am the vine. You are the branches. He who remains in me, and I in him, the same bears much fruit, for apart from me you can do nothing.",
     "slots": [
       "intercept",
       "morning"
@@ -50,7 +50,7 @@
   {
     "id": "v005",
     "reference": "Isaiah 41:10",
-    "text": "Don't you be afraid, for I am with you. Don't be dismayed, for I am your God. I will strengthen you. Yes, I will help you.",
+    "text": "Don’t you be afraid, for I am with you. Don’t be dismayed, for I am your God. I will strengthen you. Yes, I will help you. Yes, I will uphold you with the right hand of my righteousness.",
     "slots": [
       "intercept",
       "morning"
@@ -62,7 +62,7 @@
   {
     "id": "v006",
     "reference": "Lamentations 3:22-23",
-    "text": "It is because of Yahweh's loving kindnesses that we are not consumed, because his compassion doesn't fail. They are new every morning. Great is your faithfulness.",
+    "text": "It is because of Yahweh’s loving kindnesses that we are not consumed, because his compassion doesn’t fail. They are new every morning. Great is your faithfulness.",
     "slots": [
       "intercept",
       "morning"
@@ -74,7 +74,7 @@
   {
     "id": "v007",
     "reference": "Zephaniah 3:17",
-    "text": "Yahweh your God is among you, a mighty one who will save. He will rejoice over you with joy. He will calm you in his love. He will rejoice over you with singing.",
+    "text": "Yahweh, your God, is among you, a mighty one who will save. He will rejoice over you with joy. He will calm you in his love. He will rejoice over you with singing.",
     "slots": [
       "intercept",
       "morning"
@@ -110,7 +110,7 @@
   {
     "id": "v010",
     "reference": "Psalm 5:3",
-    "text": "Yahweh, in the morning you will hear my voice. In the morning I will lay my requests before you, and will watch expectantly.",
+    "text": "Yahweh, in the morning you shall hear my voice. In the morning I will lay my requests before you, and will watch expectantly.",
     "slots": [
       "intercept",
       "morning"
@@ -146,7 +146,7 @@
   {
     "id": "v013",
     "reference": "Joshua 1:9",
-    "text": "Be strong and courageous. Don't be afraid. Don't be dismayed, for Yahweh your God is with you wherever you go.",
+    "text": "Haven’t I commanded you? Be strong and courageous. Don’t be afraid. Don’t be dismayed, for Yahweh your God is with you wherever you go.”",
     "slots": [
       "intercept",
       "morning"
@@ -158,7 +158,7 @@
   {
     "id": "v014",
     "reference": "Proverbs 3:5-6",
-    "text": "Trust in Yahweh with all your heart, and don't lean on your own understanding. In all your ways acknowledge him, and he will make your paths straight.",
+    "text": "Trust in Yahweh with all your heart, and don’t lean on your own understanding. In all your ways acknowledge him, and he will make your paths straight.",
     "slots": [
       "intercept",
       "morning"
@@ -170,7 +170,7 @@
   {
     "id": "v015",
     "reference": "Isaiah 26:3",
-    "text": "You will keep whoever's mind is steadfast in perfect peace, because he trusts in you.",
+    "text": "You will keep whoever’s mind is steadfast in perfect peace, because he trusts in you.",
     "slots": [
       "intercept",
       "morning"
@@ -182,7 +182,7 @@
   {
     "id": "v016",
     "reference": "2 Timothy 1:7",
-    "text": "For God didn't give us a spirit of fear, but of power, love, and self-control.",
+    "text": "For God didn’t give us a spirit of fear, but of power, love, and self-control.",
     "slots": [
       "intercept",
       "morning"
@@ -194,7 +194,7 @@
   {
     "id": "v017",
     "reference": "Philippians 1:6",
-    "text": "Being confident of this very thing, that he who began a good work in you will complete it until the day of Jesus Christ.",
+    "text": "being confident of this very thing, that he who began a good work in you will complete it until the day of Jesus Christ.",
     "slots": [
       "intercept",
       "morning"
@@ -218,7 +218,7 @@
   {
     "id": "v019",
     "reference": "Isaiah 43:19",
-    "text": "Behold, I will do a new thing. It springs out now. Don't you know it? I will even make a way in the wilderness, and rivers in the desert.",
+    "text": "Behold, I will do a new thing. It springs out now. Don’t you know it? I will even make a way in the wilderness, and rivers in the desert.",
     "slots": [
       "intercept",
       "morning"
@@ -254,7 +254,7 @@
   {
     "id": "v022",
     "reference": "Matthew 6:33",
-    "text": "But seek first God's Kingdom and his righteousness; and all these things will be given to you as well.",
+    "text": "But seek first God’s Kingdom, and his righteousness; and all these things will be given to you as well.",
     "slots": [
       "intercept",
       "morning"
@@ -266,7 +266,7 @@
   {
     "id": "v023",
     "reference": "Romans 8:6",
-    "text": "For the mind of the flesh is death, but the mind of the Spirit is life and peace.",
+    "text": "For the mind of the flesh is death, but the mind of the Spirit is life and peace;",
     "slots": [
       "intercept",
       "morning"
@@ -278,7 +278,7 @@
   {
     "id": "v024",
     "reference": "James 4:8",
-    "text": "Draw near to God, and he will draw near to you.",
+    "text": "Draw near to God, and he will draw near to you. Cleanse your hands, you sinners; and purify your hearts, you double-minded.",
     "slots": [
       "intercept",
       "morning"
@@ -326,7 +326,7 @@
   {
     "id": "v028",
     "reference": "Hebrews 13:5",
-    "text": "He has said, 'I will in no way leave you, neither will I in any way forsake you.'",
+    "text": "Be free from the love of money, content with such things as you have, for he has said, “I will in no way leave you, neither will I in any way forsake you.”",
     "slots": [
       "intercept",
       "morning"
@@ -362,7 +362,7 @@
   {
     "id": "v031",
     "reference": "John 14:27",
-    "text": "Peace I leave with you. My peace I give to you; not as the world gives, I give to you. Don't let your heart be troubled, neither let it be fearful.",
+    "text": "Peace I leave with you. My peace I give to you; not as the world gives, give I to you. Don’t let your heart be troubled, neither let it be fearful.",
     "slots": [
       "intercept",
       "evening"
@@ -374,7 +374,7 @@
   {
     "id": "v032",
     "reference": "Philippians 4:7",
-    "text": "The peace of God, which surpasses all understanding, will guard your hearts and your thoughts in Christ Jesus.",
+    "text": "And the peace of God, which surpasses all understanding, will guard your hearts and your thoughts in Christ Jesus.",
     "slots": [
       "intercept",
       "evening"
@@ -386,7 +386,7 @@
   {
     "id": "v033",
     "reference": "1 Peter 5:7",
-    "text": "Casting all your worries on him, because he cares for you.",
+    "text": "casting all your worries on him, because he cares for you.",
     "slots": [
       "intercept",
       "evening"
@@ -422,7 +422,7 @@
   {
     "id": "v036",
     "reference": "Isaiah 30:15",
-    "text": "In returning and rest you will be saved. In quietness and in confidence will be your strength.",
+    "text": "For thus said the Lord Yahweh, the Holy One of Israel, “You will be saved in returning and rest. Your strength will be in quietness and in confidence.” You refused,",
     "slots": [
       "intercept",
       "evening"
@@ -446,7 +446,7 @@
   {
     "id": "v038",
     "reference": "Matthew 11:30",
-    "text": "For my yoke is easy, and my burden is light.",
+    "text": "For my yoke is easy, and my burden is light.”",
     "slots": [
       "intercept",
       "evening"
@@ -458,7 +458,7 @@
   {
     "id": "v039",
     "reference": "Romans 8:1",
-    "text": "There is therefore now no condemnation to those who are in Christ Jesus.",
+    "text": "There is therefore now no condemnation to those who are in Christ Jesus, who don’t walk according to the flesh, but according to the Spirit.",
     "slots": [
       "intercept",
       "evening"
@@ -494,7 +494,7 @@
   {
     "id": "v042",
     "reference": "Psalm 131:2",
-    "text": "Surely I have stilled and quieted my soul, like a weaned child with his mother. My soul is like a weaned child.",
+    "text": "Surely I have stilled and quieted my soul, like a weaned child with his mother, like a weaned child is my soul within me.",
     "slots": [
       "intercept",
       "evening"
@@ -506,7 +506,7 @@
   {
     "id": "v043",
     "reference": "John 14:1",
-    "text": "Don't let your heart be troubled. Believe in God. Believe also in me.",
+    "text": "“Don’t let your heart be troubled. Believe in God. Believe also in me.",
     "slots": [
       "intercept",
       "evening"
@@ -542,7 +542,7 @@
   {
     "id": "v046",
     "reference": "Micah 7:18",
-    "text": "Who is a God like you, who pardons iniquity, and passes over the disobedience of the remnant of his heritage?",
+    "text": "Who is a God like you, who pardons iniquity, and passes over the disobedience of the remnant of his heritage? He doesn’t retain his anger forever, because he delights in loving kindness.",
     "slots": [
       "intercept",
       "evening"
@@ -566,7 +566,7 @@
   {
     "id": "v048",
     "reference": "Psalm 32:7",
-    "text": "You are my hiding place. You will preserve me from trouble. You will surround me with songs of deliverance.",
+    "text": "You are my hiding place. You will preserve me from trouble. You will surround me with songs of deliverance. Selah.",
     "slots": [
       "intercept",
       "evening"
@@ -578,7 +578,7 @@
   {
     "id": "v049",
     "reference": "Isaiah 54:10",
-    "text": "For the mountains may depart and the hills be removed, but my loving kindness will not depart from you, says Yahweh who has mercy on you.",
+    "text": "For the mountains may depart, and the hills be removed; but my loving kindness will not depart from you, and my covenant of peace will not be removed,” says Yahweh who has mercy on you.",
     "slots": [
       "intercept",
       "evening"
@@ -602,7 +602,7 @@
   {
     "id": "v051",
     "reference": "Psalm 46:10",
-    "text": "Be still, and know that I am God. I will be exalted among the nations. I will be exalted in the earth.",
+    "text": "“Be still, and know that I am God. I will be exalted among the nations. I will be exalted in the earth.”",
     "slots": [
       "intercept"
     ],
@@ -613,7 +613,7 @@
   {
     "id": "v052",
     "reference": "Mark 6:31",
-    "text": "He said to them, 'Come away into a deserted place, and rest awhile.'",
+    "text": "He said to them, “You come apart into a deserted place, and rest awhile.” For there were many coming and going, and they had no leisure so much as to eat.",
     "slots": [
       "intercept"
     ],
@@ -624,7 +624,7 @@
   {
     "id": "v053",
     "reference": "Luke 12:32",
-    "text": "Don't be afraid, little flock, for it is your Father's good pleasure to give you the Kingdom.",
+    "text": "Don’t be afraid, little flock, for it is your Father’s good pleasure to give you the Kingdom.",
     "slots": [
       "intercept"
     ],
@@ -635,7 +635,7 @@
   {
     "id": "v054",
     "reference": "Isaiah 43:1",
-    "text": "Don't be afraid, for I have redeemed you. I have called you by your name. You are mine.",
+    "text": "But now Yahweh who created you, Jacob, and he who formed you, Israel says: “Don’t be afraid, for I have redeemed you. I have called you by your name. You are mine.",
     "slots": [
       "intercept"
     ],
@@ -646,7 +646,7 @@
   {
     "id": "v055",
     "reference": "Matthew 6:26",
-    "text": "See the birds of the sky, that they don't sow, neither do they reap, nor gather into barns. Your heavenly Father feeds them. Aren't you of much more value than they?",
+    "text": "See the birds of the sky, that they don’t sow, neither do they reap, nor gather into barns. Your heavenly Father feeds them. Aren’t you of much more value than they?",
     "slots": [
       "intercept"
     ],
@@ -657,7 +657,7 @@
   {
     "id": "v056",
     "reference": "John 10:10",
-    "text": "I came that they may have life, and may have it abundantly.",
+    "text": "The thief only comes to steal, kill, and destroy. I came that they may have life, and may have it abundantly.",
     "slots": [
       "intercept"
     ],
@@ -668,7 +668,7 @@
   {
     "id": "v057",
     "reference": "John 16:33",
-    "text": "In the world you have trouble; but take courage! I have overcome the world.",
+    "text": "I have told you these things, that in me you may have peace. In the world you have oppression; but cheer up! I have overcome the world.”",
     "slots": [
       "intercept"
     ],
@@ -679,7 +679,7 @@
   {
     "id": "v058",
     "reference": "Romans 5:1",
-    "text": "Being therefore justified by faith, we have peace with God through our Lord Jesus Christ.",
+    "text": "Being therefore justified by faith, we have peace with God through our Lord Jesus Christ;",
     "slots": [
       "intercept"
     ],
@@ -690,7 +690,7 @@
   {
     "id": "v059",
     "reference": "Colossians 3:15",
-    "text": "And let the peace of God rule in your hearts, to which also you were called in one body, and be thankful.",
+    "text": "And let the peace of God rule in your hearts, to which also you were called in one body; and be thankful.",
     "slots": [
       "intercept"
     ],
@@ -712,7 +712,7 @@
   {
     "id": "v061",
     "reference": "Numbers 6:24-26",
-    "text": "Yahweh bless you and keep you. Yahweh make his face to shine on you and be gracious to you. Yahweh lift up his face toward you, and give you peace.",
+    "text": "‘Yahweh bless you, and keep you. Yahweh make his face to shine on you, and be gracious to you. Yahweh lift up his face toward you, and give you peace.’",
     "slots": [
       "intercept"
     ],
@@ -723,7 +723,7 @@
   {
     "id": "v062",
     "reference": "Psalm 91:1-2",
-    "text": "He who dwells in the secret place of the Most High will rest in the shadow of the Almighty. I will say of Yahweh, 'He is my refuge and my fortress; my God, in whom I trust.'",
+    "text": "He who dwells in the secret place of the Most High will rest in the shadow of the Almighty. I will say of Yahweh, “He is my refuge and my fortress; my God, in whom I trust.”",
     "slots": [
       "intercept"
     ],
@@ -734,7 +734,7 @@
   {
     "id": "v063",
     "reference": "Psalm 37:7",
-    "text": "Rest in Yahweh, and wait patiently for him. Don't fret because of him who prospers in his way, because of the man who makes wicked plots happen.",
+    "text": "Rest in Yahweh, and wait patiently for him. Don’t fret because of him who prospers in his way, because of the man who makes wicked plots happen.",
     "slots": [
       "intercept"
     ],
@@ -756,7 +756,7 @@
   {
     "id": "v065",
     "reference": "Luke 10:42",
-    "text": "But one thing is needed. Mary has chosen the good part, which will not be taken away from her.",
+    "text": "but one thing is needed. Mary has chosen the good part, which will not be taken away from her.”",
     "slots": [
       "intercept"
     ],
@@ -767,7 +767,7 @@
   {
     "id": "v066",
     "reference": "2 Corinthians 12:9",
-    "text": "He has said to me, 'My grace is sufficient for you, for my power is made perfect in weakness.'",
+    "text": "He has said to me, “My grace is sufficient for you, for my power is made perfect in weakness.” Most gladly therefore I will rather glory in my weaknesses, that the power of Christ may rest on me.",
     "slots": [
       "intercept"
     ],
@@ -811,7 +811,7 @@
   {
     "id": "v070",
     "reference": "1 Corinthians 14:33",
-    "text": "For God is not a God of confusion, but of peace.",
+    "text": "for God is not a God of confusion, but of peace, as in all the assemblies of the saints.",
     "slots": [
       "intercept"
     ],
@@ -822,7 +822,7 @@
   {
     "id": "v071",
     "reference": "Matthew 6:34",
-    "text": "Therefore don't be anxious about tomorrow, for tomorrow will be anxious for itself. Each day's own evil is sufficient.",
+    "text": "Therefore don’t be anxious for tomorrow, for tomorrow will be anxious for itself. Each day’s own evil is sufficient.",
     "slots": [
       "intercept"
     ],
@@ -844,7 +844,7 @@
   {
     "id": "v073",
     "reference": "Isaiah 43:2",
-    "text": "When you pass through the waters, I will be with you; and through the rivers, they will not overflow you.",
+    "text": "When you pass through the waters, I will be with you; and through the rivers, they will not overflow you. When you walk through the fire, you will not be burned, and flame will not scorch you.",
     "slots": [
       "intercept"
     ],
@@ -866,7 +866,7 @@
   {
     "id": "v075",
     "reference": "Romans 8:38-39",
-    "text": "For I am persuaded that neither death, nor life, nor angels, nor principalities, nor things present, nor things to come, nor powers, nor height, nor depth, nor any other created thing will be able to separate us from God's love which is in Christ Jesus our Lord.",
+    "text": "For I am persuaded that neither death, nor life, nor angels, nor principalities, nor things present, nor things to come, nor powers, nor height, nor depth, nor any other created thing, will be able to separate us from God’s love, which is in Christ Jesus our Lord.",
     "slots": [
       "intercept"
     ],
@@ -899,7 +899,7 @@
   {
     "id": "v078",
     "reference": "Luke 11:9",
-    "text": "I tell you, keep asking, and it will be given you. Keep seeking, and you will find. Keep knocking, and it will be opened to you.",
+    "text": "“I tell you, keep asking, and it will be given you. Keep seeking, and you will find. Keep knocking, and it will be opened to you.",
     "slots": [
       "intercept"
     ],
@@ -932,7 +932,7 @@
   {
     "id": "v081",
     "reference": "Jeremiah 29:11",
-    "text": "For I know the thoughts that I think toward you, says Yahweh, thoughts of peace, and not of evil, to give you hope and a future.",
+    "text": "For I know the thoughts that I think toward you,” says Yahweh, “thoughts of peace, and not of evil, to give you hope and a future.",
     "slots": [
       "intercept"
     ],
@@ -954,7 +954,7 @@
   {
     "id": "v083",
     "reference": "Isaiah 58:11",
-    "text": "Yahweh will guide you continually, and satisfy your soul in dry places, and make strong your bones. You will be like a watered garden, and like a spring of water, whose waters don't fail.",
+    "text": "and Yahweh will guide you continually, and satisfy your soul in dry places, and make your bones strong; and you shall be like a watered garden, and like a spring of water, whose waters don’t fail.",
     "slots": [
       "intercept"
     ],
@@ -965,7 +965,7 @@
   {
     "id": "v084",
     "reference": "Psalm 23:2-3",
-    "text": "He makes me lie down in green pastures. He leads me beside still waters. He restores my soul.",
+    "text": "He makes me lie down in green pastures. He leads me beside still waters. He restores my soul. He guides me in the paths of righteousness for his name’s sake.",
     "slots": [
       "intercept"
     ],
@@ -976,7 +976,7 @@
   {
     "id": "v085",
     "reference": "Psalm 23:1",
-    "text": "Yahweh is my shepherd; I shall lack nothing.",
+    "text": "Yahweh is my shepherd: I shall lack nothing.",
     "slots": [
       "intercept"
     ],
@@ -998,7 +998,7 @@
   {
     "id": "v087",
     "reference": "Isaiah 41:13",
-    "text": "For I, Yahweh your God, will hold your right hand, saying to you, 'Don't be afraid. I will help you.'",
+    "text": "For I, Yahweh your God, will hold your right hand, saying to you, ‘Don’t be afraid. I will help you.’",
     "slots": [
       "intercept"
     ],
@@ -1053,7 +1053,7 @@
   {
     "id": "v092",
     "reference": "Psalm 92:1-2",
-    "text": "It is a good thing to give thanks to Yahweh, to sing praises to your name, Most High; to proclaim your loving kindness in the morning, and your faithfulness every night.",
+    "text": "It is a good thing to give thanks to Yahweh, to sing praises to your name, Most High; to proclaim your loving kindness in the morning, and your faithfulness every night,",
     "slots": [
       "morning"
     ],
@@ -1086,7 +1086,7 @@
   {
     "id": "v095",
     "reference": "Romans 12:2",
-    "text": "Don't be conformed to this world, but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God.",
+    "text": "Don’t be conformed to this world, but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God.",
     "slots": [
       "morning"
     ],
@@ -1120,7 +1120,7 @@
   {
     "id": "v098",
     "reference": "Romans 12:12",
-    "text": "Rejoicing in hope, enduring in troubles, continuing steadfastly in prayer.",
+    "text": "rejoicing in hope; enduring in troubles; continuing steadfastly in prayer;",
     "slots": [
       "morning",
       "afternoon"
@@ -1155,7 +1155,7 @@
   {
     "id": "v101",
     "reference": "Joshua 1:8",
-    "text": "This book of the law shall not depart from your mouth, but you shall meditate on it day and night.",
+    "text": "This book of the law shall not depart from your mouth, but you shall meditate on it day and night, that you may observe to do according to all that is written in it; for then you shall make your way prosperous, and then you shall have good success.",
     "slots": [
       "morning"
     ],
@@ -1166,7 +1166,7 @@
   {
     "id": "v102",
     "reference": "Zechariah 4:6",
-    "text": "Not by might, nor by power, but by my Spirit, says Yahweh of Armies.",
+    "text": "Then he answered and spoke to me, saying, “This is Yahweh’s word to Zerubbabel, saying, ‘Not by might, nor by power, but by my Spirit,’ says Yahweh of Armies.",
     "slots": [
       "morning"
     ],
@@ -1188,7 +1188,7 @@
   {
     "id": "v104",
     "reference": "Ezekiel 36:26",
-    "text": "I will also give you a new heart, and I will put a new spirit within you.",
+    "text": "I will also give you a new heart, and I will put a new spirit within you. I will take away the stony heart out of your flesh, and I will give you a heart of flesh.",
     "slots": [
       "morning"
     ],
@@ -1244,7 +1244,7 @@
   {
     "id": "v109",
     "reference": "Isaiah 43:4",
-    "text": "Since you are precious and honored in my sight, and because I love you.",
+    "text": "Since you have been precious and honored in my sight, and I have loved you; therefore I will give people in your place, and nations instead of your life.",
     "slots": [
       "morning"
     ],
@@ -1255,7 +1255,7 @@
   {
     "id": "v110",
     "reference": "Psalm 46:2",
-    "text": "Therefore we won't be afraid, though the earth changes, though the mountains are shaken into the heart of the seas.",
+    "text": "Therefore we won’t be afraid, though the earth changes, though the mountains are shaken into the heart of the seas;",
     "slots": [
       "morning",
       "afternoon"
@@ -1267,7 +1267,7 @@
   {
     "id": "v111",
     "reference": "Colossians 3:23",
-    "text": "And whatever you do, work heartily, as for the Lord, and not for men.",
+    "text": "And whatever you do, work heartily, as for the Lord, and not for men,",
     "slots": [
       "morning",
       "afternoon"
@@ -1279,7 +1279,7 @@
   {
     "id": "v112",
     "reference": "Galatians 5:22-23",
-    "text": "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faith, gentleness, and self-control.",
+    "text": "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faith, gentleness, and self-control. Against such things there is no law.",
     "slots": [
       "morning"
     ],
@@ -1290,7 +1290,7 @@
   {
     "id": "v113",
     "reference": "Psalm 37:23",
-    "text": "A man's steps are established by Yahweh, and he delights in his way.",
+    "text": "A man’s goings are established by Yahweh. He delights in his way.",
     "slots": [
       "morning"
     ],
@@ -1301,7 +1301,7 @@
   {
     "id": "v114",
     "reference": "Isaiah 26:4",
-    "text": "Trust in Yahweh forever; for in Yah, Yahweh, is an everlasting rock.",
+    "text": "Trust in Yahweh forever; for in Yah, Yahweh, is an everlasting Rock.",
     "slots": [
       "morning",
       "afternoon"
@@ -1336,7 +1336,7 @@
   {
     "id": "v117",
     "reference": "Psalm 27:4",
-    "text": "One thing I have asked of Yahweh, that I will seek after: that I may dwell in Yahweh's house all the days of my life, to see Yahweh's beauty, and to inquire in his temple.",
+    "text": "One thing I have asked of Yahweh, that I will seek after: that I may dwell in Yahweh’s house all the days of my life, to see Yahweh’s beauty, and to inquire in his temple.",
     "slots": [
       "morning"
     ],
@@ -1381,7 +1381,7 @@
   {
     "id": "v121",
     "reference": "Galatians 6:9",
-    "text": "Let us not be weary in doing good, for we will reap in due season, if we don't give up.",
+    "text": "Let us not be weary in doing good, for we will reap in due season, if we don’t give up.",
     "slots": [
       "afternoon"
     ],
@@ -1392,7 +1392,7 @@
   {
     "id": "v122",
     "reference": "Hebrews 12:1-2",
-    "text": "Let's run with endurance the race that is set before us, looking to Jesus, the author and perfecter of faith.",
+    "text": "Therefore let us also, seeing we are surrounded by so great a cloud of witnesses, lay aside every weight and the sin which so easily entangles us, and let us run with perseverance the race that is set before us, looking to Jesus, the author and perfecter of faith, who for the joy that was set before him endured the cross, despising its shame, and has sat down at the right hand of the throne of God.",
     "slots": [
       "afternoon"
     ],
@@ -1403,7 +1403,7 @@
   {
     "id": "v123",
     "reference": "Colossians 1:11",
-    "text": "Strengthened with all power, according to the might of his glory, for all endurance and perseverance with joy.",
+    "text": "strengthened with all power, according to the might of his glory, for all endurance and perseverance with joy;",
     "slots": [
       "afternoon"
     ],
@@ -1414,7 +1414,7 @@
   {
     "id": "v124",
     "reference": "1 Kings 19:7",
-    "text": "The angel of Yahweh came again the second time, and touched him, and said, 'Arise and eat, because the journey is too great for you.'",
+    "text": "Yahweh’s angel came again the second time, and touched him, and said, “Arise and eat, because the journey is too great for you.”",
     "slots": [
       "afternoon"
     ],
@@ -1436,7 +1436,7 @@
   {
     "id": "v126",
     "reference": "Jeremiah 31:25",
-    "text": "For I have satiated the weary soul, and I have replenished every sorrowful soul.",
+    "text": "For I have satiated the weary soul, and I have replenished every sorrowful soul.”",
     "slots": [
       "afternoon"
     ],
@@ -1447,7 +1447,7 @@
   {
     "id": "v127",
     "reference": "John 4:14",
-    "text": "Whoever drinks of the water that I will give him will never thirst again; but the water that I will give him will become in him a well of water springing up to eternal life.",
+    "text": "but whoever drinks of the water that I will give him will never thirst again; but the water that I will give him will become in him a well of water springing up to eternal life.”",
     "slots": [
       "afternoon"
     ],
@@ -1469,7 +1469,7 @@
   {
     "id": "v129",
     "reference": "Philippians 4:8",
-    "text": "Whatever things are true, whatever things are honorable, whatever things are just, whatever things are pure, whatever things are lovely, whatever things are of good report — think about these things.",
+    "text": "Finally, brothers, whatever things are true, whatever things are honorable, whatever things are just, whatever things are pure, whatever things are lovely, whatever things are of good report; if there is any virtue, and if there is any praise, think about these things.",
     "slots": [
       "afternoon"
     ],
@@ -1480,7 +1480,7 @@
   {
     "id": "v130",
     "reference": "2 Corinthians 4:16",
-    "text": "Therefore we don't faint. But though our outward person is decaying, yet our inward person is being renewed day by day.",
+    "text": "Therefore we don’t faint, but though our outward man is decaying, yet our inward man is renewed day by day.",
     "slots": [
       "afternoon"
     ],
@@ -1524,7 +1524,7 @@
   {
     "id": "v134",
     "reference": "Philippians 4:11",
-    "text": "I have learned, in whatever state I am, to be content.",
+    "text": "Not that I speak because of lack, for I have learned in whatever state I am, to be content in it.",
     "slots": [
       "afternoon"
     ],
@@ -1546,7 +1546,7 @@
   {
     "id": "v136",
     "reference": "Isaiah 40:28",
-    "text": "Haven't you known? Haven't you heard? The everlasting God, Yahweh, the Creator of the ends of the earth, doesn't faint. He isn't weary.",
+    "text": "Haven’t you known? Haven’t you heard? The everlasting God, Yahweh, The Creator of the ends of the earth, doesn’t faint. He isn’t weary. His understanding is unsearchable.",
     "slots": [
       "afternoon"
     ],
@@ -1557,7 +1557,7 @@
   {
     "id": "v137",
     "reference": "1 Corinthians 10:13",
-    "text": "No temptation has taken you except what is common to man. God is faithful, who will not allow you to be tempted above what you are able.",
+    "text": "No temptation has taken you except what is common to man. God is faithful, who will not allow you to be tempted above what you are able, but will with the temptation also make the way of escape, that you may be able to endure it.",
     "slots": [
       "afternoon"
     ],
@@ -1568,7 +1568,7 @@
   {
     "id": "v138",
     "reference": "Ephesians 3:20",
-    "text": "Now to him who is able to do exceedingly abundantly above all that we ask or think, according to the power that works in us.",
+    "text": "Now to him who is able to do exceedingly abundantly above all that we ask or think, according to the power that works in us,",
     "slots": [
       "afternoon"
     ],
@@ -1579,7 +1579,7 @@
   {
     "id": "v139",
     "reference": "Matthew 5:6",
-    "text": "Blessed are those who hunger and thirst for righteousness, for they shall be filled.",
+    "text": "Blessed are those who hunger and thirst after righteousness, for they shall be filled.",
     "slots": [
       "afternoon"
     ],
@@ -1590,7 +1590,7 @@
   {
     "id": "v140",
     "reference": "Psalm 73:25-26",
-    "text": "Who do I have in heaven? There is no one on earth I desire besides you. My flesh and my heart fails, but God is the strength of my heart and my portion forever.",
+    "text": "Whom do I have in heaven? There is no one on earth whom I desire besides you. My flesh and my heart fails, but God is the strength of my heart and my portion forever.",
     "slots": [
       "afternoon"
     ],
@@ -1601,7 +1601,7 @@
   {
     "id": "v141",
     "reference": "Mark 4:40",
-    "text": "He said to them, 'Why are you so afraid? How is it that you have no faith?'",
+    "text": "He said to them, “Why are you so afraid? How is it that you have no faith?”",
     "slots": [
       "afternoon"
     ],
@@ -1612,7 +1612,7 @@
   {
     "id": "v142",
     "reference": "Revelation 7:16-17",
-    "text": "They will never be hungry or thirsty any more. The Lamb who is in the middle of the throne will be their shepherd, and will guide them to springs of waters of life.",
+    "text": "They will never be hungry, neither thirsty any more; neither will the sun beat on them, nor any heat; for the Lamb who is in the middle of the throne shepherds them, and leads them to springs of life-giving waters. And God will wipe away every tear from their eyes.”",
     "slots": [
       "afternoon"
     ],
@@ -1623,7 +1623,7 @@
   {
     "id": "v143",
     "reference": "Psalm 127:2",
-    "text": "He gives sleep to his beloved.",
+    "text": "It is vain for you to rise up early, to stay up late, eating the bread of toil; for he gives sleep to his loved ones.",
     "slots": [
       "evening"
     ],
@@ -1634,7 +1634,7 @@
   {
     "id": "v144",
     "reference": "Psalm 91:4-5",
-    "text": "He will cover you with his feathers. Under his wings you will take refuge. His faithfulness is your shield and rampart. You shall not be afraid of the terror by night.",
+    "text": "He will cover you with his feathers. Under his wings you will take refuge. His faithfulness is your shield and rampart. You shall not be afraid of the terror by night, nor of the arrow that flies by day;",
     "slots": [
       "evening"
     ],
@@ -1645,7 +1645,7 @@
   {
     "id": "v145",
     "reference": "Psalm 139:11-12",
-    "text": "Even the darkness isn't dark to you, but the night shines as the day. The darkness is like light to you.",
+    "text": "If I say, “Surely the darkness will overwhelm me; the light around me will be night”; even the darkness doesn’t hide from you, but the night shines as the day. The darkness is like light to you.",
     "slots": [
       "evening"
     ],
@@ -1656,7 +1656,7 @@
   {
     "id": "v146",
     "reference": "Revelation 21:4",
-    "text": "God will wipe away every tear from their eyes. Death will be no more; neither will there be mourning, nor crying, nor pain.",
+    "text": "He will wipe away every tear from their eyes. Death will be no more; neither will there be mourning, nor crying, nor pain, any more. The first things have passed away.”",
     "slots": [
       "evening"
     ],
@@ -1689,7 +1689,7 @@
   {
     "id": "v149",
     "reference": "1 Peter 1:8",
-    "text": "Whom not having known you love; in whom, though now you don't see him, yet believing, you rejoice greatly with joy unspeakable and full of glory.",
+    "text": "whom not having known you love; in whom, though now you don’t see him, yet believing, you rejoice greatly with joy unspeakable and full of glory—",
     "slots": [
       "evening"
     ],
@@ -1700,7 +1700,7 @@
   {
     "id": "v150",
     "reference": "Psalm 42:11",
-    "text": "Why are you in despair, my soul? Why are you disturbed within me? Hope in God! For I shall still praise him, the salvation of my countenance, and my God.",
+    "text": "Why are you in despair, my soul? Why are you disturbed within me? Hope in God! For I shall still praise him, the saving help of my countenance, and my God.",
     "slots": [
       "evening"
     ],
@@ -1711,7 +1711,7 @@
   {
     "id": "v151",
     "reference": "John 1:5",
-    "text": "The light shines in the darkness, and the darkness hasn't overcome it.",
+    "text": "The light shines in the darkness, and the darkness hasn’t overcome it.",
     "slots": [
       "evening",
       "morning"
@@ -1789,7 +1789,7 @@
   {
     "id": "v158",
     "reference": "Romans 8:26",
-    "text": "In the same way, the Spirit also helps our weaknesses, for we don't know how to pray as we ought. But the Spirit himself makes intercession for us with groanings which can't be uttered.",
+    "text": "In the same way, the Spirit also helps our weaknesses, for we don’t know how to pray as we ought. But the Spirit himself makes intercession for us with groanings which can’t be uttered.",
     "slots": [
       "evening"
     ],
@@ -1811,7 +1811,7 @@
   {
     "id": "v160",
     "reference": "2 Corinthians 4:17",
-    "text": "For our light and momentary troubles are achieving for us an eternal glory that far outweighs them all.",
+    "text": "For our light affliction, which is for the moment, works for us more and more exceedingly an eternal weight of glory;",
     "slots": [
       "evening"
     ],
@@ -1822,7 +1822,7 @@
   {
     "id": "v161",
     "reference": "Revelation 22:20",
-    "text": "He who testifies these things says, 'Yes, I come quickly.' Amen! Come, Lord Jesus.",
+    "text": "He who testifies these things says, “Yes, I come quickly.” Amen! Yes, come, Lord Jesus.",
     "slots": [
       "evening"
     ],
@@ -1833,7 +1833,7 @@
   {
     "id": "v162",
     "reference": "Psalm 139:17",
-    "text": "How precious are your thoughts to me, God! How vast is the sum of them!",
+    "text": "How precious to me are your thoughts, God! How vast is their sum!",
     "slots": [
       "evening"
     ],
@@ -1866,7 +1866,7 @@
   {
     "id": "v165",
     "reference": "Matthew 6:10",
-    "text": "Let your Kingdom come. Let your will be done on earth as it is in heaven.",
+    "text": "Let your Kingdom come. Let your will be done, as in heaven, so on earth.",
     "slots": [
       "evening",
       "morning"
@@ -1889,7 +1889,7 @@
   {
     "id": "v167",
     "reference": "John 14:2",
-    "text": "In my Father's house are many homes. If it weren't so, I would have told you. I am going to prepare a place for you.",
+    "text": "In my Father’s house are many homes. If it weren’t so, I would have told you. I am going to prepare a place for you.",
     "slots": [
       "evening"
     ],
@@ -1900,7 +1900,7 @@
   {
     "id": "v168",
     "reference": "Romans 8:17",
-    "text": "And if children, then heirs; heirs of God, and joint heirs with Christ.",
+    "text": "and if children, then heirs; heirs of God, and joint heirs with Christ; if indeed we suffer with him, that we may also be glorified with him.",
     "slots": [
       "evening",
       "morning"
@@ -1912,7 +1912,7 @@
   {
     "id": "v169",
     "reference": "Psalm 63:6-7",
-    "text": "When I remember you on my bed, and think about you in the night watches. For you have been my help. I will rejoice in the shadow of your wings.",
+    "text": "when I remember you on my bed, and think about you in the night watches. For you have been my help. I will rejoice in the shadow of your wings.",
     "slots": [
       "evening"
     ],
@@ -1923,7 +1923,7 @@
   {
     "id": "v170",
     "reference": "Isaiah 26:9",
-    "text": "With my soul I have desired you in the night. Yes, with my spirit within me I will seek you earnestly.",
+    "text": "With my soul I have desired you in the night. Yes, with my spirit within me will I seek you earnestly; for when your judgments are in the earth, the inhabitants of the world learn righteousness.",
     "slots": [
       "evening"
     ],
@@ -1947,8 +1947,8 @@
   },
   {
     "id": "v172",
-    "reference": "Isaiah 41:10",
-    "text": "I will uphold you with the right hand of my righteousness.",
+    "reference": "Isaiah 40:8",
+    "text": "The grass withers, the flower fades; but the word of our God stands forever.”",
     "slots": [
       "intercept",
       "morning",
@@ -1962,7 +1962,7 @@
   {
     "id": "v173",
     "reference": "Psalm 46:7",
-    "text": "Yahweh of Armies is with us. The God of Jacob is our refuge.",
+    "text": "Yahweh of Armies is with us. The God of Jacob is our refuge. Selah.",
     "slots": [
       "intercept",
       "morning",
@@ -2004,7 +2004,7 @@
   {
     "id": "v176",
     "reference": "Nehemiah 8:10",
-    "text": "The joy of Yahweh is your strength.",
+    "text": "Then he said to them, “Go your way. Eat the fat, drink the sweet, and send portions to him for whom nothing is prepared, for today is holy to our Lord. Don’t be grieved, for the joy of Yahweh is your strength.”",
     "slots": [
       "intercept",
       "morning"
@@ -2016,7 +2016,7 @@
   {
     "id": "v177",
     "reference": "Psalm 28:7",
-    "text": "Yahweh is my strength and my shield. My heart has trusted in him, and I am helped.",
+    "text": "Yahweh is my strength and my shield. My heart has trusted in him, and I am helped. Therefore my heart greatly rejoices. With my song I will thank him.",
     "slots": [
       "intercept",
       "morning"
@@ -2028,7 +2028,7 @@
   {
     "id": "v178",
     "reference": "Psalm 31:3",
-    "text": "For you are my rock and my fortress, therefore for your name's sake lead me and guide me.",
+    "text": "For you are my rock and my fortress, therefore for your name’s sake lead me and guide me.",
     "slots": [
       "intercept",
       "morning"
@@ -2040,7 +2040,7 @@
   {
     "id": "v179",
     "reference": "Psalm 50:15",
-    "text": "Call on me in the day of trouble. I will deliver you, and you will honor me.",
+    "text": "Call on me in the day of trouble. I will deliver you, and you will honor me.”",
     "slots": [
       "intercept",
       "morning"
@@ -2064,7 +2064,7 @@
   {
     "id": "v181",
     "reference": "Psalm 86:5",
-    "text": "For you, Lord, are good, and ready to forgive, abundant in loving kindness to all those who call on you.",
+    "text": "For you, Lord, are good, and ready to forgive; abundant in loving kindness to all those who call on you.",
     "slots": [
       "intercept",
       "morning"
@@ -2112,7 +2112,7 @@
   {
     "id": "v185",
     "reference": "Romans 8:15",
-    "text": "For you didn't receive the spirit of bondage again to fear, but you received the Spirit of adoption, by whom we cry, 'Abba! Father!'",
+    "text": "For you didn’t receive the spirit of bondage again to fear, but you received the Spirit of adoption, by whom we cry, “Abba! Father!”",
     "slots": [
       "intercept",
       "morning"
@@ -2124,7 +2124,7 @@
   {
     "id": "v186",
     "reference": "Psalm 55:17",
-    "text": "Evening, morning, and at noon, I will pray, and cry aloud. He will hear my voice.",
+    "text": "Evening, morning, and at noon, I will cry out in distress. He will hear my voice.",
     "slots": [
       "afternoon"
     ],
@@ -2135,7 +2135,7 @@
   {
     "id": "v187",
     "reference": "2 Corinthians 3:5",
-    "text": "Not that we are sufficient of ourselves to account for anything as from ourselves, but our sufficiency is from God.",
+    "text": "not that we are sufficient of ourselves, to account anything as from ourselves; but our sufficiency is from God;",
     "slots": [
       "afternoon"
     ],
@@ -2146,7 +2146,7 @@
   {
     "id": "v188",
     "reference": "Matthew 6:27",
-    "text": "Which of you by being anxious can add one moment to his lifespan?",
+    "text": "“Which of you, by being anxious, can add one moment to his lifespan?",
     "slots": [
       "afternoon"
     ],
@@ -2168,7 +2168,7 @@
   {
     "id": "v190",
     "reference": "Isaiah 43:5",
-    "text": "Don't be afraid, for I am with you. I will bring your seed from the east, and gather you from the west.",
+    "text": "Don’t be afraid; for I am with you. I will bring your offspring from the east, and gather you from the west.",
     "slots": [
       "afternoon"
     ],
@@ -2203,7 +2203,7 @@
   {
     "id": "v193",
     "reference": "1 John 3:1",
-    "text": "Behold, how great a love the Father has given to us, that we should be called children of God!",
+    "text": "See how great a love the Father has given to us, that we should be called children of God! For this cause the world doesn’t know us, because it didn’t know him.",
     "slots": [
       "afternoon",
       "morning"
@@ -2215,7 +2215,7 @@
   {
     "id": "v194",
     "reference": "Isaiah 30:21",
-    "text": "Your ears will hear a word behind you, saying, 'This is the way. Walk in it.'",
+    "text": "and when you turn to the right hand, and when you turn to the left, your ears will hear a voice behind you, saying, “This is the way. Walk in it.”",
     "slots": [
       "afternoon"
     ],
@@ -2226,7 +2226,7 @@
   {
     "id": "v195",
     "reference": "Psalm 36:7-8",
-    "text": "How precious is your loving kindness, God! The children of men take refuge under the shadow of your wings. They are abundantly satisfied with the abundance of your house.",
+    "text": "How precious is your loving kindness, God! The children of men take refuge under the shadow of your wings. They shall be abundantly satisfied with the abundance of your house. You will make them drink of the river of your pleasures.",
     "slots": [
       "afternoon"
     ],
@@ -2248,7 +2248,7 @@
   {
     "id": "v197",
     "reference": "Psalm 17:15",
-    "text": "As for me, I will see your face in righteousness. I will be satisfied, when I awake, with seeing your form.",
+    "text": "As for me, I shall see your face in righteousness. I shall be satisfied, when I awake, with seeing your form.",
     "slots": [
       "evening"
     ],
@@ -2270,7 +2270,7 @@
   {
     "id": "v199",
     "reference": "Philippians 4:9",
-    "text": "The things which you learned, received, heard, and saw in me, do these things, and the God of peace will be with you.",
+    "text": "The things which you learned, received, heard, and saw in me: do these things, and the God of peace will be with you.",
     "slots": [
       "evening"
     ],
@@ -2304,7 +2304,7 @@
   {
     "id": "v202",
     "reference": "Psalm 62:8",
-    "text": "Trust in him at all times, you people. Pour out your heart before him. God is a refuge for us.",
+    "text": "Trust in him at all times, you people. Pour out your heart before him. God is a refuge for us. Selah.",
     "slots": [
       "intercept",
       "afternoon"
@@ -2316,7 +2316,7 @@
   {
     "id": "v203",
     "reference": "Isaiah 40:13",
-    "text": "Who has directed the Spirit of Yahweh, or has taught him as his counselor?",
+    "text": "Who has directed Yahweh’s Spirit, or has taught him as his counselor?",
     "slots": [
       "intercept",
       "afternoon"
@@ -2327,8 +2327,8 @@
   },
   {
     "id": "v204",
-    "reference": "Psalm 46:10",
-    "text": "Be still, and know that I am God. I will be exalted among the nations. I will be exalted in the earth.",
+    "reference": "Psalm 62:11",
+    "text": "God has spoken once; twice I have heard this, that power belongs to God.",
     "slots": [
       "intercept",
       "afternoon"
@@ -2340,7 +2340,7 @@
   {
     "id": "v205",
     "reference": "Matthew 6:25",
-    "text": "Therefore I tell you, don't be anxious for your life: what you will eat, or what you will drink; nor yet for your body, what you will wear. Isn't life more than food, and the body more than clothing?",
+    "text": "Therefore I tell you, don’t be anxious for your life: what you will eat, or what you will drink; nor yet for your body, what you will wear. Isn’t life more than food, and the body more than clothing?",
     "slots": [
       "intercept",
       "afternoon"
@@ -2352,7 +2352,7 @@
   {
     "id": "v206",
     "reference": "Romans 14:17",
-    "text": "For God's Kingdom is not eating and drinking, but righteousness, peace, and joy in the Holy Spirit.",
+    "text": "for God’s Kingdom is not eating and drinking, but righteousness, peace, and joy in the Holy Spirit.",
     "slots": [
       "intercept",
       "afternoon"
@@ -2364,7 +2364,7 @@
   {
     "id": "v207",
     "reference": "Psalm 25:4-5",
-    "text": "Show me your ways, Yahweh. Teach me your paths. Guide me in your truth, and teach me, for you are the God of my salvation.",
+    "text": "Show me your ways, Yahweh. Teach me your paths. Guide me in your truth, and teach me, For you are the God of my salvation, I wait for you all day long.",
     "slots": [
       "intercept",
       "afternoon"
@@ -2388,7 +2388,7 @@
   {
     "id": "v209",
     "reference": "Hebrews 10:23",
-    "text": "Let's hold fast the confession of our hope without wavering; for he who promised is faithful.",
+    "text": "let us hold fast the confession of our hope without wavering; for he who promised is faithful.",
     "slots": [
       "intercept",
       "afternoon"
@@ -2412,7 +2412,7 @@
   {
     "id": "v211",
     "reference": "Psalm 17:8",
-    "text": "Keep me as the apple of your eye. Hide me under the shadow of your wings.",
+    "text": "Keep me as the apple of your eye. Hide me under the shadow of your wings,",
     "slots": [
       "intercept",
       "evening"
@@ -2448,7 +2448,7 @@
   {
     "id": "v214",
     "reference": "Psalm 77:11",
-    "text": "I will remember Yah's deeds; for I will remember your wonders of old.",
+    "text": "I will remember Yah’s deeds; for I will remember your wonders of old.",
     "slots": [
       "intercept",
       "evening"
@@ -2472,7 +2472,7 @@
   {
     "id": "v216",
     "reference": "Lamentations 3:32",
-    "text": "But though he causes grief, yet he will have compassion according to the multitude of his loving kindnesses.",
+    "text": "For though he causes grief, yet he will have compassion according to the multitude of his loving kindnesses.",
     "slots": [
       "intercept",
       "evening"
@@ -2484,7 +2484,7 @@
   {
     "id": "v217",
     "reference": "Deuteronomy 31:6",
-    "text": "Be strong and courageous. Don't be afraid or scared of them; for Yahweh your God himself is who goes with you. He will not fail you nor forsake you.",
+    "text": "Be strong and courageous. Don’t be afraid or scared of them; for Yahweh your God himself is who goes with you. He will not fail you nor forsake you.”",
     "slots": [
       "afternoon"
     ],
@@ -2506,7 +2506,7 @@
   {
     "id": "v219",
     "reference": "Isaiah 43:10",
-    "text": "You are my witnesses, says Yahweh, and my servant whom I have chosen; that you may know and believe me, and understand that I am he.",
+    "text": "“You are my witnesses,” says Yahweh, “With my servant whom I have chosen; that you may know and believe me, and understand that I am he. Before me there was no God formed, neither will there be after me.",
     "slots": [
       "afternoon"
     ],
@@ -2517,7 +2517,7 @@
   {
     "id": "v220",
     "reference": "John 8:12",
-    "text": "I am the light of the world. Whoever follows me will not walk in the darkness, but will have the light of life.",
+    "text": "Again, therefore, Jesus spoke to them, saying, “I am the light of the world. He who follows me will not walk in the darkness, but will have the light of life.”",
     "slots": [
       "afternoon"
     ],
@@ -2539,7 +2539,7 @@
   {
     "id": "v222",
     "reference": "Isaiah 46:4",
-    "text": "Even to old age I am he, and even to gray hairs I will carry you. I have made, and I will bear; yes, I will carry, and will deliver.",
+    "text": "Even to old age I am he, and even to gray hairs I will carry you. I have made, and I will bear. Yes, I will carry, and will deliver.",
     "slots": [
       "afternoon"
     ],
@@ -2550,7 +2550,7 @@
   {
     "id": "v223",
     "reference": "Psalm 40:5",
-    "text": "Many, Yahweh my God, are the wonderful works which you have done, and your thoughts which are toward us.",
+    "text": "Many, Yahweh, my God, are the wonderful works which you have done, and your thoughts which are toward us. They can’t be declared back to you. If I would declare and speak of them, they are more than can be counted.",
     "slots": [
       "afternoon"
     ],
@@ -2594,7 +2594,7 @@
   {
     "id": "v227",
     "reference": "Isaiah 57:15",
-    "text": "For thus says the high and lofty One who inhabits eternity, whose name is Holy: I dwell in the high and holy place, with him also who is of a contrite and humble spirit, to revive the spirit of the humble, and to revive the heart of the contrite.",
+    "text": "For thus says the high and lofty One who inhabits eternity, whose name is Holy: “I dwell in the high and holy place, with him also who is of a contrite and humble spirit, to revive the spirit of the humble, and to revive the heart of the contrite.",
     "slots": [
       "evening"
     ],
@@ -2616,7 +2616,7 @@
   {
     "id": "v229",
     "reference": "Psalm 23:6",
-    "text": "Surely goodness and loving kindness shall follow me all the days of my life, and I will dwell in Yahweh's house forever.",
+    "text": "Surely goodness and loving kindness shall follow me all the days of my life, and I will dwell in Yahweh’s house forever.",
     "slots": [
       "evening"
     ],
@@ -2627,7 +2627,7 @@
   {
     "id": "v230",
     "reference": "1 Peter 5:6",
-    "text": "Humble yourselves therefore under the mighty hand of God, that he may exalt you in due time.",
+    "text": "Humble yourselves therefore under the mighty hand of God, that he may exalt you in due time;",
     "slots": [
       "evening"
     ],
@@ -2649,7 +2649,7 @@
   {
     "id": "v232",
     "reference": "Romans 8:27",
-    "text": "He who searches the hearts knows what is on the Spirit's mind, because he makes intercession for the saints according to God.",
+    "text": "He who searches the hearts knows what is on the Spirit’s mind, because he makes intercession for the saints according to God.",
     "slots": [
       "evening"
     ],
@@ -2660,7 +2660,7 @@
   {
     "id": "v233",
     "reference": "Matthew 6:21",
-    "text": "For where your treasure is, there your heart will be also.",
+    "text": "for where your treasure is, there your heart will be also.",
     "slots": [
       "evening"
     ],
@@ -2671,7 +2671,7 @@
   {
     "id": "v234",
     "reference": "Psalm 84:2",
-    "text": "My soul longs, yes, even faints for the courts of Yahweh. My heart and my flesh cry out for the living God.",
+    "text": "My soul longs, and even faints for the courts of Yahweh. My heart and my flesh cry out for the living God.",
     "slots": [
       "evening"
     ],
@@ -2693,7 +2693,7 @@
   {
     "id": "v236",
     "reference": "Isaiah 55:1",
-    "text": "Come, everyone who thirsts, to the waters! Come, he who has no money, buy, and eat! Yes, come, buy wine and milk without money and without price.",
+    "text": "“Hey! Come, everyone who thirsts, to the waters! Come, he who has no money, buy, and eat! Yes, come, buy wine and milk without money and without price.",
     "slots": [
       "evening"
     ],
@@ -2704,7 +2704,7 @@
   {
     "id": "v237",
     "reference": "Ephesians 2:4-5",
-    "text": "But God, being rich in mercy, for his great love with which he loved us, even when we were dead through our trespasses, made us alive together with Christ.",
+    "text": "But God, being rich in mercy, for his great love with which he loved us, even when we were dead through our trespasses, made us alive together with Christ (by grace you have been saved),",
     "slots": [
       "evening"
     ],
@@ -2737,7 +2737,7 @@
   {
     "id": "v240",
     "reference": "Psalm 30:11-12",
-    "text": "You have turned my mourning into dancing for me. You have removed my sackcloth, and clothed me with gladness, to the end that my heart may sing praise to you, and not be silent.",
+    "text": "You have turned my mourning into dancing for me. You have removed my sackcloth, and clothed me with gladness, To the end that my heart may sing praise to you, and not be silent. Yahweh my God, I will give thanks to you forever!",
     "slots": [
       "evening"
     ],
