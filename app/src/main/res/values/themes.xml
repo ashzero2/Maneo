@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base app theme — Compose handles all visual theming, this just removes the ActionBar -->
+    <style name="Theme.Maneo" parent="android:Theme.Material.NoActionBar" />
+
+    <!-- Used by InterceptActivity (Phase 3) — full-screen over lock screen -->
+    <style name="Theme.Maneo.Fullscreen" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/maneo_background</item>
+    </style>
+</resources>

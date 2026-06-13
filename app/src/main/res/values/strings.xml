@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Maneo</string>
+    <string name="accessibility_service_label">Maneo app blocker</string>
+    <string name="accessibility_description">Maneo uses Accessibility Services to detect when a blocked app is opened, so it can show you a moment of peace before you continue.</string>
+</resources>
