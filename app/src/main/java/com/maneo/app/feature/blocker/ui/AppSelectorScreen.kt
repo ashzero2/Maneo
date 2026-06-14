@@ -32,9 +32,11 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.maneo.app.ui.components.ScreenHeader
 
 @Composable
 fun AppSelectorScreen(
+    onBack: (() -> Unit)? = null,
     viewModel: AppSelectorViewModel = hiltViewModel(),
 ) {
     val apps by viewModel.apps.collectAsState()
@@ -45,12 +47,18 @@ fun AppSelectorScreen(
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background),
     ) {
+        ScreenHeader(
+            title = "Blocked apps",
+            onBack = onBack,
+            modifier = Modifier.padding(start = if (onBack != null) 4.dp else 16.dp, end = 16.dp),
+        )
+
         OutlinedTextField(
             value = query,
             onValueChange = viewModel::setSearchQuery,
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 16.dp, vertical = 12.dp),
+                .padding(horizontal = 16.dp, vertical = 4.dp),
             placeholder = { Text("Search apps") },
             leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) },
             singleLine = true,

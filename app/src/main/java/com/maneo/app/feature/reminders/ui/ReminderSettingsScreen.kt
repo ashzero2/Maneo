@@ -29,9 +29,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.maneo.app.feature.reminders.repository.ReminderSettings
+import com.maneo.app.ui.components.ScreenHeader
 
 @Composable
 fun ReminderSettingsScreen(
+    onBack: (() -> Unit)? = null,
     viewModel: ReminderSettingsViewModel = hiltViewModel(),
 ) {
     val settings by viewModel.settings.collectAsState()
@@ -40,46 +42,46 @@ fun ReminderSettingsScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.background)
-            .padding(horizontal = 24.dp),
+            .background(MaterialTheme.colorScheme.background),
     ) {
-        Spacer(Modifier.height(40.dp))
-        Text(
-            text = "Daily Reminders",
-            style = MaterialTheme.typography.headlineSmall,
-            color = MaterialTheme.colorScheme.onBackground,
+        ScreenHeader(
+            title = "Reminders",
+            onBack = onBack,
+            modifier = Modifier.padding(start = if (onBack != null) 4.dp else 16.dp, end = 16.dp),
         )
-        Spacer(Modifier.height(8.dp))
-        Text(
-            text = "A quiet moment with God, delivered to you.",
-            style = MaterialTheme.typography.bodyMedium,
-            color = MaterialTheme.colorScheme.onSurfaceVariant,
-        )
-        Spacer(Modifier.height(32.dp))
 
-        ReminderRow(
-            label = "Morning",
-            displayTime = settings.morningTime.toDisplayTime(),
-            enabled = settings.morningEnabled,
-            onToggle = { viewModel.setEnabled("morning", it) },
-            onTimeTap = { showPickerFor = "morning" },
-        )
-        HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
-        ReminderRow(
-            label = "Afternoon",
-            displayTime = settings.afternoonTime.toDisplayTime(),
-            enabled = settings.afternoonEnabled,
-            onToggle = { viewModel.setEnabled("afternoon", it) },
-            onTimeTap = { showPickerFor = "afternoon" },
-        )
-        HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
-        ReminderRow(
-            label = "Evening",
-            displayTime = settings.eveningTime.toDisplayTime(),
-            enabled = settings.eveningEnabled,
-            onToggle = { viewModel.setEnabled("evening", it) },
-            onTimeTap = { showPickerFor = "evening" },
-        )
+        Column(modifier = Modifier.padding(horizontal = 24.dp)) {
+            Text(
+                text = "A quiet moment with God, delivered to you.",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+            )
+            Spacer(Modifier.height(24.dp))
+
+            ReminderRow(
+                label = "Morning",
+                displayTime = settings.morningTime.toDisplayTime(),
+                enabled = settings.morningEnabled,
+                onToggle = { viewModel.setEnabled("morning", it) },
+                onTimeTap = { showPickerFor = "morning" },
+            )
+            HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
+            ReminderRow(
+                label = "Afternoon",
+                displayTime = settings.afternoonTime.toDisplayTime(),
+                enabled = settings.afternoonEnabled,
+                onToggle = { viewModel.setEnabled("afternoon", it) },
+                onTimeTap = { showPickerFor = "afternoon" },
+            )
+            HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
+            ReminderRow(
+                label = "Evening",
+                displayTime = settings.eveningTime.toDisplayTime(),
+                enabled = settings.eveningEnabled,
+                onToggle = { viewModel.setEnabled("evening", it) },
+                onTimeTap = { showPickerFor = "evening" },
+            )
+        }
     }
 
     showPickerFor?.let { slot ->
@@ -165,15 +167,15 @@ private fun String.toDisplayTime(): String {
     val (h, m) = split(":").map { it.toInt() }
     val amPm = if (h < 12) "AM" else "PM"
     val displayH = when {
-        h == 0 -> 12
-        h > 12 -> h - 12
-        else -> h
+        h == 0  -> 12
+        h > 12  -> h - 12
+        else    -> h
     }
     return "%d:%02d %s".format(displayH, m, amPm)
 }
 
 private fun String.currentTime(settings: ReminderSettings): String = when (this) {
-    "morning" -> settings.morningTime
+    "morning"   -> settings.morningTime
     "afternoon" -> settings.afternoonTime
-    else -> settings.eveningTime
+    else        -> settings.eveningTime
 }

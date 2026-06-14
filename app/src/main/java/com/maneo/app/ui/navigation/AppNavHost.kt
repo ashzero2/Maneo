@@ -151,9 +151,15 @@ fun AppNavHost(
                     onNavigateToLicences = { navController.navigate(Routes.OSS_LICENCES) },
                 )
             }
-            composable(Routes.REMINDERS_SETTINGS) { ReminderSettingsScreen() }
-            composable(Routes.APP_SELECTOR) { AppSelectorScreen() }
-            composable(Routes.OSS_LICENCES) { OssLicencesScreen() }
+            composable(Routes.REMINDERS_SETTINGS) {
+                ReminderSettingsScreen(onBack = { navController.popBackStack() })
+            }
+            composable(Routes.APP_SELECTOR) {
+                AppSelectorScreen(onBack = { navController.popBackStack() })
+            }
+            composable(Routes.OSS_LICENCES) {
+                OssLicencesScreen(onBack = { navController.popBackStack() })
+            }
         }
     }
 }

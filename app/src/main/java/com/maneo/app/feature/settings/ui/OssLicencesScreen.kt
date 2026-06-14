@@ -15,47 +15,51 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.maneo.app.ui.components.ScreenHeader
 
 private data class Licence(val name: String, val copyright: String, val licence: String)
 
 private val LICENCES = listOf(
-    Licence("Jetpack Compose", "The Android Open Source Project", "Apache License 2.0"),
-    Licence("Dagger / Hilt", "Google Inc.", "Apache License 2.0"),
-    Licence("AndroidX Room", "The Android Open Source Project", "Apache License 2.0"),
-    Licence("AndroidX DataStore", "The Android Open Source Project", "Apache License 2.0"),
-    Licence("AndroidX WorkManager", "The Android Open Source Project", "Apache License 2.0"),
-    Licence("AndroidX Navigation", "The Android Open Source Project", "Apache License 2.0"),
-    Licence("kotlinx.serialization", "JetBrains s.r.o.", "Apache License 2.0"),
-    Licence("kotlinx.coroutines", "JetBrains s.r.o.", "Apache License 2.0"),
-    Licence("Lora", "Cyreal", "SIL Open Font License 1.1"),
-    Licence("Inter", "Rasmus Andersson", "SIL Open Font License 1.1"),
+    Licence("Jetpack Compose",       "The Android Open Source Project", "Apache License 2.0"),
+    Licence("Dagger / Hilt",         "Google Inc.",                     "Apache License 2.0"),
+    Licence("AndroidX Room",         "The Android Open Source Project", "Apache License 2.0"),
+    Licence("AndroidX DataStore",    "The Android Open Source Project", "Apache License 2.0"),
+    Licence("AndroidX WorkManager",  "The Android Open Source Project", "Apache License 2.0"),
+    Licence("AndroidX Navigation",   "The Android Open Source Project", "Apache License 2.0"),
+    Licence("kotlinx.serialization", "JetBrains s.r.o.",                "Apache License 2.0"),
+    Licence("kotlinx.coroutines",    "JetBrains s.r.o.",                "Apache License 2.0"),
+    Licence("Lora",                  "Cyreal",                          "SIL Open Font License 1.1"),
+    Licence("Inter",                 "Rasmus Andersson",                "SIL Open Font License 1.1"),
 )
 
 @Composable
-fun OssLicencesScreen() {
+fun OssLicencesScreen(
+    onBack: (() -> Unit)? = null,
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
-            .verticalScroll(rememberScrollState())
-            .padding(horizontal = 24.dp),
+            .verticalScroll(rememberScrollState()),
     ) {
-        Spacer(Modifier.height(48.dp))
-        Text(
-            text = "Open source licences",
-            style = MaterialTheme.typography.headlineSmall,
-            color = MaterialTheme.colorScheme.onBackground,
+        ScreenHeader(
+            title = "Open source licences",
+            onBack = onBack,
+            modifier = Modifier.padding(start = if (onBack != null) 4.dp else 16.dp, end = 16.dp),
         )
-        Spacer(Modifier.height(24.dp))
 
-        LICENCES.forEachIndexed { index, item ->
-            LicenceRow(item)
-            if (index < LICENCES.lastIndex) {
-                HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
+        Column(modifier = Modifier.padding(horizontal = 24.dp)) {
+            Spacer(Modifier.height(8.dp))
+
+            LICENCES.forEachIndexed { index, item ->
+                LicenceRow(item)
+                if (index < LICENCES.lastIndex) {
+                    HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
+                }
             }
-        }
 
-        Spacer(Modifier.height(40.dp))
+            Spacer(Modifier.height(40.dp))
+        }
     }
 }
 
