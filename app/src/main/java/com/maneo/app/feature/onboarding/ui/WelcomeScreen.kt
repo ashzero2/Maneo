@@ -22,7 +22,8 @@ fun WelcomeScreen(onGetStarted: () -> Unit) {
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.background)
-            .padding(horizontal = 32.dp),
+            .padding(horizontal = 32.dp)
+            .padding(bottom = 24.dp),
     ) {
         Column(
             modifier = Modifier.align(Alignment.Center),
@@ -57,13 +58,10 @@ fun WelcomeScreen(onGetStarted: () -> Unit) {
             modifier = Modifier
                 .fillMaxWidth()
                 .height(56.dp)
-                .align(Alignment.BottomCenter)
-                .padding(bottom = 0.dp),
+                .align(Alignment.BottomCenter),
             shape = MaterialTheme.shapes.medium,
         ) {
             Text("Get started")
         }
-
-        Spacer(modifier = Modifier.height(40.dp).align(Alignment.BottomCenter))
     }
 }
