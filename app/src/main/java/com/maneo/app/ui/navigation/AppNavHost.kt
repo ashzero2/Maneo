@@ -30,6 +30,7 @@ import com.maneo.app.feature.onboarding.ui.OnboardingViewModel
 import com.maneo.app.feature.onboarding.ui.PermissionsScreen
 import com.maneo.app.feature.onboarding.ui.WelcomeScreen
 import com.maneo.app.feature.reminders.ui.ReminderSettingsScreen
+import com.maneo.app.feature.settings.ui.OssLicencesScreen
 import com.maneo.app.feature.settings.ui.SettingsScreen
 
 @Composable
@@ -146,10 +147,12 @@ fun AppNavHost(
                 SettingsScreen(
                     onNavigateToReminders = { navController.navigate(Routes.REMINDERS_SETTINGS) },
                     onNavigateToApps = { navController.navigate(Routes.APP_SELECTOR) },
+                    onNavigateToLicences = { navController.navigate(Routes.OSS_LICENCES) },
                 )
             }
             composable(Routes.REMINDERS_SETTINGS) { ReminderSettingsScreen() }
             composable(Routes.APP_SELECTOR) { AppSelectorScreen() }
+            composable(Routes.OSS_LICENCES) { OssLicencesScreen() }
         }
     }
 }

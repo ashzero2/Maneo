@@ -10,4 +10,5 @@ object Routes {
     const val APP_SELECTOR           = "blocker/apps"
     const val REMINDERS_SETTINGS     = "reminders/settings"
     const val SETTINGS               = "settings"
+    const val OSS_LICENCES           = "settings/licences"
 }
