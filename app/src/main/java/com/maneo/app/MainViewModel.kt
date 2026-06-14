@@ -17,9 +17,15 @@ class MainViewModel @Inject constructor(
     private val _onboardingDone = MutableStateFlow<Boolean?>(null)
     val onboardingDone: StateFlow<Boolean?> = _onboardingDone
 
+    private val _pendingSlot = MutableStateFlow<String?>(null)
+    val pendingSlot: StateFlow<String?> = _pendingSlot
+
     init {
         viewModelScope.launch {
             onboardingRepository.isOnboardingDone.collect { _onboardingDone.value = it }
         }
     }
+
+    fun setPendingSlot(slot: String?) { _pendingSlot.value = slot }
+    fun clearPendingSlot() { _pendingSlot.value = null }
 }
