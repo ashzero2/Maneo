@@ -24,6 +24,16 @@
             </intent-filter>
         </activity>
 
+        <!-- InterceptActivity: shown over blocked apps via AccessibilityService (F2) -->
+        <activity
+            android:name=".feature.blocker.ui.InterceptActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Maneo.Fullscreen"
+            android:excludeFromRecents="true"
+            android:taskAffinity=""
+            android:showWhenLocked="true"
+            android:turnScreenOn="true" />
+
     </application>
 
 </manifest>
