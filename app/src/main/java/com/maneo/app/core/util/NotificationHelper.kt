@@ -49,5 +49,25 @@ object NotificationHelper {
         NotificationManagerCompat.from(context).notify(slot.hashCode(), notification)
     }
 
+    fun sendScreenTimeWarning(context: Context, title: String, body: String, packageName: String) {
+        val intent = Intent(context, MainActivity::class.java).apply {
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
+        }
+        val pendingIntent = PendingIntent.getActivity(
+            context,
+            "screentime_$packageName".hashCode(),
+            intent,
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE,
+        )
+        val notification = NotificationCompat.Builder(context, CHANNEL_ID)
+            .setSmallIcon(R.drawable.ic_notification)
+            .setContentTitle(title)
+            .setContentText(body)
+            .setContentIntent(pendingIntent)
+            .setAutoCancel(true)
+            .build()
+        NotificationManagerCompat.from(context).notify("screentime_$packageName".hashCode(), notification)
+    }
+
     const val EXTRA_SLOT = "slot"
 }
