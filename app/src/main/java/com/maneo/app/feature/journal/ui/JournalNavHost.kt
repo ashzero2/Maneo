@@ -7,12 +7,24 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 
 @Composable
-fun JournalNavHost() {
-    var showEntry by remember { mutableStateOf(false) }
+fun JournalNavHost(initialSlot: String? = null) {
+    var entrySlot by remember { mutableStateOf(initialSlot) }
+    var showEntry by remember { mutableStateOf(initialSlot != null) }
 
     if (showEntry) {
-        JournalEntryScreen(onBack = { showEntry = false })
+        JournalEntryScreen(
+            slot = entrySlot,
+            onBack = {
+                showEntry = false
+                entrySlot = null
+            },
+        )
     } else {
-        JournalListScreen(onNewEntry = { showEntry = true })
+        JournalListScreen(
+            onNewEntry = {
+                entrySlot = null
+                showEntry = true
+            },
+        )
     }
 }

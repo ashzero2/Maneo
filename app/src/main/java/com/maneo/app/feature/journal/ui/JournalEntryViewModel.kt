@@ -21,10 +21,11 @@ import kotlin.math.abs
 @HiltViewModel
 class JournalEntryViewModel @Inject constructor(
     private val saveEntry: SaveEntry,
-    @ApplicationContext context: Context,
+    @ApplicationContext private val context: Context,
 ) : ViewModel() {
 
-    val prompt: String? = loadGeneralPrompt(context)
+    var prompt by mutableStateOf<String?>(null)
+        private set
 
     var text by mutableStateOf("")
         private set
@@ -32,22 +33,34 @@ class JournalEntryViewModel @Inject constructor(
     var saved by mutableStateOf(false)
         private set
 
+    private var activeSlot: String? = null
+    private var configured = false
+
+    fun configure(slot: String?) {
+        if (configured) return
+        configured = true
+        activeSlot = slot
+        prompt = loadPromptForSlot(slot)
+    }
+
+    fun dismissPrompt() { prompt = null }
+
     fun onTextChange(value: String) { text = value }
 
-    fun save(slot: String? = null) {
+    fun save() {
         if (text.isBlank()) return
         viewModelScope.launch {
-            saveEntry(text, promptUsed = if (text.isNotBlank()) prompt else null, slot = slot)
+            saveEntry(text, promptUsed = prompt, slot = activeSlot)
             saved = true
         }
     }
 
-    private fun loadGeneralPrompt(context: Context): String? = try {
+    private fun loadPromptForSlot(slot: String?): String? = try {
         val raw = context.assets.open("prompts.json").bufferedReader().readText()
-        val arr = Json.parseToJsonElement(raw).jsonObject["general"]?.jsonArray
-            ?.map { it.jsonPrimitive.content } ?: return null
-        val index = abs(LocalDate.now().toEpochDay().toInt()) % arr.size
-        arr[index]
+        val obj = Json.parseToJsonElement(raw).jsonObject
+        val key = if (slot in setOf("morning", "afternoon", "evening")) slot else "general"
+        val arr = obj[key]?.jsonArray?.map { it.jsonPrimitive.content } ?: return null
+        arr[abs(LocalDate.now().toEpochDay().toInt()) % arr.size]
     } catch (_: Exception) {
         null
     }

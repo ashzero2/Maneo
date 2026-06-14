@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Required on API 30+ to query installed launcher apps for the app selector -->
     <queries>
@@ -21,6 +22,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Maneo">
+
+        <!-- Disable WorkManager's default initializer — we provide our own via HiltWorkerFactory -->
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="androidx.work.WorkManagerInitializer"
+                android:value="androidx.startup"
+                tools:node="remove" />
+        </provider>
 
         <activity
             android:name=".MainActivity"
@@ -55,6 +68,15 @@
             android:taskAffinity=""
             android:showWhenLocked="true"
             android:turnScreenOn="true" />
+
+        <!-- Reschedules reminders after device reboot (F5/F6) -->
+        <receiver
+            android:name=".feature.reminders.receiver.BootReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
 
     </application>
 
