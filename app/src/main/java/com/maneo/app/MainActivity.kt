@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import com.maneo.app.feature.blocker.ui.AppSelectorScreen
 import com.maneo.app.ui.theme.ManeoTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -19,7 +20,8 @@ class MainActivity : ComponentActivity() {
         setContent {
             ManeoTheme {
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    // Navigation shell wired in Phase 9
+                    // Temporary: replaced by nav shell in Phase 9
+                    AppSelectorScreen()
                 }
             }
         }
