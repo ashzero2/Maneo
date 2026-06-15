@@ -47,7 +47,7 @@ fun HomeScreen(
     val greeting = when {
         hour < 12 -> "Good morning"
         hour < 17 -> "Good afternoon"
-        else      -> "Good evening"
+        else -> "Good evening"
     }
     val dateLabel = LocalDate.now().format(DateTimeFormatter.ofPattern("EEEE, MMMM d"))
 
@@ -99,7 +99,7 @@ fun HomeScreen(
                     )
                     Spacer(Modifier.height(12.dp))
                     Text(
-                        text = "— ${viewModel.verse.reference}",
+                        text = viewModel.verse.reference,
                         style = MaterialTheme.typography.labelMedium,
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
@@ -128,8 +128,8 @@ fun HomeScreen(
         Spacer(Modifier.weight(1f))
 
         val countLabel = when (blockedCount) {
-            0    -> "No apps being held"
-            1    -> "1 app being held"
+            0 -> "No apps being held"
+            1 -> "1 app being held"
             else -> "$blockedCount apps being held"
         }
         Row(

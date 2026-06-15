@@ -64,10 +64,10 @@ fun JournalEntryScreen(
             }
             Text(
                 text = when (slot) {
-                    "morning"   -> "Morning prayer"
+                    "morning" -> "Morning prayer"
                     "afternoon" -> "Afternoon prayer"
-                    "evening"   -> "Evening prayer"
-                    else        -> "Prayer"
+                    "evening" -> "Evening prayer"
+                    else -> "Prayer"
                 },
                 style = MaterialTheme.typography.titleSmall,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,

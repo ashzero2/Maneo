@@ -167,15 +167,15 @@ private fun String.toDisplayTime(): String {
     val (h, m) = split(":").map { it.toInt() }
     val amPm = if (h < 12) "AM" else "PM"
     val displayH = when {
-        h == 0  -> 12
-        h > 12  -> h - 12
-        else    -> h
+        h == 0 -> 12
+        h > 12 -> h - 12
+        else -> h
     }
     return "%d:%02d %s".format(displayH, m, amPm)
 }
 
 private fun String.currentTime(settings: ReminderSettings): String = when (this) {
-    "morning"   -> settings.morningTime
+    "morning" -> settings.morningTime
     "afternoon" -> settings.afternoonTime
-    else        -> settings.eveningTime
+    else -> settings.eveningTime
 }

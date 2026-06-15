@@ -130,7 +130,7 @@ private fun Long.toRelativeDate(): String {
     return when (then.toLocalDate()) {
         today                -> then.format(DateTimeFormatter.ofPattern("h:mm a"))
         today.minusDays(1)   -> "Yesterday"
-        else                 -> if (then.year == today.year)
+        else -> if (then.year == today.year)
             then.format(DateTimeFormatter.ofPattern("MMM d"))
         else
             then.format(DateTimeFormatter.ofPattern("MMM d, yyyy"))
