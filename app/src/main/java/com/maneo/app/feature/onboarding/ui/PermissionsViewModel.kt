@@ -2,6 +2,7 @@ package com.maneo.app.feature.onboarding.ui
 
 import android.app.AppOpsManager
 import android.content.Context
+import android.os.PowerManager
 import android.os.Process
 import android.provider.Settings
 import androidx.compose.runtime.getValue
@@ -17,6 +18,7 @@ data class PermissionState(
     val accessibilityGranted: Boolean = false,
     val usageStatsGranted: Boolean = false,
     val notificationsGranted: Boolean = false,
+    val batteryOptimizationIgnored: Boolean = false,
 )
 
 @HiltViewModel
@@ -34,6 +36,7 @@ class PermissionsViewModel @Inject constructor(
             accessibilityGranted = isAccessibilityEnabled(),
             usageStatsGranted = isUsageStatsGranted(),
             notificationsGranted = areNotificationsEnabled(),
+            batteryOptimizationIgnored = isBatteryOptimizationIgnored(),
         )
     }
 
@@ -58,4 +61,8 @@ class PermissionsViewModel @Inject constructor(
 
     private fun areNotificationsEnabled(): Boolean =
         NotificationManagerCompat.from(context).areNotificationsEnabled()
+
+    private fun isBatteryOptimizationIgnored(): Boolean =
+        context.getSystemService(PowerManager::class.java)
+            .isIgnoringBatteryOptimizations(context.packageName)
 }
