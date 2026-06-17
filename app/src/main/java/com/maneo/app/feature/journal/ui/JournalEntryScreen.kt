@@ -35,7 +35,7 @@ fun JournalEntryScreen(
     viewModel: JournalEntryViewModel = hiltViewModel(),
 ) {
     LaunchedEffect(Unit) {
-        viewModel.configure(slot)
+        viewModel.configure(slot)  // suspend — reads DataStore for evening auto-suggestion
     }
 
     LaunchedEffect(viewModel.saved) {

@@ -1,5 +1,6 @@
 package com.maneo.app.core.util
 
+import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -13,6 +14,8 @@ import com.maneo.app.R
 object NotificationHelper {
 
     const val CHANNEL_ID = "maneo_reminders"
+    const val CHANNEL_ID_SERVICE = "maneo_service"
+    const val SERVICE_NOTIFICATION_ID = 1001
 
     fun createChannel(context: Context) {
         val channel = NotificationChannel(
@@ -24,6 +27,27 @@ object NotificationHelper {
         }
         context.getSystemService(NotificationManager::class.java).createNotificationChannel(channel)
     }
+
+    fun createServiceChannel(context: Context) {
+        val channel = NotificationChannel(
+            CHANNEL_ID_SERVICE,
+            "Service",
+            NotificationManager.IMPORTANCE_LOW,
+        ).apply {
+            description = "Keeps Maneo active in the background"
+            setShowBadge(false)
+        }
+        context.getSystemService(NotificationManager::class.java).createNotificationChannel(channel)
+    }
+
+    fun buildKeepAliveNotification(context: Context): Notification =
+        NotificationCompat.Builder(context, CHANNEL_ID_SERVICE)
+            .setContentTitle("Maneo is keeping watch")
+            .setSmallIcon(R.drawable.ic_notification)
+            .setPriority(NotificationCompat.PRIORITY_LOW)
+            .setOngoing(true)
+            .setShowWhen(false)
+            .build()
 
     fun sendReminder(context: Context, title: String, body: String, slot: String) {
         val intent = Intent(context, MainActivity::class.java).apply {

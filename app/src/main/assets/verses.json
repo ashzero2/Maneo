@@ -2744,5 +2744,911 @@
     "tone": [
       "inviting"
     ]
+  },
+  {
+    "id": "v241",
+    "reference": "Psalm 18:1-2",
+    "text": "I love you, Yahweh, my strength. Yahweh is my rock, my fortress, and my deliverer; my God, my rock, in whom I take refuge.",
+    "slots": [
+      "morning"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v242",
+    "reference": "Psalm 23:1-2",
+    "text": "Yahweh is my shepherd; I shall lack nothing. He makes me lie down in green pastures. He leads me beside still waters.",
+    "slots": [
+      "evening",
+      "intercept"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v243",
+    "reference": "Psalm 23:3",
+    "text": "He restores my soul. He guides me in the paths of righteousness for his name's sake.",
+    "slots": [
+      "morning",
+      "intercept"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v244",
+    "reference": "Psalm 32:8",
+    "text": "I will instruct you and teach you in the way which you shall go. I will counsel you with my eye on you.",
+    "slots": [
+      "morning"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v245",
+    "reference": "Psalm 36:7",
+    "text": "How precious is your loving kindness, God! The children of men take refuge under the shadow of your wings.",
+    "slots": [
+      "evening",
+      "morning"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v246",
+    "reference": "Psalm 40:1-2",
+    "text": "I waited patiently for Yahweh. He turned to me, and heard my cry. He brought me up also out of a horrible pit, out of the miry clay.",
+    "slots": [
+      "morning",
+      "evening"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v247",
+    "reference": "Psalm 42:1-2",
+    "text": "As the deer pants for the water brooks, so my soul pants after you, God. My soul thirsts for God, for the living God.",
+    "slots": [
+      "intercept",
+      "morning"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v248",
+    "reference": "Psalm 62:1-2",
+    "text": "My soul rests in God alone. My salvation is from him. He alone is my rock and my salvation, my fortress. I will never be greatly shaken.",
+    "slots": [
+      "intercept",
+      "evening"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v249",
+    "reference": "Psalm 63:3",
+    "text": "Because your loving kindness is better than life, my lips shall praise you.",
+    "slots": [
+      "morning"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v250",
+    "reference": "Psalm 71:5",
+    "text": "For you are my hope, Lord Yahweh — my confidence from my youth.",
+    "slots": [
+      "morning"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v251",
+    "reference": "Psalm 84:1-2",
+    "text": "How lovely are your dwellings, Yahweh of Armies! My soul longs, and even faints for the courts of Yahweh. My heart and my flesh cry out for the living God.",
+    "slots": [
+      "morning",
+      "intercept"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v252",
+    "reference": "Psalm 91:4",
+    "text": "He will cover you with his feathers. Under his wings you will take refuge. His faithfulness is your shield and rampart.",
+    "slots": [
+      "evening",
+      "intercept"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v253",
+    "reference": "Psalm 100:4-5",
+    "text": "Enter his gates with thanksgiving, and his courts with praise. Give thanks to him, and bless his name. For Yahweh is good. His loving kindness endures forever.",
+    "slots": [
+      "morning"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v254",
+    "reference": "Psalm 103:2-3",
+    "text": "Praise Yahweh, my soul, and don't forget all his benefits — who forgives all your sins, who heals all your diseases.",
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v255",
+    "reference": "Psalm 103:13-14",
+    "text": "Like a father has compassion on his children, so Yahweh has compassion on those who fear him. For he knows our frame. He remembers that we are dust.",
+    "slots": [
+      "evening",
+      "intercept"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v256",
+    "reference": "Psalm 119:11",
+    "text": "I have hidden your word in my heart, that I might not sin against you.",
+    "slots": [
+      "morning",
+      "intercept"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v257",
+    "reference": "Psalm 119:114",
+    "text": "You are my hiding place and my shield. I hope in your word.",
+    "slots": [
+      "intercept",
+      "evening"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v258",
+    "reference": "Psalm 130:5",
+    "text": "I wait for Yahweh. My soul waits. I hope in his word.",
+    "slots": [
+      "evening",
+      "intercept"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v259",
+    "reference": "Psalm 138:3",
+    "text": "In the day that I called, you answered me, and encouraged me with strength in my soul.",
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v260",
+    "reference": "Psalm 139:1-2",
+    "text": "Yahweh, you have searched me, and you know me. You know my sitting down and my rising up. You perceive my thoughts from afar.",
+    "slots": [
+      "morning",
+      "evening"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v261",
+    "reference": "Proverbs 3:24",
+    "text": "When you lie down, you will not be afraid. Yes, you will lie down, and your sleep will be sweet.",
+    "slots": [
+      "evening"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v262",
+    "reference": "Proverbs 4:23",
+    "text": "Keep your heart with all diligence, for out of it is the wellspring of life.",
+    "slots": [
+      "intercept",
+      "morning"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v263",
+    "reference": "Proverbs 8:34",
+    "text": "Blessed is the man who hears me, watching daily at my gates, waiting at my door posts.",
+    "slots": [
+      "morning",
+      "intercept"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v264",
+    "reference": "Proverbs 16:9",
+    "text": "A man's heart plans his course, but Yahweh directs his steps.",
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v265",
+    "reference": "Proverbs 17:22",
+    "text": "A cheerful heart is good medicine, but a crushed spirit dries up the bones.",
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v266",
+    "reference": "Proverbs 18:10",
+    "text": "The name of Yahweh is a strong tower. The righteous run to him, and are safe.",
+    "slots": [
+      "intercept",
+      "morning"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v267",
+    "reference": "Isaiah 40:28-29",
+    "text": "Haven't you known? Haven't you heard? The everlasting God, Yahweh, the Creator of the ends of the earth, doesn't faint. He gives power to the weak.",
+    "slots": [
+      "afternoon",
+      "intercept"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v268",
+    "reference": "Isaiah 43:1-2",
+    "text": "Don't be afraid, for I have redeemed you. I have called you by your name. You are mine. When you pass through the waters, I will be with you.",
+    "slots": [
+      "intercept",
+      "evening"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v269",
+    "reference": "Isaiah 43:18-19",
+    "text": "Don't remember the former things, and don't consider the things of old. Behold, I will do a new thing. It springs out now.",
+    "slots": [
+      "morning",
+      "intercept"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v270",
+    "reference": "Jeremiah 31:3",
+    "text": "Yes, I have loved you with an everlasting love. Therefore I have drawn you with loving kindness.",
+    "slots": [
+      "intercept",
+      "evening",
+      "morning"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v271",
+    "reference": "Lamentations 3:25-26",
+    "text": "Yahweh is good to those who wait for him, to the soul that seeks him. It is good that a man should hope and quietly wait for the salvation of Yahweh.",
+    "slots": [
+      "intercept",
+      "evening"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v272",
+    "reference": "Matthew 5:3",
+    "text": "Blessed are the poor in spirit, for theirs is the Kingdom of Heaven.",
+    "slots": [
+      "morning",
+      "intercept"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v273",
+    "reference": "Matthew 6:6",
+    "text": "But you, when you pray, enter into your inner room, and having shut your door, pray to your Father who is in secret, and your Father who sees in secret will reward you openly.",
+    "slots": [
+      "morning",
+      "evening"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v274",
+    "reference": "Matthew 11:29-30",
+    "text": "Take my yoke upon you and learn from me, for I am gentle and humble in heart; and you will find rest for your souls. For my yoke is easy, and my burden is light.",
+    "slots": [
+      "intercept",
+      "evening",
+      "afternoon"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v275",
+    "reference": "Luke 10:38-39",
+    "text": "Now as they went on their way, he entered into a certain village, and a certain woman named Martha received him into her house. She had a sister called Mary, who also sat at Jesus' feet, and heard his word.",
+    "slots": [
+      "intercept",
+      "morning"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v276",
+    "reference": "Luke 12:22-23",
+    "text": "He said to his disciples, 'Therefore I tell you, don't be anxious for your life, what you will eat, nor yet for your body, what you will wear. Life is more than food, and the body is more than clothing.'",
+    "slots": [
+      "intercept",
+      "afternoon"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v277",
+    "reference": "Luke 15:20",
+    "text": "He arose, and came to his father. But while he was yet far off, his father saw him, and was moved with compassion, and ran, and fell on his neck, and kissed him.",
+    "slots": [
+      "intercept",
+      "evening"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v278",
+    "reference": "John 1:4-5",
+    "text": "In him was life, and the life was the light of men. The light shines in the darkness, and the darkness hasn't overcome it.",
+    "slots": [
+      "morning",
+      "intercept"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v279",
+    "reference": "John 3:16",
+    "text": "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.",
+    "slots": [
+      "intercept",
+      "morning",
+      "evening"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v280",
+    "reference": "John 4:13-14",
+    "text": "Jesus answered her, 'Everyone who drinks of this water will thirst again, but whoever drinks of the water that I will give him will never thirst again.'",
+    "slots": [
+      "intercept"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v281",
+    "reference": "John 6:35",
+    "text": "Jesus said to them, 'I am the bread of life. Whoever comes to me will not be hungry, and whoever believes in me will never be thirsty.'",
+    "slots": [
+      "intercept",
+      "morning"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v282",
+    "reference": "John 10:27",
+    "text": "My sheep hear my voice, and I know them, and they follow me.",
+    "slots": [
+      "morning",
+      "intercept"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v283",
+    "reference": "John 14:6",
+    "text": "Jesus said to him, 'I am the way, the truth, and the life. No one comes to the Father, except through me.'",
+    "slots": [
+      "morning",
+      "intercept"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v284",
+    "reference": "Romans 5:8",
+    "text": "But God commends his own love toward us, in that while we were yet sinners, Christ died for us.",
+    "slots": [
+      "intercept",
+      "evening"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v285",
+    "reference": "Romans 12:1",
+    "text": "Therefore I urge you, brothers, by the mercies of God, to present your bodies a living sacrifice, holy, acceptable to God, which is your spiritual service.",
+    "slots": [
+      "morning",
+      "intercept"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v286",
+    "reference": "1 Corinthians 13:4-5",
+    "text": "Love is patient and is kind; love doesn't envy. Love doesn't brag, is not proud, doesn't behave itself inappropriately, doesn't seek its own way.",
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v287",
+    "reference": "1 Corinthians 13:13",
+    "text": "But now faith, hope, and love remain — these three. The greatest of these is love.",
+    "slots": [
+      "morning",
+      "evening"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v288",
+    "reference": "2 Corinthians 4:16-17",
+    "text": "Therefore we don't faint, but though our outward man is decaying, yet our inward man is renewed day by day. For our light and momentary troubles are achieving for us an eternal glory.",
+    "slots": [
+      "afternoon",
+      "intercept"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v289",
+    "reference": "Ephesians 1:17-18",
+    "text": "That the God of our Lord Jesus Christ, the Father of glory, may give to you a spirit of wisdom and revelation in the knowledge of him, having the eyes of your heart enlightened.",
+    "slots": [
+      "morning"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v290",
+    "reference": "Ephesians 2:8-9",
+    "text": "For by grace you have been saved through faith, and that not of yourselves; it is the gift of God, not of works, that no one would boast.",
+    "slots": [
+      "morning",
+      "intercept"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v291",
+    "reference": "Ephesians 3:17-19",
+    "text": "That Christ may dwell in your hearts through faith; to the end that you, being rooted and grounded in love, may be strengthened to comprehend with all the saints what is the breadth and length and height and depth.",
+    "slots": [
+      "morning",
+      "evening"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v292",
+    "reference": "Philippians 4:4",
+    "text": "Rejoice in the Lord always! Again I will say, 'Rejoice!'",
+    "slots": [
+      "morning"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v293",
+    "reference": "Philippians 4:6-7",
+    "text": "In nothing be anxious, but in everything, by prayer and petition with thanksgiving, let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your thoughts in Christ Jesus.",
+    "slots": [
+      "intercept",
+      "afternoon",
+      "evening"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v294",
+    "reference": "Philippians 4:11-12",
+    "text": "I have learned, in whatever state I am, to be content. I know how to be humbled, and I know also how to abound.",
+    "slots": [
+      "intercept",
+      "afternoon"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v295",
+    "reference": "Colossians 1:17",
+    "text": "He is before all things, and in him all things are held together.",
+    "slots": [
+      "morning",
+      "intercept"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v296",
+    "reference": "Colossians 3:1-2",
+    "text": "If then you were raised together with Christ, seek the things that are above, where Christ is, seated on the right hand of God. Set your mind on the things that are above, not on the things that are on the earth.",
+    "slots": [
+      "morning",
+      "intercept"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v297",
+    "reference": "Hebrews 4:12",
+    "text": "For the word of God is living and active, and sharper than any two-edged sword, piercing even to the dividing of soul and spirit.",
+    "slots": [
+      "morning",
+      "intercept"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v298",
+    "reference": "Hebrews 4:15-16",
+    "text": "For we don't have a high priest who can't be touched with the feeling of our infirmities, but one who has been in all points tempted like we are, yet without sin. Let's therefore draw near with boldness to the throne of grace.",
+    "slots": [
+      "intercept",
+      "morning"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v299",
+    "reference": "Hebrews 11:1",
+    "text": "Now faith is assurance of things hoped for, proof of things not seen.",
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v300",
+    "reference": "Hebrews 13:8",
+    "text": "Jesus Christ is the same yesterday, today, and forever.",
+    "slots": [
+      "morning",
+      "intercept"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v301",
+    "reference": "James 1:5",
+    "text": "But if any of you lacks wisdom, let him ask of God, who gives to all liberally and without reproach; and it will be given to him.",
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v302",
+    "reference": "James 1:17",
+    "text": "Every good gift and every perfect gift is from above, coming down from the Father of lights, with whom can be no variation, nor turning shadow.",
+    "slots": [
+      "morning"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v303",
+    "reference": "James 4:10",
+    "text": "Humble yourselves in the sight of the Lord, and he will exalt you.",
+    "slots": [
+      "intercept",
+      "morning"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v304",
+    "reference": "James 5:16",
+    "text": "Confess your offenses to one another, and pray for one another, that you may be healed. The effective, earnest prayer of a righteous man is powerfully effective.",
+    "slots": [
+      "evening",
+      "morning"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v305",
+    "reference": "1 Peter 2:9",
+    "text": "But you are a chosen race, a royal priesthood, a holy nation, a people for God's own possession, that you may proclaim the excellence of him who called you out of darkness into his marvelous light.",
+    "slots": [
+      "morning",
+      "intercept"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v306",
+    "reference": "1 Peter 5:6-7",
+    "text": "Humble yourselves therefore under the mighty hand of God, that he may exalt you in due time, casting all your worries on him, because he cares for you.",
+    "slots": [
+      "intercept",
+      "evening",
+      "afternoon"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v307",
+    "reference": "1 Peter 5:8",
+    "text": "Be sober and self-controlled. Be watchful. Your adversary, the devil, walks around like a roaring lion, seeking whom he may devour.",
+    "slots": [
+      "intercept",
+      "morning"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v308",
+    "reference": "1 John 4:4",
+    "text": "You are of God, little children, and have overcome them; because greater is he who is in you than he who is in the world.",
+    "slots": [
+      "intercept",
+      "morning"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v309",
+    "reference": "1 John 4:8",
+    "text": "He who doesn't love doesn't know God, for God is love.",
+    "slots": [
+      "morning",
+      "evening"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v310",
+    "reference": "1 John 4:19",
+    "text": "We love him, because he first loved us.",
+    "slots": [
+      "morning",
+      "evening",
+      "intercept"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v311",
+    "reference": "1 John 5:14",
+    "text": "This is the boldness which we have toward him, that if we ask anything according to his will, he listens to us.",
+    "slots": [
+      "morning"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v312",
+    "reference": "Revelation 22:17",
+    "text": "The Spirit and the bride say, 'Come!' He who hears, let him say, 'Come!' He who is thirsty, let him come. He who desires, let him take the water of life freely.",
+    "slots": [
+      "intercept",
+      "morning"
+    ],
+    "tone": [
+      "inviting"
+    ]
+  },
+  {
+    "id": "v313",
+    "reference": "Habakkuk 3:19",
+    "text": "Yahweh, the Lord, is my strength. He makes my feet like deer's feet, and enables me to go in high places.",
+    "slots": [
+      "morning",
+      "afternoon"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v314",
+    "reference": "Genesis 1:1",
+    "text": "In the beginning, God created the heavens and the earth.",
+    "slots": [
+      "morning"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v315",
+    "reference": "Genesis 28:15",
+    "text": "Behold, I am with you, and will keep you wherever you go, and will bring you again into this land. For I will not leave you until I have done that which I have spoken of to you.",
+    "slots": [
+      "morning",
+      "intercept"
+    ],
+    "tone": [
+      "grounding"
+    ]
+  },
+  {
+    "id": "v316",
+    "reference": "Deuteronomy 31:8",
+    "text": "Yahweh himself is who goes before you. He will be with you. He will not fail you nor forsake you. Don't be afraid. Don't be discouraged.",
+    "slots": [
+      "morning",
+      "intercept"
+    ],
+    "tone": [
+      "grounding"
+    ]
   }
 ]

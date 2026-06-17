@@ -3,6 +3,8 @@ package com.maneo.app.feature.settings.ui
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.background
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,8 +20,11 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Slider
 import androidx.compose.material3.SliderDefaults
+import androidx.compose.material3.Switch
+import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
@@ -29,25 +34,44 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.core.app.ShareCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import kotlin.math.roundToInt
 
 private const val GITHUB_URL = "https://github.com/maneo-app/maneo"
 private val THRESHOLD_VALUES = listOf(15, 30, 60, 90, 120)
+private val TIMER_VALUES = listOf(5, 10, 15, 20)
 
 @Composable
 fun SettingsScreen(
     onNavigateToReminders: () -> Unit,
     onNavigateToApps: () -> Unit,
     onNavigateToLicences: () -> Unit,
+    onNavigateToWeekly: () -> Unit,
     viewModel: SettingsViewModel = hiltViewModel(),
 ) {
     val thresholdMins by viewModel.thresholdMins.collectAsState()
+    val timerEnabled by viewModel.timerEnabled.collectAsState()
+    val timerSeconds by viewModel.timerSeconds.collectAsState()
+    val exportContent by viewModel.exportContent.collectAsState()
     val context = LocalContext.current
+
+    LaunchedEffect(exportContent) {
+        val content = exportContent ?: return@LaunchedEffect
+        ShareCompat.IntentBuilder(context)
+            .setType("text/plain")
+            .setSubject("My Maneo Journal")
+            .setText(content.ifEmpty { "No entries yet." })
+            .startChooser()
+        viewModel.onExportHandled()
+    }
 
     val savedIndex = THRESHOLD_VALUES.indexOf(thresholdMins).coerceAtLeast(0)
     var sliderPos by remember(savedIndex) { mutableFloatStateOf(savedIndex.toFloat()) }
     val displayMins = THRESHOLD_VALUES[sliderPos.roundToInt().coerceIn(0, THRESHOLD_VALUES.lastIndex)]
+    val savedTimerIndex = TIMER_VALUES.indexOf(timerSeconds).coerceAtLeast(0)
+    var timerSliderPos by remember(savedTimerIndex) { mutableFloatStateOf(savedTimerIndex.toFloat()) }
+    val displayTimerSecs = TIMER_VALUES[timerSliderPos.roundToInt().coerceIn(0, TIMER_VALUES.lastIndex)]
 
     Column(
         modifier = Modifier
@@ -108,10 +132,81 @@ fun SettingsScreen(
 
         Spacer(Modifier.height(24.dp))
         HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
+        Spacer(Modifier.height(20.dp))
 
+        // Intercept timer
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = "Intercept pause",
+                    style = MaterialTheme.typography.titleSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                Text(
+                    text = if (timerEnabled) "Wait $displayTimerSecs seconds before continuing"
+                           else "Amen button appears immediately",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(top = 2.dp),
+                )
+            }
+            Switch(
+                checked = timerEnabled,
+                onCheckedChange = viewModel::setTimerEnabled,
+                colors = SwitchDefaults.colors(
+                    checkedThumbColor = MaterialTheme.colorScheme.onPrimary,
+                    checkedTrackColor = MaterialTheme.colorScheme.primary,
+                ),
+                modifier = Modifier.semantics {
+                    contentDescription = if (timerEnabled) "Intercept pause enabled" else "Intercept pause disabled"
+                },
+            )
+        }
+        if (timerEnabled) {
+            Spacer(Modifier.height(8.dp))
+            Slider(
+                value = timerSliderPos,
+                onValueChange = { timerSliderPos = it },
+                onValueChangeFinished = {
+                    viewModel.setTimerSeconds(
+                        TIMER_VALUES[timerSliderPos.roundToInt().coerceIn(0, TIMER_VALUES.lastIndex)]
+                    )
+                },
+                valueRange = 0f..3f,
+                steps = 2,
+                colors = SliderDefaults.colors(
+                    thumbColor = MaterialTheme.colorScheme.primary,
+                    activeTrackColor = MaterialTheme.colorScheme.primary,
+                ),
+                modifier = Modifier.fillMaxWidth(),
+            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+            ) {
+                TIMER_VALUES.forEach { value ->
+                    Text(
+                        text = "${value}s",
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+            }
+        }
+
+        Spacer(Modifier.height(20.dp))
+        HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
+
+        SettingsRow(label = "This week", onClick = onNavigateToWeekly)
+        HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
         SettingsRow(label = "Reminders", onClick = onNavigateToReminders)
         HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
         SettingsRow(label = "Blocked apps", onClick = onNavigateToApps)
+        HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
+        SettingsRow(label = "Export journal", onClick = viewModel::triggerExport)
         HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
 
         Spacer(Modifier.height(40.dp))

@@ -6,6 +6,8 @@ import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import com.maneo.app.ui.theme.ManeoTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -31,11 +33,22 @@ class InterceptActivity : ComponentActivity() {
 
         setContent {
             ManeoTheme {
-                InterceptScreen(
-                    verse = viewModel.verse,
-                    prayer = viewModel.prayer,
-                    onAmen = { finish() },
-                )
+                val verse by viewModel.verse.collectAsState()
+                val prayer by viewModel.prayer.collectAsState()
+                val timerEnabled by viewModel.timerEnabled.collectAsState()
+                val timerTotalSeconds by viewModel.timerTotalSeconds.collectAsState()
+                val remainingSeconds by viewModel.remainingSeconds.collectAsState()
+                if (verse != null && prayer != null) {
+                    InterceptScreen(
+                        verse = verse!!,
+                        prayer = prayer!!,
+                        timerEnabled = timerEnabled,
+                        remainingSeconds = remainingSeconds,
+                        timerTotalSeconds = timerTotalSeconds,
+                        onWait = { viewModel.recordWait(); finish() },
+                        onContinue = { viewModel.recordContinue(); finish() },
+                    )
+                }
             }
         }
     }

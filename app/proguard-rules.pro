@@ -7,6 +7,10 @@
 # Room
 -keep class * extends androidx.room.RoomDatabase { *; }
 
+# SQLCipher
+-keep class net.sqlcipher.** { *; }
+-keep class net.sqlcipher.database.** { *; }
+
 # Kotlin serialization
 -keepattributes *Annotation*, InnerClasses
 -dontnote kotlinx.serialization.AnnotationsKt

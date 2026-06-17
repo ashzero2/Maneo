@@ -33,6 +33,7 @@ import com.maneo.app.feature.onboarding.ui.WelcomeScreen
 import com.maneo.app.feature.reminders.ui.ReminderSettingsScreen
 import com.maneo.app.feature.settings.ui.OssLicencesScreen
 import com.maneo.app.feature.settings.ui.SettingsScreen
+import com.maneo.app.feature.settings.ui.WeeklyReviewScreen
 
 @Composable
 fun AppNavHost(
@@ -149,6 +150,7 @@ fun AppNavHost(
                     onNavigateToReminders = { navController.navigate(Routes.REMINDERS_SETTINGS) },
                     onNavigateToApps = { navController.navigate(Routes.APP_SELECTOR) },
                     onNavigateToLicences = { navController.navigate(Routes.OSS_LICENCES) },
+                    onNavigateToWeekly = { navController.navigate(Routes.WEEKLY_REVIEW) },
                 )
             }
             composable(Routes.REMINDERS_SETTINGS) {
@@ -159,6 +161,9 @@ fun AppNavHost(
             }
             composable(Routes.OSS_LICENCES) {
                 OssLicencesScreen(onBack = { navController.popBackStack() })
+            }
+            composable(Routes.WEEKLY_REVIEW) {
+                WeeklyReviewScreen(onBack = { navController.popBackStack() })
             }
         }
     }

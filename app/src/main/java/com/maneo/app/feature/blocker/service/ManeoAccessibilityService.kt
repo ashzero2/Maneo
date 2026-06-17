@@ -2,7 +2,10 @@ package com.maneo.app.feature.blocker.service
 
 import android.accessibilityservice.AccessibilityService
 import android.content.Intent
+import android.content.pm.ServiceInfo
+import android.os.Build
 import android.view.accessibility.AccessibilityEvent
+import com.maneo.app.core.util.NotificationHelper
 import com.maneo.app.feature.blocker.repository.BlockedAppsRepository
 import com.maneo.app.feature.blocker.ui.InterceptActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -28,6 +31,14 @@ class ManeoAccessibilityService : AccessibilityService() {
     private val serviceScope = CoroutineScope(Dispatchers.Default + SupervisorJob())
 
     override fun onServiceConnected() {
+        NotificationHelper.createServiceChannel(this)
+        val notification = NotificationHelper.buildKeepAliveNotification(this)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+            startForeground(NotificationHelper.SERVICE_NOTIFICATION_ID, notification, ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE)
+        } else {
+            @Suppress("DEPRECATION")
+            startForeground(NotificationHelper.SERVICE_NOTIFICATION_ID, notification)
+        }
         serviceScope.launch {
             blockedAppsRepository.blockedApps.collect { packages ->
                 blockedPackages = packages

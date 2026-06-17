@@ -2,6 +2,7 @@ package com.maneo.app.feature.onboarding.ui
 
 import android.Manifest
 import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import android.provider.Settings
 import androidx.activity.compose.rememberLauncherForActivityResult
@@ -20,6 +21,7 @@ import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.Notifications
+import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Button
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -112,6 +114,19 @@ fun PermissionsScreen(
                     }
                     context.startActivity(intent)
                 }
+            },
+        )
+        HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
+        PermissionRow(
+            icon = Icons.Default.Warning,
+            title = "Background activity",
+            description = "Prevents your device from stopping Maneo between app opens. Recommended on Samsung, Xiaomi, and OnePlus.",
+            isGranted = viewModel.state.batteryOptimizationIgnored,
+            onGrant = {
+                val intent = Intent(Settings.ACTION_REQUEST_IGNORE_BATTERY_OPTIMIZATIONS).apply {
+                    data = Uri.parse("package:${context.packageName}")
+                }
+                context.startActivity(intent)
             },
         )
 

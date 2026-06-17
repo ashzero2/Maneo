@@ -7,9 +7,13 @@ import kotlin.math.abs
 
 class GetPrayerForDate @Inject constructor(private val repository: PrayerRepository) {
 
-    operator fun invoke(date: LocalDate = LocalDate.now()): Prayer {
+    operator fun invoke(
+        seenIds: Set<String> = emptySet(),
+        date: LocalDate = LocalDate.now(),
+    ): Prayer {
         val pool = repository.prayers
         require(pool.isNotEmpty()) { "No prayers loaded" }
-        return pool[abs(date.toEpochDay().toInt()) % pool.size]
+        val freshPool = pool.filter { it.id !in seenIds }.takeIf { it.size >= 3 } ?: pool
+        return freshPool[abs(date.toEpochDay().toInt()) % freshPool.size]
     }
 }
