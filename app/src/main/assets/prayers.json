@@ -1,22 +1,242 @@
 [
-  {"id":"p001","text":"Lord, quiet my heart and draw me close to you right now."},
-  {"id":"p002","text":"Father, thank you that your peace is always available to me. I receive it now."},
-  {"id":"p003","text":"Jesus, I pause to remember you are with me. Guide my steps today."},
-  {"id":"p004","text":"Lord, I give you this moment. Let it be yours."},
-  {"id":"p005","text":"God, you are my refuge. I rest in you right now."},
-  {"id":"p006","text":"Father, fill this pause with your presence. I am yours."},
-  {"id":"p007","text":"Lord Jesus, let your peace guard my heart and mind this moment."},
-  {"id":"p008","text":"Heavenly Father, I breathe out distraction and breathe in your peace."},
-  {"id":"p009","text":"God, thank you that I am never alone. You are here with me now."},
-  {"id":"p010","text":"Lord, I surrender this moment to you. Do what only you can do."},
-  {"id":"p011","text":"Father, tune my heart to yours right now. I am listening."},
-  {"id":"p012","text":"Jesus, be my focus. You are more than enough."},
-  {"id":"p013","text":"Lord, I come to you just as I am. Thank you for your grace."},
-  {"id":"p014","text":"Father, let your love be the loudest voice in my heart today."},
-  {"id":"p015","text":"God, I rest in the knowledge that you hold everything I need."},
-  {"id":"p016","text":"Lord, help me be still and know that you are God."},
-  {"id":"p017","text":"Jesus, my soul finds rest in you alone. I receive your peace now."},
-  {"id":"p018","text":"Father, I trust that your plans for me are good. Lead me."},
-  {"id":"p019","text":"Lord, let this moment become an offering of my heart to you."},
-  {"id":"p020","text":"God, thank you for never leaving me. I am held by your love."}
+  {
+    "id": "p001",
+    "text": "Lord, quiet my heart and draw me close to you right now."
+  },
+  {
+    "id": "p002",
+    "text": "Father, thank you that your peace is always available to me. I receive it now."
+  },
+  {
+    "id": "p003",
+    "text": "Jesus, I pause to remember you are with me. Guide my steps today."
+  },
+  {
+    "id": "p004",
+    "text": "Lord, I give you this moment. Let it be yours."
+  },
+  {
+    "id": "p005",
+    "text": "God, you are my refuge. I rest in you right now."
+  },
+  {
+    "id": "p006",
+    "text": "Father, fill this pause with your presence. I am yours."
+  },
+  {
+    "id": "p007",
+    "text": "Lord Jesus, let your peace guard my heart and mind this moment."
+  },
+  {
+    "id": "p008",
+    "text": "Heavenly Father, I breathe out distraction and breathe in your peace."
+  },
+  {
+    "id": "p009",
+    "text": "God, thank you that I am never alone. You are here with me now."
+  },
+  {
+    "id": "p010",
+    "text": "Lord, I surrender this moment to you. Do what only you can do."
+  },
+  {
+    "id": "p011",
+    "text": "Father, tune my heart to yours right now. I am listening."
+  },
+  {
+    "id": "p012",
+    "text": "Jesus, be my focus. You are more than enough."
+  },
+  {
+    "id": "p013",
+    "text": "Lord, I come to you just as I am. Thank you for your grace."
+  },
+  {
+    "id": "p014",
+    "text": "Father, let your love be the loudest voice in my heart today."
+  },
+  {
+    "id": "p015",
+    "text": "God, I rest in the knowledge that you hold everything I need."
+  },
+  {
+    "id": "p016",
+    "text": "Lord, help me be still and know that you are God."
+  },
+  {
+    "id": "p017",
+    "text": "Jesus, my soul finds rest in you alone. I receive your peace now."
+  },
+  {
+    "id": "p018",
+    "text": "Father, I trust that your plans for me are good. Lead me."
+  },
+  {
+    "id": "p019",
+    "text": "Lord, let this moment become an offering of my heart to you."
+  },
+  {
+    "id": "p020",
+    "text": "God, thank you for never leaving me. I am held by your love."
+  },
+  {
+    "id": "p021",
+    "text": "Father, I pause here. Whatever I was reaching for — remind me that you are enough."
+  },
+  {
+    "id": "p022",
+    "text": "Lord, still my restless heart. Let me breathe before I scroll."
+  },
+  {
+    "id": "p023",
+    "text": "Jesus, hold my attention for a moment. I give you this pause."
+  },
+  {
+    "id": "p024",
+    "text": "God, you see where my heart just went. Bring it back to you."
+  },
+  {
+    "id": "p025",
+    "text": "Father, be the first thing I reach for today."
+  },
+  {
+    "id": "p026",
+    "text": "Lord, let this moment of stillness be an act of trust."
+  },
+  {
+    "id": "p027",
+    "text": "Jesus, I give you this distracted mind. Make it yours."
+  },
+  {
+    "id": "p028",
+    "text": "God, the world keeps pulling at me. Hold me fast."
+  },
+  {
+    "id": "p029",
+    "text": "Father, I am weary of the noise. You are my quiet place."
+  },
+  {
+    "id": "p030",
+    "text": "Lord, you know what I was looking for. Show me that you are better."
+  },
+  {
+    "id": "p031",
+    "text": "Jesus, let me linger here with you a moment longer."
+  },
+  {
+    "id": "p032",
+    "text": "God, help me want you more than I want to be entertained."
+  },
+  {
+    "id": "p033",
+    "text": "Father, my hands keep reaching for the wrong things. Guide them."
+  },
+  {
+    "id": "p034",
+    "text": "Lord, before I go any further — I come to you first."
+  },
+  {
+    "id": "p035",
+    "text": "Jesus, let the next minute be yours, not the feed's."
+  },
+  {
+    "id": "p036",
+    "text": "God, I am made for more than this. Remind me."
+  },
+  {
+    "id": "p037",
+    "text": "Father, thank you for interrupting me. You know what I need."
+  },
+  {
+    "id": "p038",
+    "text": "Lord, there is a restlessness in me. Only you can satisfy it."
+  },
+  {
+    "id": "p039",
+    "text": "Jesus, I pause and breathe. You are here. That is enough."
+  },
+  {
+    "id": "p040",
+    "text": "God, anchor my soul in something that lasts."
+  },
+  {
+    "id": "p041",
+    "text": "Father, I release my grip on the screen and open my hands to you."
+  },
+  {
+    "id": "p042",
+    "text": "Lord, redirect this energy toward what is true and good and lasting."
+  },
+  {
+    "id": "p043",
+    "text": "Jesus, I am easily distracted. Be my one fixed point."
+  },
+  {
+    "id": "p044",
+    "text": "God, let me see clearly what I am trading my attention for."
+  },
+  {
+    "id": "p045",
+    "text": "Father, calm the noise inside me before it grows louder."
+  },
+  {
+    "id": "p046",
+    "text": "Lord, I have everything I need in you. Help me live like I believe that."
+  },
+  {
+    "id": "p047",
+    "text": "Jesus, this impulse to scroll — I lay it down before you."
+  },
+  {
+    "id": "p048",
+    "text": "God, you are more interesting than anything on this screen."
+  },
+  {
+    "id": "p049",
+    "text": "Father, let me carry your peace through the rest of this day."
+  },
+  {
+    "id": "p050",
+    "text": "Lord, help me close this and go do what actually matters."
+  },
+  {
+    "id": "p051",
+    "text": "Jesus, I trust you with this moment and the one that follows."
+  },
+  {
+    "id": "p052",
+    "text": "God, the world says fill the silence. You say be still. I choose you."
+  },
+  {
+    "id": "p053",
+    "text": "Father, my soul is thirsty. Point me to the living water."
+  },
+  {
+    "id": "p054",
+    "text": "Lord, I want to abide, not just appear."
+  },
+  {
+    "id": "p055",
+    "text": "Jesus, thank you for not letting me rush past you today."
+  },
+  {
+    "id": "p056",
+    "text": "God, fill the empty place I was about to fill with distraction."
+  },
+  {
+    "id": "p057",
+    "text": "Father, you have been patient with me. I want to be patient with you."
+  },
+  {
+    "id": "p058",
+    "text": "Lord, let what I carry out of this moment be yours, not the world's."
+  },
+  {
+    "id": "p059",
+    "text": "Jesus, I am reaching for something. Let it be you."
+  },
+  {
+    "id": "p060",
+    "text": "God, slow me down. I do not want to miss what you are doing."
+  }
 ]

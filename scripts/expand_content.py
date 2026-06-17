@@ -1,0 +1,400 @@
+#!/usr/bin/env python3
+"""Expands verses.json, prayers.json, and prompts.json with additional WEB content."""
+
+import json, os
+
+ASSETS = os.path.join(os.path.dirname(__file__), "../app/src/main/assets")
+
+# ---------------------------------------------------------------------------
+# VERSES — WEB (World English Bible, public domain)
+# Each entry: id, reference, text, slots (list), tone (list)
+# slots: "morning" | "afternoon" | "evening" | "intercept"
+# tone: "inviting" | "grounding"
+# ---------------------------------------------------------------------------
+
+NEW_VERSES = [
+    # --- Psalms ---
+    {"reference": "Psalm 16:8", "text": "I have set Yahweh always before me. Because he is at my right hand, I shall not be moved.", "slots": ["morning", "intercept"], "tone": ["grounding"]},
+    {"reference": "Psalm 16:11", "text": "You will show me the path of life. In your presence is fullness of joy. In your right hand there are pleasures forever more.", "slots": ["morning", "evening"], "tone": ["inviting"]},
+    {"reference": "Psalm 17:8", "text": "Keep me as the apple of your eye. Hide me under the shadow of your wings.", "slots": ["evening", "intercept"], "tone": ["grounding"]},
+    {"reference": "Psalm 18:1-2", "text": "I love you, Yahweh, my strength. Yahweh is my rock, my fortress, and my deliverer; my God, my rock, in whom I take refuge.", "slots": ["morning"], "tone": ["inviting"]},
+    {"reference": "Psalm 19:14", "text": "Let the words of my mouth and the meditation of my heart be acceptable in your sight, Yahweh, my rock, and my redeemer.", "slots": ["morning", "intercept"], "tone": ["grounding"]},
+    {"reference": "Psalm 23:1-2", "text": "Yahweh is my shepherd; I shall lack nothing. He makes me lie down in green pastures. He leads me beside still waters.", "slots": ["evening", "intercept"], "tone": ["grounding"]},
+    {"reference": "Psalm 23:3", "text": "He restores my soul. He guides me in the paths of righteousness for his name's sake.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "Psalm 25:4-5", "text": "Show me your ways, Yahweh. Teach me your paths. Guide me in your truth, and teach me, for you are the God of my salvation.", "slots": ["morning"], "tone": ["inviting"]},
+    {"reference": "Psalm 27:1", "text": "Yahweh is my light and my salvation. Whom shall I fear? Yahweh is the strength of my life. Of whom shall I be afraid?", "slots": ["morning", "intercept"], "tone": ["grounding"]},
+    {"reference": "Psalm 27:4", "text": "One thing I have asked of Yahweh, that I will seek after — that I may dwell in the house of Yahweh all the days of my life.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "Psalm 27:14", "text": "Wait for Yahweh. Be strong, and let your heart take courage. Yes, wait for Yahweh.", "slots": ["afternoon", "intercept"], "tone": ["grounding"]},
+    {"reference": "Psalm 28:7", "text": "Yahweh is my strength and my shield. My heart has trusted in him, and I am helped. Therefore my heart greatly rejoices.", "slots": ["morning", "afternoon"], "tone": ["inviting"]},
+    {"reference": "Psalm 29:11", "text": "Yahweh will give strength to his people. Yahweh will bless his people with peace.", "slots": ["morning", "afternoon"], "tone": ["grounding"]},
+    {"reference": "Psalm 30:5", "text": "For his anger is but for a moment. His favor is for a lifetime. Weeping may stay for the night, but joy comes in the morning.", "slots": ["morning", "evening"], "tone": ["inviting"]},
+    {"reference": "Psalm 31:3", "text": "For you are my rock and my fortress, therefore for your name's sake lead me and guide me.", "slots": ["morning", "intercept"], "tone": ["grounding"]},
+    {"reference": "Psalm 32:8", "text": "I will instruct you and teach you in the way which you shall go. I will counsel you with my eye on you.", "slots": ["morning"], "tone": ["inviting"]},
+    {"reference": "Psalm 34:8", "text": "Oh taste and see that Yahweh is good. Blessed is the man who takes refuge in him.", "slots": ["intercept", "morning"], "tone": ["inviting"]},
+    {"reference": "Psalm 34:18", "text": "Yahweh is near to those who have a broken heart, and saves those who have a crushed spirit.", "slots": ["evening", "intercept"], "tone": ["grounding"]},
+    {"reference": "Psalm 36:7", "text": "How precious is your loving kindness, God! The children of men take refuge under the shadow of your wings.", "slots": ["evening", "morning"], "tone": ["inviting"]},
+    {"reference": "Psalm 37:4", "text": "Also delight yourself in Yahweh, and he will give you the desires of your heart.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "Psalm 37:7", "text": "Rest in Yahweh, and wait patiently for him. Don't fret because of him who prospers in his way.", "slots": ["afternoon", "evening", "intercept"], "tone": ["grounding"]},
+    {"reference": "Psalm 40:1-2", "text": "I waited patiently for Yahweh. He turned to me, and heard my cry. He brought me up also out of a horrible pit, out of the miry clay.", "slots": ["morning", "evening"], "tone": ["inviting"]},
+    {"reference": "Psalm 42:1-2", "text": "As the deer pants for the water brooks, so my soul pants after you, God. My soul thirsts for God, for the living God.", "slots": ["intercept", "morning"], "tone": ["inviting"]},
+    {"reference": "Psalm 42:11", "text": "Why are you in despair, my soul? Why are you disturbed within me? Hope in God! For I shall still praise him.", "slots": ["afternoon", "evening", "intercept"], "tone": ["grounding"]},
+    {"reference": "Psalm 46:1", "text": "God is our refuge and strength, a very present help in trouble.", "slots": ["intercept", "afternoon"], "tone": ["grounding"]},
+    {"reference": "Psalm 46:10", "text": "Be still, and know that I am God. I will be exalted among the nations. I will be exalted in the earth.", "slots": ["intercept", "evening", "afternoon"], "tone": ["grounding"]},
+    {"reference": "Psalm 51:10", "text": "Create in me a clean heart, O God. Renew a right spirit within me.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "Psalm 55:22", "text": "Cast your burden on Yahweh, and he will sustain you. He will never allow the righteous to be moved.", "slots": ["afternoon", "evening", "intercept"], "tone": ["grounding"]},
+    {"reference": "Psalm 62:1-2", "text": "My soul rests in God alone. My salvation is from him. He alone is my rock and my salvation, my fortress. I will never be greatly shaken.", "slots": ["intercept", "evening"], "tone": ["grounding"]},
+    {"reference": "Psalm 62:5", "text": "My soul, wait in silence for God alone, for my expectation is from him.", "slots": ["intercept", "evening"], "tone": ["grounding"]},
+    {"reference": "Psalm 63:1", "text": "God, you are my God. I will earnestly seek you. My soul thirsts for you. My flesh longs for you, in a dry and weary land, where there is no water.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "Psalm 63:3", "text": "Because your loving kindness is better than life, my lips shall praise you.", "slots": ["morning"], "tone": ["inviting"]},
+    {"reference": "Psalm 71:5", "text": "For you are my hope, Lord Yahweh — my confidence from my youth.", "slots": ["morning"], "tone": ["inviting"]},
+    {"reference": "Psalm 73:28", "text": "But it is good for me to come close to God. I have made the Lord Yahweh my refuge, that I may tell of all your works.", "slots": ["intercept", "morning"], "tone": ["inviting"]},
+    {"reference": "Psalm 84:1-2", "text": "How lovely are your dwellings, Yahweh of Armies! My soul longs, and even faints for the courts of Yahweh. My heart and my flesh cry out for the living God.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "Psalm 86:5", "text": "For you, Lord, are good, and ready to forgive, and abundant in loving kindness to all those who call on you.", "slots": ["intercept", "morning", "evening"], "tone": ["inviting"]},
+    {"reference": "Psalm 90:14", "text": "Satisfy us in the morning with your loving kindness, that we may rejoice and be glad all our days.", "slots": ["morning"], "tone": ["inviting"]},
+    {"reference": "Psalm 91:1-2", "text": "He who dwells in the secret place of the Most High will rest in the shadow of the Almighty. I will say of Yahweh, 'He is my refuge and my fortress; my God, in whom I trust.'", "slots": ["evening", "intercept"], "tone": ["grounding"]},
+    {"reference": "Psalm 91:4", "text": "He will cover you with his feathers. Under his wings you will take refuge. His faithfulness is your shield and rampart.", "slots": ["evening", "intercept"], "tone": ["grounding"]},
+    {"reference": "Psalm 94:19", "text": "In the multitude of my thoughts within me, your comforts delight my soul.", "slots": ["intercept", "afternoon", "evening"], "tone": ["grounding"]},
+    {"reference": "Psalm 100:4-5", "text": "Enter his gates with thanksgiving, and his courts with praise. Give thanks to him, and bless his name. For Yahweh is good. His loving kindness endures forever.", "slots": ["morning"], "tone": ["inviting"]},
+    {"reference": "Psalm 103:2-3", "text": "Praise Yahweh, my soul, and don't forget all his benefits — who forgives all your sins, who heals all your diseases.", "slots": ["morning", "afternoon"], "tone": ["inviting"]},
+    {"reference": "Psalm 103:13-14", "text": "Like a father has compassion on his children, so Yahweh has compassion on those who fear him. For he knows our frame. He remembers that we are dust.", "slots": ["evening", "intercept"], "tone": ["grounding"]},
+    {"reference": "Psalm 107:9", "text": "For he satisfies the longing soul, and fills the hungry soul with good.", "slots": ["intercept", "morning"], "tone": ["inviting"]},
+    {"reference": "Psalm 116:7", "text": "Return to your rest, my soul, for Yahweh has dealt bountifully with you.", "slots": ["evening", "intercept"], "tone": ["grounding"]},
+    {"reference": "Psalm 119:11", "text": "I have hidden your word in my heart, that I might not sin against you.", "slots": ["morning", "intercept"], "tone": ["grounding"]},
+    {"reference": "Psalm 119:105", "text": "Your word is a lamp to my feet and a light for my path.", "slots": ["morning", "afternoon"], "tone": ["inviting"]},
+    {"reference": "Psalm 119:114", "text": "You are my hiding place and my shield. I hope in your word.", "slots": ["intercept", "evening"], "tone": ["grounding"]},
+    {"reference": "Psalm 121:1-2", "text": "I will lift up my eyes to the hills. Where does my help come from? My help comes from Yahweh, who made heaven and earth.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "Psalm 121:7-8", "text": "Yahweh will keep you from all evil. He will keep your soul. Yahweh will keep your going out and your coming in, from this time forth, and forever more.", "slots": ["evening", "morning"], "tone": ["grounding"]},
+    {"reference": "Psalm 130:5", "text": "I wait for Yahweh. My soul waits. I hope in his word.", "slots": ["evening", "intercept"], "tone": ["grounding"]},
+    {"reference": "Psalm 131:2", "text": "Surely I have stilled and quieted my soul, like a weaned child with his mother. Like a weaned child is my soul within me.", "slots": ["intercept", "evening"], "tone": ["grounding"]},
+    {"reference": "Psalm 138:3", "text": "In the day that I called, you answered me, and encouraged me with strength in my soul.", "slots": ["morning", "afternoon"], "tone": ["inviting"]},
+    {"reference": "Psalm 139:1-2", "text": "Yahweh, you have searched me, and you know me. You know my sitting down and my rising up. You perceive my thoughts from afar.", "slots": ["morning", "evening"], "tone": ["grounding"]},
+    {"reference": "Psalm 139:14", "text": "I will give thanks to you, for I am fearfully and wonderfully made. Your works are wonderful. My soul knows that very well.", "slots": ["morning"], "tone": ["inviting"]},
+    {"reference": "Psalm 143:8", "text": "Cause me to hear your loving kindness in the morning, for I trust in you. Cause me to know the way in which I should walk, for I lift up my soul to you.", "slots": ["morning"], "tone": ["inviting"]},
+    {"reference": "Psalm 145:18", "text": "Yahweh is near to all those who call on him, to all who call on him in truth.", "slots": ["intercept", "morning", "evening"], "tone": ["inviting"]},
+
+    # --- Proverbs ---
+    {"reference": "Proverbs 3:5-6", "text": "Trust in Yahweh with all your heart, and don't lean on your own understanding. In all your ways acknowledge him, and he will make your paths straight.", "slots": ["morning", "intercept"], "tone": ["grounding"]},
+    {"reference": "Proverbs 3:24", "text": "When you lie down, you will not be afraid. Yes, you will lie down, and your sleep will be sweet.", "slots": ["evening"], "tone": ["grounding"]},
+    {"reference": "Proverbs 4:23", "text": "Keep your heart with all diligence, for out of it is the wellspring of life.", "slots": ["intercept", "morning"], "tone": ["grounding"]},
+    {"reference": "Proverbs 8:34", "text": "Blessed is the man who hears me, watching daily at my gates, waiting at my door posts.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "Proverbs 16:9", "text": "A man's heart plans his course, but Yahweh directs his steps.", "slots": ["morning", "afternoon"], "tone": ["grounding"]},
+    {"reference": "Proverbs 17:22", "text": "A cheerful heart is good medicine, but a crushed spirit dries up the bones.", "slots": ["morning", "afternoon"], "tone": ["inviting"]},
+    {"reference": "Proverbs 18:10", "text": "The name of Yahweh is a strong tower. The righteous run to him, and are safe.", "slots": ["intercept", "morning"], "tone": ["grounding"]},
+
+    # --- Isaiah ---
+    {"reference": "Isaiah 26:3", "text": "You will keep whoever's mind is steadfast in perfect peace, because they trust in you.", "slots": ["intercept", "evening", "afternoon"], "tone": ["grounding"]},
+    {"reference": "Isaiah 30:15", "text": "For thus said the Lord Yahweh, the Holy One of Israel, 'In returning and rest you will be saved. In quietness and in confidence will be your strength.'", "slots": ["intercept", "evening"], "tone": ["grounding"]},
+    {"reference": "Isaiah 40:28-29", "text": "Haven't you known? Haven't you heard? The everlasting God, Yahweh, the Creator of the ends of the earth, doesn't faint. He gives power to the weak.", "slots": ["afternoon", "intercept"], "tone": ["grounding"]},
+    {"reference": "Isaiah 40:31", "text": "But those who wait for Yahweh will renew their strength. They will mount up with wings like eagles. They will run, and not be weary. They will walk, and not faint.", "slots": ["morning", "afternoon", "intercept"], "tone": ["inviting"]},
+    {"reference": "Isaiah 41:10", "text": "Don't you be afraid, for I am with you. Don't be dismayed, for I am your God. I will strengthen you. Yes, I will help you. Yes, I will uphold you with the right hand of my righteousness.", "slots": ["intercept", "morning", "afternoon"], "tone": ["grounding"]},
+    {"reference": "Isaiah 43:1-2", "text": "Don't be afraid, for I have redeemed you. I have called you by your name. You are mine. When you pass through the waters, I will be with you.", "slots": ["intercept", "evening"], "tone": ["grounding"]},
+    {"reference": "Isaiah 43:18-19", "text": "Don't remember the former things, and don't consider the things of old. Behold, I will do a new thing. It springs out now.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "Isaiah 55:1", "text": "Come, everyone who thirsts, to the waters! Come, he who has no money, buy, and eat! Yes, come, buy wine and milk without money and without price.", "slots": ["intercept", "morning"], "tone": ["inviting"]},
+    {"reference": "Isaiah 55:6", "text": "Seek Yahweh while he may be found. Call on him while he is near.", "slots": ["intercept", "morning"], "tone": ["inviting"]},
+    {"reference": "Isaiah 58:11", "text": "Yahweh will guide you continually, satisfy your soul in dry places, and make your bones strong. You will be like a watered garden, and like a spring of water whose waters don't fail.", "slots": ["afternoon", "morning"], "tone": ["inviting"]},
+
+    # --- Jeremiah / Lamentations ---
+    {"reference": "Jeremiah 29:11", "text": "For I know the thoughts that I think toward you, says Yahweh, thoughts of peace, and not of evil, to give you hope and a future.", "slots": ["morning", "afternoon"], "tone": ["inviting"]},
+    {"reference": "Jeremiah 31:3", "text": "Yes, I have loved you with an everlasting love. Therefore I have drawn you with loving kindness.", "slots": ["intercept", "evening", "morning"], "tone": ["inviting"]},
+    {"reference": "Lamentations 3:22-23", "text": "It is because of Yahweh's loving kindnesses that we are not consumed, because his compassion doesn't fail. They are new every morning.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "Lamentations 3:25-26", "text": "Yahweh is good to those who wait for him, to the soul that seeks him. It is good that a man should hope and quietly wait for the salvation of Yahweh.", "slots": ["intercept", "evening"], "tone": ["grounding"]},
+
+    # --- Matthew ---
+    {"reference": "Matthew 5:3", "text": "Blessed are the poor in spirit, for theirs is the Kingdom of Heaven.", "slots": ["morning", "intercept"], "tone": ["grounding"]},
+    {"reference": "Matthew 5:6", "text": "Blessed are those who hunger and thirst after righteousness, for they shall be filled.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "Matthew 5:8", "text": "Blessed are the pure in heart, for they shall see God.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "Matthew 6:6", "text": "But you, when you pray, enter into your inner room, and having shut your door, pray to your Father who is in secret, and your Father who sees in secret will reward you openly.", "slots": ["morning", "evening"], "tone": ["grounding"]},
+    {"reference": "Matthew 6:21", "text": "For where your treasure is, there your heart will be also.", "slots": ["intercept", "afternoon"], "tone": ["grounding"]},
+    {"reference": "Matthew 6:33", "text": "But seek first God's Kingdom and his righteousness; and all these things will be given to you as well.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "Matthew 11:28", "text": "Come to me, all you who labor and are heavily burdened, and I will give you rest.", "slots": ["intercept", "evening"], "tone": ["inviting"]},
+    {"reference": "Matthew 11:29-30", "text": "Take my yoke upon you and learn from me, for I am gentle and humble in heart; and you will find rest for your souls. For my yoke is easy, and my burden is light.", "slots": ["intercept", "evening", "afternoon"], "tone": ["grounding"]},
+
+    # --- Luke ---
+    {"reference": "Luke 10:38-39", "text": "Now as they went on their way, he entered into a certain village, and a certain woman named Martha received him into her house. She had a sister called Mary, who also sat at Jesus' feet, and heard his word.", "slots": ["intercept", "morning"], "tone": ["inviting"]},
+    {"reference": "Luke 12:22-23", "text": "He said to his disciples, 'Therefore I tell you, don't be anxious for your life, what you will eat, nor yet for your body, what you will wear. Life is more than food, and the body is more than clothing.'", "slots": ["intercept", "afternoon"], "tone": ["grounding"]},
+    {"reference": "Luke 15:20", "text": "He arose, and came to his father. But while he was yet far off, his father saw him, and was moved with compassion, and ran, and fell on his neck, and kissed him.", "slots": ["intercept", "evening"], "tone": ["inviting"]},
+
+    # --- John ---
+    {"reference": "John 1:4-5", "text": "In him was life, and the life was the light of men. The light shines in the darkness, and the darkness hasn't overcome it.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "John 3:16", "text": "For God so loved the world, that he gave his one and only Son, that whoever believes in him should not perish, but have eternal life.", "slots": ["intercept", "morning", "evening"], "tone": ["inviting"]},
+    {"reference": "John 4:13-14", "text": "Jesus answered her, 'Everyone who drinks of this water will thirst again, but whoever drinks of the water that I will give him will never thirst again.'", "slots": ["intercept"], "tone": ["inviting"]},
+    {"reference": "John 6:35", "text": "Jesus said to them, 'I am the bread of life. Whoever comes to me will not be hungry, and whoever believes in me will never be thirsty.'", "slots": ["intercept", "morning"], "tone": ["inviting"]},
+    {"reference": "John 10:10", "text": "The thief only comes to steal, kill, and destroy. I came that they may have life, and may have it abundantly.", "slots": ["intercept", "morning"], "tone": ["inviting"]},
+    {"reference": "John 10:27", "text": "My sheep hear my voice, and I know them, and they follow me.", "slots": ["morning", "intercept"], "tone": ["grounding"]},
+    {"reference": "John 14:1", "text": "Don't let your heart be troubled. Believe in God. Believe also in me.", "slots": ["intercept", "afternoon", "evening"], "tone": ["grounding"]},
+    {"reference": "John 14:6", "text": "Jesus said to him, 'I am the way, the truth, and the life. No one comes to the Father, except through me.'", "slots": ["morning", "intercept"], "tone": ["grounding"]},
+    {"reference": "John 14:27", "text": "Peace I leave with you. My peace I give to you; not as the world gives, I give to you. Don't let your heart be troubled, neither let it be fearful.", "slots": ["intercept", "evening", "afternoon"], "tone": ["grounding"]},
+    {"reference": "John 15:4", "text": "Remain in me, and I in you. As the branch can't bear fruit by itself unless it remains in the vine, so neither can you, unless you remain in me.", "slots": ["intercept", "morning"], "tone": ["grounding"]},
+    {"reference": "John 15:5", "text": "I am the vine. You are the branches. He who remains in me and I in him bears much fruit, for apart from me you can do nothing.", "slots": ["intercept", "morning"], "tone": ["grounding"]},
+    {"reference": "John 15:9", "text": "Even as the Father has loved me, I also have loved you. Remain in my love.", "slots": ["intercept", "morning", "evening"], "tone": ["inviting"]},
+    {"reference": "John 16:33", "text": "I have told you these things, that in me you may have peace. In the world you have oppression; but cheer up! I have overcome the world.", "slots": ["intercept", "afternoon"], "tone": ["grounding"]},
+
+    # --- Romans ---
+    {"reference": "Romans 5:1", "text": "Being therefore justified by faith, we have peace with God through our Lord Jesus Christ.", "slots": ["morning", "intercept"], "tone": ["grounding"]},
+    {"reference": "Romans 5:8", "text": "But God commends his own love toward us, in that while we were yet sinners, Christ died for us.", "slots": ["intercept", "evening"], "tone": ["inviting"]},
+    {"reference": "Romans 8:1", "text": "There is therefore now no condemnation to those who are in Christ Jesus.", "slots": ["intercept", "morning"], "tone": ["grounding"]},
+    {"reference": "Romans 8:26", "text": "In the same way, the Spirit also helps our weaknesses, for we don't know how to pray as we ought. But the Spirit himself makes intercession for us with groanings which can't be uttered.", "slots": ["evening", "intercept"], "tone": ["grounding"]},
+    {"reference": "Romans 8:28", "text": "We know that all things work together for good for those who love God, to those who are called according to his purpose.", "slots": ["afternoon", "intercept"], "tone": ["grounding"]},
+    {"reference": "Romans 8:38-39", "text": "For I am persuaded that neither death, nor life, nor angels, nor principalities, nor things present, nor things to come, nor powers, nor height, nor depth, nor any other created thing will be able to separate us from God's love.", "slots": ["intercept", "evening"], "tone": ["grounding"]},
+    {"reference": "Romans 12:1", "text": "Therefore I urge you, brothers, by the mercies of God, to present your bodies a living sacrifice, holy, acceptable to God, which is your spiritual service.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "Romans 12:2", "text": "Don't be conformed to this world, but be transformed by the renewing of your mind, so that you may prove what is the good, well-pleasing, and perfect will of God.", "slots": ["morning", "intercept"], "tone": ["grounding"]},
+
+    # --- 1 Corinthians ---
+    {"reference": "1 Corinthians 10:13", "text": "No temptation has taken you except what is common to man. God is faithful, who will not allow you to be tempted above what you are able, but will with the temptation also make the way of escape.", "slots": ["intercept", "afternoon"], "tone": ["grounding"]},
+    {"reference": "1 Corinthians 13:4-5", "text": "Love is patient and is kind; love doesn't envy. Love doesn't brag, is not proud, doesn't behave itself inappropriately, doesn't seek its own way.", "slots": ["morning", "afternoon"], "tone": ["inviting"]},
+    {"reference": "1 Corinthians 13:13", "text": "But now faith, hope, and love remain — these three. The greatest of these is love.", "slots": ["morning", "evening"], "tone": ["inviting"]},
+
+    # --- 2 Corinthians ---
+    {"reference": "2 Corinthians 4:16-17", "text": "Therefore we don't faint, but though our outward man is decaying, yet our inward man is renewed day by day. For our light and momentary troubles are achieving for us an eternal glory.", "slots": ["afternoon", "intercept"], "tone": ["grounding"]},
+    {"reference": "2 Corinthians 5:17", "text": "Therefore if anyone is in Christ, he is a new creation. The old things have passed away. Behold, all things have become new.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "2 Corinthians 12:9", "text": "He has said to me, 'My grace is sufficient for you, for my power is made perfect in weakness.' Most gladly therefore I will rather glory in my weaknesses, that the power of Christ may rest on me.", "slots": ["afternoon", "intercept", "evening"], "tone": ["grounding"]},
+
+    # --- Galatians ---
+    {"reference": "Galatians 5:22-23", "text": "But the fruit of the Spirit is love, joy, peace, patience, kindness, goodness, faithfulness, gentleness, and self-control.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "Galatians 6:9", "text": "Let us not be weary in doing good, for we will reap in due season, if we don't give up.", "slots": ["afternoon", "intercept"], "tone": ["grounding"]},
+
+    # --- Ephesians ---
+    {"reference": "Ephesians 1:17-18", "text": "That the God of our Lord Jesus Christ, the Father of glory, may give to you a spirit of wisdom and revelation in the knowledge of him, having the eyes of your heart enlightened.", "slots": ["morning"], "tone": ["inviting"]},
+    {"reference": "Ephesians 2:8-9", "text": "For by grace you have been saved through faith, and that not of yourselves; it is the gift of God, not of works, that no one would boast.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "Ephesians 2:10", "text": "For we are his workmanship, created in Christ Jesus for good works, which God prepared before that we would walk in them.", "slots": ["morning"], "tone": ["inviting"]},
+    {"reference": "Ephesians 3:17-19", "text": "That Christ may dwell in your hearts through faith; to the end that you, being rooted and grounded in love, may be strengthened to comprehend with all the saints what is the breadth and length and height and depth.", "slots": ["morning", "evening"], "tone": ["inviting"]},
+    {"reference": "Ephesians 3:20", "text": "Now to him who is able to do exceedingly abundantly above all that we ask or think, according to the power that works in us.", "slots": ["morning"], "tone": ["inviting"]},
+    {"reference": "Ephesians 6:10", "text": "Finally, be strong in the Lord, and in the strength of his might.", "slots": ["morning", "intercept"], "tone": ["grounding"]},
+
+    # --- Philippians ---
+    {"reference": "Philippians 1:6", "text": "Being confident of this very thing, that he who began a good work in you will complete it until the day of Jesus Christ.", "slots": ["morning", "afternoon"], "tone": ["inviting"]},
+    {"reference": "Philippians 4:4", "text": "Rejoice in the Lord always! Again I will say, 'Rejoice!'", "slots": ["morning"], "tone": ["inviting"]},
+    {"reference": "Philippians 4:6-7", "text": "In nothing be anxious, but in everything, by prayer and petition with thanksgiving, let your requests be made known to God. And the peace of God, which surpasses all understanding, will guard your hearts and your thoughts in Christ Jesus.", "slots": ["intercept", "afternoon", "evening"], "tone": ["grounding"]},
+    {"reference": "Philippians 4:8", "text": "Whatever things are true, whatever things are honorable, whatever things are just, whatever things are pure, whatever things are lovely, whatever things are of good report — think about these things.", "slots": ["intercept", "morning"], "tone": ["grounding"]},
+    {"reference": "Philippians 4:11-12", "text": "I have learned, in whatever state I am, to be content. I know how to be humbled, and I know also how to abound.", "slots": ["intercept", "afternoon"], "tone": ["grounding"]},
+    {"reference": "Philippians 4:13", "text": "I can do all things through Christ, who strengthens me.", "slots": ["morning", "afternoon", "intercept"], "tone": ["grounding"]},
+    {"reference": "Philippians 4:19", "text": "My God will supply every need of yours according to his riches in glory in Christ Jesus.", "slots": ["morning", "afternoon"], "tone": ["inviting"]},
+
+    # --- Colossians ---
+    {"reference": "Colossians 1:17", "text": "He is before all things, and in him all things are held together.", "slots": ["morning", "intercept"], "tone": ["grounding"]},
+    {"reference": "Colossians 3:1-2", "text": "If then you were raised together with Christ, seek the things that are above, where Christ is, seated on the right hand of God. Set your mind on the things that are above, not on the things that are on the earth.", "slots": ["morning", "intercept"], "tone": ["grounding"]},
+    {"reference": "Colossians 3:15", "text": "And let the peace of God rule in your hearts, to which also you were called in one body; and be thankful.", "slots": ["intercept", "morning", "evening"], "tone": ["grounding"]},
+    {"reference": "Colossians 3:16", "text": "Let the word of Christ dwell in you richly; in all wisdom teaching and admonishing one another with psalms, hymns, and spiritual songs.", "slots": ["morning", "evening"], "tone": ["inviting"]},
+
+    # --- 1 Thessalonians ---
+    {"reference": "1 Thessalonians 5:16-18", "text": "Rejoice always. Pray without ceasing. In everything give thanks, for this is the will of God in Christ Jesus toward you.", "slots": ["morning", "intercept", "afternoon"], "tone": ["inviting"]},
+    {"reference": "1 Thessalonians 5:23", "text": "May the God of peace himself sanctify you completely. May your whole spirit, soul, and body be preserved blameless at the coming of our Lord Jesus Christ.", "slots": ["evening"], "tone": ["grounding"]},
+
+    # --- Hebrews ---
+    {"reference": "Hebrews 4:9-10", "text": "There remains therefore a Sabbath rest for the people of God. For he who has entered into his rest has himself also rested from his works, as God did from his.", "slots": ["evening", "intercept"], "tone": ["grounding"]},
+    {"reference": "Hebrews 4:12", "text": "For the word of God is living and active, and sharper than any two-edged sword, piercing even to the dividing of soul and spirit.", "slots": ["morning", "intercept"], "tone": ["grounding"]},
+    {"reference": "Hebrews 4:15-16", "text": "For we don't have a high priest who can't be touched with the feeling of our infirmities, but one who has been in all points tempted like we are, yet without sin. Let's therefore draw near with boldness to the throne of grace.", "slots": ["intercept", "morning"], "tone": ["inviting"]},
+    {"reference": "Hebrews 10:23", "text": "Let's hold fast the confession of our hope without wavering; for he who promised is faithful.", "slots": ["afternoon", "intercept"], "tone": ["grounding"]},
+    {"reference": "Hebrews 11:1", "text": "Now faith is assurance of things hoped for, proof of things not seen.", "slots": ["morning", "afternoon"], "tone": ["inviting"]},
+    {"reference": "Hebrews 12:1-2", "text": "Therefore let's also, seeing we are surrounded by so great a cloud of witnesses, lay aside every weight and the sin which so easily entangles us, and let's run with perseverance the race that is set before us, looking to Jesus.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "Hebrews 13:5", "text": "He has said, 'I will in no way leave you, neither will I in any way forsake you.'", "slots": ["intercept", "evening"], "tone": ["grounding"]},
+    {"reference": "Hebrews 13:8", "text": "Jesus Christ is the same yesterday, today, and forever.", "slots": ["morning", "intercept"], "tone": ["grounding"]},
+
+    # --- James ---
+    {"reference": "James 1:5", "text": "But if any of you lacks wisdom, let him ask of God, who gives to all liberally and without reproach; and it will be given to him.", "slots": ["morning", "afternoon"], "tone": ["inviting"]},
+    {"reference": "James 1:17", "text": "Every good gift and every perfect gift is from above, coming down from the Father of lights, with whom can be no variation, nor turning shadow.", "slots": ["morning"], "tone": ["inviting"]},
+    {"reference": "James 4:8", "text": "Draw near to God, and he will draw near to you.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "James 4:10", "text": "Humble yourselves in the sight of the Lord, and he will exalt you.", "slots": ["intercept", "morning"], "tone": ["grounding"]},
+    {"reference": "James 5:16", "text": "Confess your offenses to one another, and pray for one another, that you may be healed. The effective, earnest prayer of a righteous man is powerfully effective.", "slots": ["evening", "morning"], "tone": ["inviting"]},
+
+    # --- 1 Peter ---
+    {"reference": "1 Peter 2:9", "text": "But you are a chosen race, a royal priesthood, a holy nation, a people for God's own possession, that you may proclaim the excellence of him who called you out of darkness into his marvelous light.", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "1 Peter 5:6-7", "text": "Humble yourselves therefore under the mighty hand of God, that he may exalt you in due time, casting all your worries on him, because he cares for you.", "slots": ["intercept", "evening", "afternoon"], "tone": ["grounding"]},
+    {"reference": "1 Peter 5:8", "text": "Be sober and self-controlled. Be watchful. Your adversary, the devil, walks around like a roaring lion, seeking whom he may devour.", "slots": ["intercept", "morning"], "tone": ["grounding"]},
+
+    # --- 1 John ---
+    {"reference": "1 John 1:9", "text": "If we confess our sins, he is faithful and righteous to forgive us the sins, and to cleanse us from all unrighteousness.", "slots": ["evening", "intercept"], "tone": ["inviting"]},
+    {"reference": "1 John 3:1", "text": "Behold, how great a love the Father has bestowed on us, that we should be called children of God!", "slots": ["morning", "intercept"], "tone": ["inviting"]},
+    {"reference": "1 John 4:4", "text": "You are of God, little children, and have overcome them; because greater is he who is in you than he who is in the world.", "slots": ["intercept", "morning"], "tone": ["grounding"]},
+    {"reference": "1 John 4:8", "text": "He who doesn't love doesn't know God, for God is love.", "slots": ["morning", "evening"], "tone": ["inviting"]},
+    {"reference": "1 John 4:18", "text": "There is no fear in love; but perfect love casts out fear, because fear has punishment. He who fears is not made perfect in love.", "slots": ["intercept", "evening"], "tone": ["grounding"]},
+    {"reference": "1 John 4:19", "text": "We love him, because he first loved us.", "slots": ["morning", "evening", "intercept"], "tone": ["inviting"]},
+    {"reference": "1 John 5:14", "text": "This is the boldness which we have toward him, that if we ask anything according to his will, he listens to us.", "slots": ["morning"], "tone": ["inviting"]},
+
+    # --- Revelation ---
+    {"reference": "Revelation 3:20", "text": "Behold, I stand at the door and knock. If anyone hears my voice and opens the door, then I will come in to him, and will dine with him, and he with me.", "slots": ["intercept", "evening"], "tone": ["inviting"]},
+    {"reference": "Revelation 21:4", "text": "He will wipe away every tear from their eyes. Death will be no more; neither will there be mourning, nor crying, nor pain, any more.", "slots": ["evening", "intercept"], "tone": ["grounding"]},
+    {"reference": "Revelation 22:17", "text": "The Spirit and the bride say, 'Come!' He who hears, let him say, 'Come!' He who is thirsty, let him come. He who desires, let him take the water of life freely.", "slots": ["intercept", "morning"], "tone": ["inviting"]},
+
+    # --- Zephaniah ---
+    {"reference": "Zephaniah 3:17", "text": "Yahweh, your God, is among you, a mighty one who will save. He will rejoice over you with joy. He will calm you in his love. He will rejoice over you with singing.", "slots": ["evening", "intercept", "morning"], "tone": ["inviting"]},
+
+    # --- Micah ---
+    {"reference": "Micah 6:8", "text": "He has shown you, O man, what is good. What does Yahweh require of you, but to act justly, to love mercy, and to walk humbly with your God?", "slots": ["morning", "afternoon"], "tone": ["grounding"]},
+
+    # --- Habakkuk ---
+    {"reference": "Habakkuk 3:19", "text": "Yahweh, the Lord, is my strength. He makes my feet like deer's feet, and enables me to go in high places.", "slots": ["morning", "afternoon"], "tone": ["grounding"]},
+
+    # --- Genesis ---
+    {"reference": "Genesis 1:1", "text": "In the beginning, God created the heavens and the earth.", "slots": ["morning"], "tone": ["grounding"]},
+    {"reference": "Genesis 28:15", "text": "Behold, I am with you, and will keep you wherever you go, and will bring you again into this land. For I will not leave you until I have done that which I have spoken of to you.", "slots": ["morning", "intercept"], "tone": ["grounding"]},
+
+    # --- Numbers ---
+    {"reference": "Numbers 6:24-26", "text": "Yahweh bless you, and keep you. Yahweh make his face shine on you, and be gracious to you. Yahweh lift up his face toward you, and give you peace.", "slots": ["morning", "evening"], "tone": ["inviting"]},
+
+    # --- Deuteronomy ---
+    {"reference": "Deuteronomy 31:6", "text": "Be strong and courageous. Don't be afraid or scared of them; for Yahweh your God himself is who goes with you. He will not fail you nor forsake you.", "slots": ["morning", "intercept"], "tone": ["grounding"]},
+    {"reference": "Deuteronomy 31:8", "text": "Yahweh himself is who goes before you. He will be with you. He will not fail you nor forsake you. Don't be afraid. Don't be discouraged.", "slots": ["morning", "intercept"], "tone": ["grounding"]},
+]
+
+# ---------------------------------------------------------------------------
+# PRAYERS — short, warm, WEB-aligned
+# ---------------------------------------------------------------------------
+
+NEW_PRAYERS = [
+    {"text": "Father, I pause here. Whatever I was reaching for — remind me that you are enough."},
+    {"text": "Lord, still my restless heart. Let me breathe before I scroll."},
+    {"text": "Jesus, hold my attention for a moment. I give you this pause."},
+    {"text": "God, you see where my heart just went. Bring it back to you."},
+    {"text": "Father, be the first thing I reach for today."},
+    {"text": "Lord, let this moment of stillness be an act of trust."},
+    {"text": "Jesus, I give you this distracted mind. Make it yours."},
+    {"text": "God, the world keeps pulling at me. Hold me fast."},
+    {"text": "Father, I am weary of the noise. You are my quiet place."},
+    {"text": "Lord, you know what I was looking for. Show me that you are better."},
+    {"text": "Jesus, let me linger here with you a moment longer."},
+    {"text": "God, help me want you more than I want to be entertained."},
+    {"text": "Father, my hands keep reaching for the wrong things. Guide them."},
+    {"text": "Lord, before I go any further — I come to you first."},
+    {"text": "Jesus, let the next minute be yours, not the feed's."},
+    {"text": "God, I am made for more than this. Remind me."},
+    {"text": "Father, thank you for interrupting me. You know what I need."},
+    {"text": "Lord, there is a restlessness in me. Only you can satisfy it."},
+    {"text": "Jesus, I pause and breathe. You are here. That is enough."},
+    {"text": "God, anchor my soul in something that lasts."},
+    {"text": "Father, I release my grip on the screen and open my hands to you."},
+    {"text": "Lord, redirect this energy toward what is true and good and lasting."},
+    {"text": "Jesus, I am easily distracted. Be my one fixed point."},
+    {"text": "God, let me see clearly what I am trading my attention for."},
+    {"text": "Father, calm the noise inside me before it grows louder."},
+    {"text": "Lord, I have everything I need in you. Help me live like I believe that."},
+    {"text": "Jesus, this impulse to scroll — I lay it down before you."},
+    {"text": "God, you are more interesting than anything on this screen."},
+    {"text": "Father, let me carry your peace through the rest of this day."},
+    {"text": "Lord, help me close this and go do what actually matters."},
+    {"text": "Jesus, I trust you with this moment and the one that follows."},
+    {"text": "God, the world says fill the silence. You say be still. I choose you."},
+    {"text": "Father, my soul is thirsty. Point me to the living water."},
+    {"text": "Lord, I want to abide, not just appear."},
+    {"text": "Jesus, thank you for not letting me rush past you today."},
+    {"text": "God, fill the empty place I was about to fill with distraction."},
+    {"text": "Father, you have been patient with me. I want to be patient with you."},
+    {"text": "Lord, let what I carry out of this moment be yours, not the world's."},
+    {"text": "Jesus, I am reaching for something. Let it be you."},
+    {"text": "God, slow me down. I do not want to miss what you are doing."},
+]
+
+# ---------------------------------------------------------------------------
+# PROMPTS — journal prompts per slot
+# ---------------------------------------------------------------------------
+
+EXTRA_PROMPTS = {
+    "morning": [
+        "What do you want to hold onto today?",
+        "Where do you sense God inviting you this morning?",
+        "What would faithfulness look like for you today?",
+        "What is one small thing you can offer God today?",
+        "Who is on your heart this morning?",
+        "What would it mean to be fully present today?",
+        "What does your soul need most right now?",
+        "Where do you find it hardest to trust God this season?",
+        "What truth do you need to speak to yourself this morning?",
+        "What are you afraid of today, and what does God say about it?",
+    ],
+    "afternoon": [
+        "What pulled you away from what matters most today?",
+        "Where has God surprised you so far today?",
+        "What do you need to let go of right now?",
+        "How have you been with the people around you today?",
+        "What is draining you, and what would it look like to give that to God?",
+        "Where have you been most yourself today?",
+        "What are you grateful for in this moment?",
+        "What would finishing this day well look like?",
+        "Is there anyone you need to forgive or be reconciled with?",
+        "What lie are you believing right now, and what is the truth?",
+    ],
+    "evening": [
+        "What do you want to confess before you sleep?",
+        "What did God do today that you almost missed?",
+        "Who did you love well today? Who did you fail to love?",
+        "What is one thing you want to carry into tomorrow?",
+        "What are you anxious about, and can you release it to God?",
+        "Where did you sense God's presence most strongly today?",
+        "What would you do differently if you had today again?",
+        "What scripture is staying with you tonight?",
+        "What are you proud of today, and what are you ashamed of?",
+        "What does rest mean for your soul tonight?",
+    ],
+    "general": [
+        "What is God asking of you in this season?",
+        "What would it look like to love well right now?",
+        "Where have you been holding back from God?",
+        "What are you most afraid of losing?",
+        "Who do you need to pray for, and what do you want to say to God about them?",
+        "What habit or pattern in your life is working against what you want to become?",
+        "If you could ask God one question right now, what would it be?",
+        "What story are you telling yourself about your life? Is it true?",
+        "What are you learning about yourself lately?",
+        "What does God's goodness look like in your specific life today?",
+    ],
+}
+
+
+def main():
+    # --- Verses ---
+    existing = json.load(open(f"{ASSETS}/verses.json"))
+    next_id = max(int(v["id"].replace("v", "")) for v in existing) + 1
+
+    added = []
+    existing_refs = {v["reference"] for v in existing}
+    for v in NEW_VERSES:
+        if v["reference"] in existing_refs:
+            continue
+        added.append({
+            "id": f"v{next_id:03d}",
+            "reference": v["reference"],
+            "text": v["text"],
+            "slots": v["slots"],
+            "tone": v["tone"],
+        })
+        next_id += 1
+
+    all_verses = existing + added
+    with open(f"{ASSETS}/verses.json", "w") as f:
+        json.dump(all_verses, f, indent=2, ensure_ascii=False)
+    print(f"verses.json: {len(existing)} → {len(all_verses)} (+{len(added)})")
+
+    # --- Prayers ---
+    existing_p = json.load(open(f"{ASSETS}/prayers.json"))
+    next_pid = max(int(p["id"].replace("p", "")) for p in existing_p) + 1
+    existing_texts = {p["text"] for p in existing_p}
+
+    added_p = []
+    for p in NEW_PRAYERS:
+        if p["text"] in existing_texts:
+            continue
+        added_p.append({"id": f"p{next_pid:03d}", "text": p["text"]})
+        next_pid += 1
+
+    all_prayers = existing_p + added_p
+    with open(f"{ASSETS}/prayers.json", "w") as f:
+        json.dump(all_prayers, f, indent=2, ensure_ascii=False)
+    print(f"prayers.json: {len(existing_p)} → {len(all_prayers)} (+{len(added_p)})")
+
+    # --- Prompts ---
+    existing_pr = json.load(open(f"{ASSETS}/prompts.json"))
+    for slot, new_prompts in EXTRA_PROMPTS.items():
+        existing_set = set(existing_pr.get(slot, []))
+        for prompt in new_prompts:
+            if prompt not in existing_set:
+                existing_pr.setdefault(slot, []).append(prompt)
+                existing_set.add(prompt)
+
+    with open(f"{ASSETS}/prompts.json", "w") as f:
+        json.dump(existing_pr, f, indent=2, ensure_ascii=False)
+    total = sum(len(v) for v in existing_pr.values())
+    print(f"prompts.json: {total} total prompts across {len(existing_pr)} slots")
+
+
+if __name__ == "__main__":
+    main()
