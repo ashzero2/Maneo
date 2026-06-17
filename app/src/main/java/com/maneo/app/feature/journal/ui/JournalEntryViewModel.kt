@@ -4,11 +4,15 @@ import android.content.Context
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.maneo.app.core.data.prefs.PrefsKeys
 import com.maneo.app.feature.journal.domain.SaveEntry
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonArray
@@ -21,6 +25,7 @@ import kotlin.math.abs
 @HiltViewModel
 class JournalEntryViewModel @Inject constructor(
     private val saveEntry: SaveEntry,
+    private val dataStore: DataStore<Preferences>,
     @ApplicationContext private val context: Context,
 ) : ViewModel() {
 
@@ -36,10 +41,23 @@ class JournalEntryViewModel @Inject constructor(
     private var activeSlot: String? = null
     private var configured = false
 
-    fun configure(slot: String?) {
+    suspend fun configure(slot: String?) {
         if (configured) return
         configured = true
         activeSlot = slot
+
+        if (slot == "evening") {
+            val prefs = dataStore.data.first()
+            val storedDay = prefs[PrefsKeys.TODAY_INTERCEPT_DATE] ?: 0L
+            val todayCount = if (LocalDate.now().toEpochDay() == storedDay) {
+                prefs[PrefsKeys.TODAY_INTERCEPT_COUNT] ?: 0
+            } else 0
+            if (todayCount >= EVENING_SUGGESTION_THRESHOLD) {
+                prompt = "You paused $todayCount times today. What were you looking for?"
+                return
+            }
+        }
+
         prompt = loadPromptForSlot(slot)
     }
 
@@ -63,5 +81,9 @@ class JournalEntryViewModel @Inject constructor(
         arr[abs(LocalDate.now().toEpochDay().toInt()) % arr.size]
     } catch (_: Exception) {
         null
+    }
+
+    private companion object {
+        const val EVENING_SUGGESTION_THRESHOLD = 5
     }
 }

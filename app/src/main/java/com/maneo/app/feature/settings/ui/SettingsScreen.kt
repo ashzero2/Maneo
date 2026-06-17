@@ -43,6 +43,7 @@ fun SettingsScreen(
     onNavigateToReminders: () -> Unit,
     onNavigateToApps: () -> Unit,
     onNavigateToLicences: () -> Unit,
+    onNavigateToWeekly: () -> Unit,
     viewModel: SettingsViewModel = hiltViewModel(),
 ) {
     val thresholdMins by viewModel.thresholdMins.collectAsState()
@@ -181,6 +182,8 @@ fun SettingsScreen(
         Spacer(Modifier.height(20.dp))
         HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
 
+        SettingsRow(label = "This week", onClick = onNavigateToWeekly)
+        HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
         SettingsRow(label = "Reminders", onClick = onNavigateToReminders)
         HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
         SettingsRow(label = "Blocked apps", onClick = onNavigateToApps)

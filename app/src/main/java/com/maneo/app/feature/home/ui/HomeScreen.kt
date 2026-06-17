@@ -43,6 +43,7 @@ fun HomeScreen(
 ) {
     val blockedCount by viewModel.blockedCount.collectAsState()
     val verse by viewModel.verse.collectAsState()
+    val weeklyWaitCount by viewModel.weeklyWaitCount.collectAsState()
 
     val hour = LocalDateTime.now().hour
     val greeting = when {
@@ -134,6 +135,14 @@ fun HomeScreen(
             0 -> "No apps being held"
             1 -> "1 app being held"
             else -> "$blockedCount apps being held"
+        }
+        if (weeklyWaitCount > 0) {
+            Text(
+                text = "You chose to wait $weeklyWaitCount ${if (weeklyWaitCount == 1) "time" else "times"} this week.",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(bottom = 6.dp),
+            )
         }
         Row(
             modifier = Modifier

@@ -11,4 +11,5 @@ object Routes {
     const val REMINDERS_SETTINGS     = "reminders/settings"
     const val SETTINGS               = "settings"
     const val OSS_LICENCES           = "settings/licences"
+    const val WEEKLY_REVIEW          = "settings/weekly"
 }

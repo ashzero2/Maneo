@@ -1,7 +1,10 @@
 package com.maneo.app.feature.home.ui
 
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.maneo.app.core.data.prefs.PrefsKeys
 import com.maneo.app.core.data.prefs.SeenVerseRepository
 import com.maneo.app.core.domain.model.Verse
 import com.maneo.app.feature.blocker.repository.BlockedAppsRepository
@@ -21,6 +24,7 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val getVerseForSlot: GetVerseForSlot,
     private val seenVerseRepository: SeenVerseRepository,
+    private val dataStore: DataStore<Preferences>,
     blockedAppsRepository: BlockedAppsRepository,
 ) : ViewModel() {
 
@@ -29,6 +33,14 @@ class HomeViewModel @Inject constructor(
 
     val blockedCount: StateFlow<Int> = blockedAppsRepository.blockedApps
         .map { it.size }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), 0)
+
+    val weeklyWaitCount: StateFlow<Int> = dataStore.data
+        .map { prefs ->
+            val resetDay = prefs[PrefsKeys.WEEKLY_COUNT_RESET_EPOCH_DAY] ?: return@map 0
+            if (LocalDate.now().toEpochDay() - resetDay >= 7) return@map 0
+            prefs[PrefsKeys.WEEKLY_WAIT_COUNT] ?: 0
+        }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), 0)
 
     init {
