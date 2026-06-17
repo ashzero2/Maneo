@@ -3,6 +3,8 @@ package com.maneo.app.feature.settings.ui
 import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.background
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -22,6 +24,7 @@ import androidx.compose.material3.Switch
 import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableFloatStateOf
@@ -31,6 +34,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.core.app.ShareCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import kotlin.math.roundToInt
 
@@ -49,7 +53,18 @@ fun SettingsScreen(
     val thresholdMins by viewModel.thresholdMins.collectAsState()
     val timerEnabled by viewModel.timerEnabled.collectAsState()
     val timerSeconds by viewModel.timerSeconds.collectAsState()
+    val exportContent by viewModel.exportContent.collectAsState()
     val context = LocalContext.current
+
+    LaunchedEffect(exportContent) {
+        val content = exportContent ?: return@LaunchedEffect
+        ShareCompat.IntentBuilder(context)
+            .setType("text/plain")
+            .setSubject("My Maneo Journal")
+            .setText(content.ifEmpty { "No entries yet." })
+            .startChooser()
+        viewModel.onExportHandled()
+    }
 
     val savedIndex = THRESHOLD_VALUES.indexOf(thresholdMins).coerceAtLeast(0)
     var sliderPos by remember(savedIndex) { mutableFloatStateOf(savedIndex.toFloat()) }
@@ -145,6 +160,9 @@ fun SettingsScreen(
                     checkedThumbColor = MaterialTheme.colorScheme.onPrimary,
                     checkedTrackColor = MaterialTheme.colorScheme.primary,
                 ),
+                modifier = Modifier.semantics {
+                    contentDescription = if (timerEnabled) "Intercept pause enabled" else "Intercept pause disabled"
+                },
             )
         }
         if (timerEnabled) {
@@ -187,6 +205,8 @@ fun SettingsScreen(
         SettingsRow(label = "Reminders", onClick = onNavigateToReminders)
         HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
         SettingsRow(label = "Blocked apps", onClick = onNavigateToApps)
+        HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
+        SettingsRow(label = "Export journal", onClick = viewModel::triggerExport)
         HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
 
         Spacer(Modifier.height(40.dp))

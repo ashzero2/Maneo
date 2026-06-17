@@ -29,6 +29,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import java.time.LocalDate
@@ -147,6 +149,7 @@ fun HomeScreen(
         Row(
             modifier = Modifier
                 .padding(bottom = 12.dp)
+                .semantics { contentDescription = "$countLabel — tap to manage" }
                 .clickable { onViewApps() },
             verticalAlignment = Alignment.CenterVertically,
         ) {
