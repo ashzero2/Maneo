@@ -35,11 +35,18 @@ class InterceptActivity : ComponentActivity() {
             ManeoTheme {
                 val verse by viewModel.verse.collectAsState()
                 val prayer by viewModel.prayer.collectAsState()
+                val timerEnabled by viewModel.timerEnabled.collectAsState()
+                val timerTotalSeconds by viewModel.timerTotalSeconds.collectAsState()
+                val remainingSeconds by viewModel.remainingSeconds.collectAsState()
                 if (verse != null && prayer != null) {
                     InterceptScreen(
                         verse = verse!!,
                         prayer = prayer!!,
-                        onAmen = { finish() },
+                        timerEnabled = timerEnabled,
+                        remainingSeconds = remainingSeconds,
+                        timerTotalSeconds = timerTotalSeconds,
+                        onWait = { viewModel.recordWait(); finish() },
+                        onContinue = { viewModel.recordContinue(); finish() },
                     )
                 }
             }

@@ -37,6 +37,19 @@ object PrefsKeys {
     val SEEN_PRAYER_IDS      = stringSetPreferencesKey("seen_prayer_ids")
     val SEEN_PRAYER_RESET_DAY = longPreferencesKey("seen_prayer_reset_day")
 
+    // Intercept timer — optional dwell before buttons appear
+    val INTERCEPT_TIMER_ENABLED = booleanPreferencesKey("intercept_timer_enabled")
+    val INTERCEPT_TIMER_SECONDS = intPreferencesKey("intercept_timer_seconds")
+
+    // Intercept outcomes — weekly rolling counts
+    val WEEKLY_WAIT_COUNT           = intPreferencesKey("weekly_wait_count")
+    val WEEKLY_CONTINUE_COUNT       = intPreferencesKey("weekly_continue_count")
+    val WEEKLY_COUNT_RESET_EPOCH_DAY = longPreferencesKey("weekly_count_reset_epoch_day")
+
+    // Today's intercept count — for gentle tone escalation
+    val TODAY_INTERCEPT_COUNT = intPreferencesKey("today_intercept_count")
+    val TODAY_INTERCEPT_DATE  = longPreferencesKey("today_intercept_date")
+
     fun seenVerseIds(slot: String) = when (slot) {
         "morning"   -> SEEN_VERSE_IDS_MORNING
         "afternoon" -> SEEN_VERSE_IDS_AFTERNOON

@@ -18,6 +18,8 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Slider
 import androidx.compose.material3.SliderDefaults
+import androidx.compose.material3.Switch
+import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
@@ -34,6 +36,7 @@ import kotlin.math.roundToInt
 
 private const val GITHUB_URL = "https://github.com/maneo-app/maneo"
 private val THRESHOLD_VALUES = listOf(15, 30, 60, 90, 120)
+private val TIMER_VALUES = listOf(5, 10, 15, 20)
 
 @Composable
 fun SettingsScreen(
@@ -43,11 +46,16 @@ fun SettingsScreen(
     viewModel: SettingsViewModel = hiltViewModel(),
 ) {
     val thresholdMins by viewModel.thresholdMins.collectAsState()
+    val timerEnabled by viewModel.timerEnabled.collectAsState()
+    val timerSeconds by viewModel.timerSeconds.collectAsState()
     val context = LocalContext.current
 
     val savedIndex = THRESHOLD_VALUES.indexOf(thresholdMins).coerceAtLeast(0)
     var sliderPos by remember(savedIndex) { mutableFloatStateOf(savedIndex.toFloat()) }
     val displayMins = THRESHOLD_VALUES[sliderPos.roundToInt().coerceIn(0, THRESHOLD_VALUES.lastIndex)]
+    val savedTimerIndex = TIMER_VALUES.indexOf(timerSeconds).coerceAtLeast(0)
+    var timerSliderPos by remember(savedTimerIndex) { mutableFloatStateOf(savedTimerIndex.toFloat()) }
+    val displayTimerSecs = TIMER_VALUES[timerSliderPos.roundToInt().coerceIn(0, TIMER_VALUES.lastIndex)]
 
     Column(
         modifier = Modifier
@@ -107,6 +115,70 @@ fun SettingsScreen(
         }
 
         Spacer(Modifier.height(24.dp))
+        HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
+        Spacer(Modifier.height(20.dp))
+
+        // Intercept timer
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = "Intercept pause",
+                    style = MaterialTheme.typography.titleSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                )
+                Text(
+                    text = if (timerEnabled) "Wait $displayTimerSecs seconds before continuing"
+                           else "Amen button appears immediately",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(top = 2.dp),
+                )
+            }
+            Switch(
+                checked = timerEnabled,
+                onCheckedChange = viewModel::setTimerEnabled,
+                colors = SwitchDefaults.colors(
+                    checkedThumbColor = MaterialTheme.colorScheme.onPrimary,
+                    checkedTrackColor = MaterialTheme.colorScheme.primary,
+                ),
+            )
+        }
+        if (timerEnabled) {
+            Spacer(Modifier.height(8.dp))
+            Slider(
+                value = timerSliderPos,
+                onValueChange = { timerSliderPos = it },
+                onValueChangeFinished = {
+                    viewModel.setTimerSeconds(
+                        TIMER_VALUES[timerSliderPos.roundToInt().coerceIn(0, TIMER_VALUES.lastIndex)]
+                    )
+                },
+                valueRange = 0f..3f,
+                steps = 2,
+                colors = SliderDefaults.colors(
+                    thumbColor = MaterialTheme.colorScheme.primary,
+                    activeTrackColor = MaterialTheme.colorScheme.primary,
+                ),
+                modifier = Modifier.fillMaxWidth(),
+            )
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween,
+            ) {
+                TIMER_VALUES.forEach { value ->
+                    Text(
+                        text = "${value}s",
+                        style = MaterialTheme.typography.labelSmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    )
+                }
+            }
+        }
+
+        Spacer(Modifier.height(20.dp))
         HorizontalDivider(color = MaterialTheme.colorScheme.outline.copy(alpha = 0.2f))
 
         SettingsRow(label = "Reminders", onClick = onNavigateToReminders)
