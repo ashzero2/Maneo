@@ -1,5 +1,6 @@
 package com.maneo.app.feature.blocker.ui
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.WindowManager
@@ -47,7 +48,16 @@ class InterceptActivity : ComponentActivity() {
                         remainingSeconds = remainingSeconds,
                         timerTotalSeconds = timerTotalSeconds,
                         isSabbath = isSabbath,
-                        onWait = { viewModel.recordWait(); finish() },
+                        onWait = {
+                            viewModel.recordWait()
+                            startActivity(
+                                Intent(Intent.ACTION_MAIN).apply {
+                                    addCategory(Intent.CATEGORY_HOME)
+                                    addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                                }
+                            )
+                            finish()
+                        },
                         onContinue = { viewModel.recordContinue(); finish() },
                     )
                 }
