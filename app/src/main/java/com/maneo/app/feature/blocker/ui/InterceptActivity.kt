@@ -38,6 +38,7 @@ class InterceptActivity : ComponentActivity() {
                 val timerEnabled by viewModel.timerEnabled.collectAsState()
                 val timerTotalSeconds by viewModel.timerTotalSeconds.collectAsState()
                 val remainingSeconds by viewModel.remainingSeconds.collectAsState()
+                val isSabbath by viewModel.isSabbath.collectAsState()
                 if (verse != null && prayer != null) {
                     InterceptScreen(
                         verse = verse!!,
@@ -45,6 +46,7 @@ class InterceptActivity : ComponentActivity() {
                         timerEnabled = timerEnabled,
                         remainingSeconds = remainingSeconds,
                         timerTotalSeconds = timerTotalSeconds,
+                        isSabbath = isSabbath,
                         onWait = { viewModel.recordWait(); finish() },
                         onContinue = { viewModel.recordContinue(); finish() },
                     )

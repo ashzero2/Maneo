@@ -18,6 +18,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
+import java.time.DayOfWeek
 import java.time.LocalDate
 import javax.inject.Inject
 
@@ -44,19 +45,29 @@ class InterceptViewModel @Inject constructor(
     private val _remainingSeconds = MutableStateFlow(0)
     val remainingSeconds: StateFlow<Int> = _remainingSeconds.asStateFlow()
 
+    private val _isSabbath = MutableStateFlow(false)
+    val isSabbath: StateFlow<Boolean> = _isSabbath.asStateFlow()
+
     init {
         viewModelScope.launch {
             val prefs = dataStore.data.first()
-            val slot = "intercept"
             val date = LocalDate.now()
 
-            // Escalation: if the user has opened blocked apps many times today, shift to grounding tone
+            val translation = prefs[PrefsKeys.TRANSLATION] ?: "web"
+            val sabbathEnabled = prefs[PrefsKeys.SABBATH_ENABLED] ?: false
+            val sabbathDayValue = prefs[PrefsKeys.SABBATH_DAY] ?: DayOfWeek.SUNDAY.value
+            val isSabbathDay = sabbathEnabled && date.dayOfWeek.value == sabbathDayValue
+            _isSabbath.value = isSabbathDay
+
+            val slot = if (isSabbathDay) "sabbath" else "intercept"
+
+            // Escalation only applies on non-sabbath days
             val todayCount = getTodayInterceptCount(prefs, date)
             incrementTodayInterceptCount(date)
-            val tone = if (todayCount >= ESCALATION_THRESHOLD) "grounding" else null
+            val tone = if (!isSabbathDay && todayCount >= ESCALATION_THRESHOLD) "grounding" else null
 
             val seenVerseIds = seenVerseRepository.getSeenVerseIds(slot, date)
-            val v = getVerseForSlot(slot, tone = tone, seenIds = seenVerseIds)
+            val v = getVerseForSlot(slot, tone = tone, translation = translation, seenIds = seenVerseIds)
             seenVerseRepository.markVerseSeen(slot, v.id, date)
             _verse.value = v
 

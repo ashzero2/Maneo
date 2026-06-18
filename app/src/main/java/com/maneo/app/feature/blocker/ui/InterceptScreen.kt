@@ -37,10 +37,11 @@ fun InterceptScreen(
     timerEnabled: Boolean,
     remainingSeconds: Int,
     timerTotalSeconds: Int,
+    isSabbath: Boolean = false,
     onWait: () -> Unit,
     onContinue: () -> Unit,
 ) {
-    val buttonsVisible = !timerEnabled || remainingSeconds == 0
+    val buttonsVisible = isSabbath || !timerEnabled || remainingSeconds == 0
 
     Box(
         modifier = Modifier
@@ -55,6 +56,16 @@ fun InterceptScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center,
         ) {
+            if (isSabbath) {
+                Text(
+                    text = "Today is set apart.",
+                    style = MaterialTheme.typography.bodySmall.copy(fontStyle = FontStyle.Italic),
+                    color = MaterialTheme.colorScheme.primary,
+                    textAlign = TextAlign.Center,
+                )
+                Spacer(Modifier.height(8.dp))
+            }
+
             Text(
                 text = verse.reference,
                 style = MaterialTheme.typography.labelMedium,

@@ -11,14 +11,17 @@ class GetVerseForSlot @Inject constructor(private val repository: VerseRepositor
     operator fun invoke(
         slot: String,
         tone: String? = null,
+        translation: String = "web",
         seenIds: Set<String> = emptySet(),
         date: LocalDate = LocalDate.now(),
     ): Verse {
-        val fullPool = repository.getVersesForSlot(slot)
-        require(fullPool.isNotEmpty()) { "No verses for slot: $slot" }
+        val allPool = repository.getVersesForSlot(slot)
+        require(allPool.isNotEmpty()) { "No verses for slot: $slot" }
+
+        val translationPool = allPool.filter { it.translation == translation }.takeIf { it.isNotEmpty() } ?: allPool
 
         val toneFilter = tone ?: defaultTone(slot)
-        val tonedPool = fullPool.filter { toneFilter in it.tone }.takeIf { it.size >= 3 } ?: fullPool
+        val tonedPool = translationPool.filter { toneFilter in it.tone }.takeIf { it.size >= 3 } ?: translationPool
         val freshPool = tonedPool.filter { it.id !in seenIds }.takeIf { it.size >= 3 } ?: tonedPool
 
         val seed = date.toEpochDay() * 31L + slot.hashCode()

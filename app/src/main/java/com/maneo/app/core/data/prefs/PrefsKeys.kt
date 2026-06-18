@@ -50,6 +50,13 @@ object PrefsKeys {
     val TODAY_INTERCEPT_COUNT = intPreferencesKey("today_intercept_count")
     val TODAY_INTERCEPT_DATE  = longPreferencesKey("today_intercept_date")
 
+    // v1.1: Translation selector — "web" | "kjv"
+    val TRANSLATION = stringPreferencesKey("translation")
+
+    // v1.1: Sabbath mode — enabled flag + day of week (DayOfWeek.value: 1=Mon … 7=Sun)
+    val SABBATH_ENABLED = booleanPreferencesKey("sabbath_enabled")
+    val SABBATH_DAY     = intPreferencesKey("sabbath_day")
+
     fun seenVerseIds(slot: String) = when (slot) {
         "morning"   -> SEEN_VERSE_IDS_MORNING
         "afternoon" -> SEEN_VERSE_IDS_AFTERNOON

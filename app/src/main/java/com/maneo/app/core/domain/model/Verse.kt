@@ -8,6 +8,7 @@ data class Verse(
     val id: String,
     val reference: String,
     val text: String,
-    val slots: List<String>,    // "morning", "afternoon", "evening", "intercept"
-    val tone: List<String>,     // "inviting", "grounding"
+    val slots: List<String>,        // "morning", "afternoon", "evening", "intercept", "sabbath"
+    val tone: List<String>,         // "inviting", "grounding"
+    val translation: String = "web", // "web" | "kjv"
 )

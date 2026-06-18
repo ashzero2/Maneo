@@ -32,6 +32,12 @@ The name comes from the Greek word *μένω* (menō) — the same word Jesus us
 ### The Intercept
 When you open a blocked app, a full-screen verse and prayer appears before you reach the feed. An **Amen** button waits quietly — or you can continue anyway. After ten opens in a day, the tone shifts gently to grounding verses. Everything you choose is counted quietly across the week.
 
+### Translation
+Choose between **WEB** (World English Bible) and **KJV** (King James Version) — both bundled locally, no network required. Switch any time in Settings. All 316 verses are available in both translations.
+
+### Sabbath Mode
+On your chosen Sabbath day (Sunday or Saturday), the intercept screen feels different. Verse content shifts to rest, stillness, and Psalm-heavy passages. *"Today is set apart."* appears quietly above the verse. The countdown timer steps back. Continue anyway remains — no walls, just a different texture to the day.
+
 ### Daily Reminders
 Three moments: morning, afternoon, evening. Each brings a verse matched to the time of day — inviting in the morning, grounding in the evening. Tapping a notification opens the journal with a prompt for that moment.
 
@@ -72,7 +78,7 @@ Everything stays on your device.
 | App selector | Toggle any installed app on or off |
 | Reminders | Morning, afternoon, evening — each adjustable |
 | This week | Formation review — pauses, waits, estimated reflection time |
-| Settings | Screen time threshold, intercept pause timer, export journal |
+| Settings | Screen time threshold, intercept pause timer, translation, Sabbath mode, export journal |
 
 ---
 
@@ -177,6 +183,20 @@ One feature per PR. A few things worth keeping in mind:
 - Not a guilt machine — no streaks to break, no scores to lose
 - Not a subscription product — free, forever, no in-app purchases
 - Not a social platform
+
+---
+
+---
+
+## Research
+
+The features in Maneo are informed by research into digital wellness, Christian formation, and mobile habit psychology.
+
+**Digital Sabbath** — Emerging research in environmental psychology (Attention Restoration Theory) supports weekly screen-free periods as one of the most effective ways to restore directed attention and reduce anxiety. Jonathan Haidt called for a weekly digital day off at the 2025 World Economic Forum. Sources: [WEF 2025](https://www.weforum.org/stories/2025/03/jonathan-haidt-digital-detox-anxious-generation-radio-davos/) · [Desiring God — Screen Sabbaths](https://www.desiringgod.org/articles/screen-sabbaths) · [The Psychology of the Digital Sabbath](https://www.podcastvideos.com/articles/the-psychology-of-the-digital-sabbath-why-saturday-screen-breaks-boost-monday-creativity/)
+
+**Translation** — WEB (World English Bible) is fully public domain. KJV is de facto public domain outside the UK and the most widely read English Bible translation in the world. Both are bundled locally; no network calls. Sources: [Public domain Bible versions](https://inspiringtips.com/which-bible-versions-are-in-the-public-domain/) · [KJV JSON dataset](https://github.com/aruljohn/Bible-kjv)
+
+**App blocking friction** — Studies on Android Focus Mode show that named friction (a pause before access) breaks autopilot habits more effectively than hard walls, which users eventually disable. Maneo's intercept screen provides spiritual friction rather than mechanical blocking. Source: [Android Police — Focus Mode week-long review](https://www.androidpolice.com/i-used-focus-mode-for-a-week-how-it-reshaped-phone-habits/)
 
 ---
 

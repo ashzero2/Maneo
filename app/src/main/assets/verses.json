@@ -5,7 +5,8 @@
     "text": "“Come to me, all you who labor and are heavily burdened, and I will give you rest.",
     "slots": [
       "intercept",
-      "morning"
+      "morning",
+      "sabbath"
     ],
     "tone": [
       "inviting"
@@ -17,7 +18,8 @@
     "text": "Take my yoke upon you, and learn from me, for I am gentle and humble in heart; and you will find rest for your souls.",
     "slots": [
       "intercept",
-      "morning"
+      "morning",
+      "sabbath"
     ],
     "tone": [
       "inviting"
@@ -173,7 +175,8 @@
     "text": "You will keep whoever’s mind is steadfast in perfect peace, because he trusts in you.",
     "slots": [
       "intercept",
-      "morning"
+      "morning",
+      "sabbath"
     ],
     "tone": [
       "grounding"
@@ -365,7 +368,8 @@
     "text": "Peace I leave with you. My peace I give to you; not as the world gives, give I to you. Don’t let your heart be troubled, neither let it be fearful.",
     "slots": [
       "intercept",
-      "evening"
+      "evening",
+      "sabbath"
     ],
     "tone": [
       "inviting"
@@ -401,7 +405,8 @@
     "text": "In peace I will both lay myself down and sleep, for you, Yahweh alone, make me live in safety.",
     "slots": [
       "intercept",
-      "evening"
+      "evening",
+      "sabbath"
     ],
     "tone": [
       "inviting"
@@ -413,7 +418,8 @@
     "text": "My soul rests in God alone. My salvation is from him.",
     "slots": [
       "intercept",
-      "evening"
+      "evening",
+      "sabbath"
     ],
     "tone": [
       "grounding"
@@ -425,7 +431,8 @@
     "text": "For thus said the Lord Yahweh, the Holy One of Israel, “You will be saved in returning and rest. Your strength will be in quietness and in confidence.” You refused,",
     "slots": [
       "intercept",
-      "evening"
+      "evening",
+      "sabbath"
     ],
     "tone": [
       "grounding"
@@ -485,7 +492,8 @@
     "text": "Return to your rest, my soul, for Yahweh has dealt bountifully with you.",
     "slots": [
       "intercept",
-      "evening"
+      "evening",
+      "sabbath"
     ],
     "tone": [
       "inviting"
@@ -497,7 +505,8 @@
     "text": "Surely I have stilled and quieted my soul, like a weaned child with his mother, like a weaned child is my soul within me.",
     "slots": [
       "intercept",
-      "evening"
+      "evening",
+      "sabbath"
     ],
     "tone": [
       "inviting"
@@ -604,7 +613,8 @@
     "reference": "Psalm 46:10",
     "text": "“Be still, and know that I am God. I will be exalted among the nations. I will be exalted in the earth.”",
     "slots": [
-      "intercept"
+      "intercept",
+      "sabbath"
     ],
     "tone": [
       "grounding"
@@ -615,7 +625,8 @@
     "reference": "Mark 6:31",
     "text": "He said to them, “You come apart into a deserted place, and rest awhile.” For there were many coming and going, and they had no leisure so much as to eat.",
     "slots": [
-      "intercept"
+      "intercept",
+      "sabbath"
     ],
     "tone": [
       "inviting"
@@ -736,7 +747,8 @@
     "reference": "Psalm 37:7",
     "text": "Rest in Yahweh, and wait patiently for him. Don’t fret because of him who prospers in his way, because of the man who makes wicked plots happen.",
     "slots": [
-      "intercept"
+      "intercept",
+      "sabbath"
     ],
     "tone": [
       "grounding"
@@ -747,7 +759,8 @@
     "reference": "Hebrews 4:9-10",
     "text": "There remains therefore a Sabbath rest for the people of God. For he who has entered into his rest has himself also rested from his works, as God did from his.",
     "slots": [
-      "intercept"
+      "intercept",
+      "sabbath"
     ],
     "tone": [
       "inviting"
@@ -758,7 +771,8 @@
     "reference": "Luke 10:42",
     "text": "but one thing is needed. Mary has chosen the good part, which will not be taken away from her.”",
     "slots": [
-      "intercept"
+      "intercept",
+      "sabbath"
     ],
     "tone": [
       "grounding"
@@ -967,7 +981,8 @@
     "reference": "Psalm 23:2-3",
     "text": "He makes me lie down in green pastures. He leads me beside still waters. He restores my soul. He guides me in the paths of righteousness for his name’s sake.",
     "slots": [
-      "intercept"
+      "intercept",
+      "sabbath"
     ],
     "tone": [
       "inviting"
@@ -978,7 +993,8 @@
     "reference": "Psalm 23:1",
     "text": "Yahweh is my shepherd: I shall lack nothing.",
     "slots": [
-      "intercept"
+      "intercept",
+      "sabbath"
     ],
     "tone": [
       "grounding"
@@ -1033,7 +1049,8 @@
     "reference": "Psalm 34:8",
     "text": "Oh taste and see that Yahweh is good. Blessed is the man who takes refuge in him.",
     "slots": [
-      "intercept"
+      "intercept",
+      "sabbath"
     ],
     "tone": [
       "inviting"
@@ -1625,7 +1642,8 @@
     "reference": "Psalm 127:2",
     "text": "It is vain for you to rise up early, to stay up late, eating the bread of toil; for he gives sleep to his loved ones.",
     "slots": [
-      "evening"
+      "evening",
+      "sabbath"
     ],
     "tone": [
       "inviting"
@@ -3106,7 +3124,8 @@
     "text": "Yahweh is good to those who wait for him, to the soul that seeks him. It is good that a man should hope and quietly wait for the salvation of Yahweh.",
     "slots": [
       "intercept",
-      "evening"
+      "evening",
+      "sabbath"
     ],
     "tone": [
       "grounding"

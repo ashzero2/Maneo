@@ -56,6 +56,36 @@ class SettingsViewModel @Inject constructor(
         }
     }
 
+    val translation: StateFlow<String> = dataStore.data
+        .map { it[PrefsKeys.TRANSLATION] ?: "web" }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), "web")
+
+    val sabbathEnabled: StateFlow<Boolean> = dataStore.data
+        .map { it[PrefsKeys.SABBATH_ENABLED] ?: false }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), false)
+
+    val sabbathDay: StateFlow<Int> = dataStore.data
+        .map { it[PrefsKeys.SABBATH_DAY] ?: 7 }
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), 7)
+
+    fun setTranslation(value: String) {
+        viewModelScope.launch {
+            dataStore.edit { it[PrefsKeys.TRANSLATION] = value }
+        }
+    }
+
+    fun setSabbathEnabled(enabled: Boolean) {
+        viewModelScope.launch {
+            dataStore.edit { it[PrefsKeys.SABBATH_ENABLED] = enabled }
+        }
+    }
+
+    fun setSabbathDay(dayValue: Int) {
+        viewModelScope.launch {
+            dataStore.edit { it[PrefsKeys.SABBATH_DAY] = dayValue }
+        }
+    }
+
     fun triggerExport() {
         viewModelScope.launch {
             _exportContent.value = exportJournal()
