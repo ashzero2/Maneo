@@ -1,48 +1,60 @@
-# Maneo
+<div align="center">
 
-> *"Abide in me, and I in you."*
-> — John 15:4
+<img src="app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" width="100" alt="Maneo" />
 
-**maneo** *(Latin, verb)* — to remain, to abide, to stay, to dwell.
+<h1>Maneo</h1>
 
-It is the word Jesus used in John 15 when he described the relationship between the vine and its branches. Not striving. Not performing. Simply staying close.
+<p><em>maneo</em> &ensp;·&ensp; Latin, verb &ensp;·&ensp; <em>to remain · to abide · to stay · to dwell</em></p>
 
-That is what this app is about.
+<p><em>"Abide in me, and I in you. As the branch cannot bear fruit by itself,<br/>unless it abides in the vine, neither can you, unless you abide in me."</em><br/>— John 15:4</p>
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-c8956c?style=flat-square)](LICENSE)
+[![Platform](https://img.shields.io/badge/Android-API%2026%2B-3D2C1E?style=flat-square&logo=android&logoColor=c8956c)](https://developer.android.com)
+[![Kotlin](https://img.shields.io/badge/Kotlin-Jetpack%20Compose-c8956c?style=flat-square&logo=kotlin&logoColor=white)](https://kotlinlang.org)
+[![Free](https://img.shields.io/badge/Free-Forever-3D2C1E?style=flat-square)](https://github.com/maneo-app/maneo)
+
+</div>
 
 ---
 
-## What it does
+## What Maneo is
 
-When you reach for Instagram, Twitter, or any app that tends to pull you away from yourself — Maneo catches that moment. Before the feed loads, you see a Bible verse and a short prayer. A breath. Then you can proceed.
+When you reach for a distracting app, Maneo catches that moment. Before the feed loads, you see a verse from Scripture and a short prayer. A breath. A chance to remember what you were made for. Then you can proceed — no guilt, no wall.
 
 It won't stop you. It just invites you to pause.
 
-Beyond the intercept, Maneo offers:
-
-- **Daily reminders** — morning, afternoon, and evening notifications, each with a verse and a link into the prayer journal
-- **Prayer journal** — a quiet space to write. A rotating daily prompt appears above the text field, based on the time of day. Dismiss it if you'd rather write freely.
-- **Screen time nudges** — after a configurable amount of time spent on a blocked app, a gentle notification asks if you'd like a moment with God before continuing. Once per day, per app. Not a wall — just a question.
-- **Home screen** — today's verse, a shortcut into the journal, and a count of the apps you're holding
-
-Everything is local. Nothing leaves your device. No account. No analytics.
+The name comes from the Greek word *μένω* (menō) — the same word Jesus uses in John 15 when he speaks of abiding. Not striving. Not performing. Simply staying close to the vine. It appears 118 times in the New Testament.
 
 ---
 
-## The name
+## Features
 
-*Maneo* in Latin, *μένω* (menō) in Greek — the same word carried across both languages, appearing 118 times in the New Testament. In John 15, Jesus uses it to describe what he wants from his followers: not activity, not achievement — abiding. Staying connected to the source.
+### The Intercept
+When you open a blocked app, a full-screen verse and prayer appears before you reach the feed. An **Amen** button waits quietly — or you can continue anyway. After ten opens in a day, the tone shifts gently to grounding verses. Everything you choose is counted quietly across the week.
 
-The app is built around that same idea. It doesn't gamify your faith or track your progress. It simply tries to keep a thread of connection intact when the pull of the screen would otherwise sever it.
+### Daily Reminders
+Three moments: morning, afternoon, evening. Each brings a verse matched to the time of day — inviting in the morning, grounding in the evening. Tapping a notification opens the journal with a prompt for that moment.
+
+### Prayer Journal
+A quiet place to write. A rotating daily prompt appears above the text field, drawn from the time of day. Dismiss it if you'd rather write freely. In the evening, if you've paused many times that day, it asks gently: *"What were you looking for?"* All entries stay on your device.
+
+### This Week
+A formation-framed review in Settings — how many times you paused, how many times you waited, an estimated time spent in reflection. No streaks. No scores. Just a quiet look at how you've been.
+
+### Home Screen
+Today's verse, a shortcut to write a prayer, and a count of apps you're holding. When you've been pausing, a gentle note of encouragement appears.
 
 ---
 
-## What it is not
+## Privacy
 
-- Not a Bible app — [YouVersion](https://www.youversion.com) does that better
-- Not a productivity tracker or habit builder
-- Not a guilt machine — there are no streaks to break, no scores to lose
-- Not a subscription product — free, forever, no in-app purchases
-- Not a social platform
+Everything stays on your device.
+
+- No account. No sign-in.
+- No analytics. No crash reporting.
+- No network calls — verses, prayers, and prompts are all bundled locally.
+- Journal entries are stored in a local SQLite database, encrypted at rest with a key held in the Android Keystore.
+- Export your entire journal any time via the share sheet.
 
 ---
 
@@ -50,47 +62,61 @@ The app is built around that same idea. It doesn't gamify your faith or track yo
 
 | Screen | Purpose |
 |--------|---------|
-| Welcome | What Maneo is, in plain language |
-| Permissions | Accessibility access, usage stats, notifications — each explained honestly |
-| First block | Pick one app to start with. Just one. |
-| Home | Today's verse, journal shortcut, blocked apps count |
+| Welcome | What Maneo is, plainly |
+| Permissions | Accessibility, usage stats, notifications — each explained honestly |
+| First block | Pick one app. Just one. |
+| Home | Today's verse, journal shortcut, blocked app count, weekly encouragement |
 | Intercept | Full-screen verse + prayer when you open a blocked app |
-| Journal list | All past entries, newest first |
-| Journal entry | Free-text prayer field with an optional daily prompt |
+| Journal list | All entries, newest first |
+| Journal entry | Free-text prayer with optional daily prompt |
 | App selector | Toggle any installed app on or off |
-| Reminders | Set times for morning, afternoon, evening notifications |
-| Settings | Screen time threshold, open source licences, GitHub link |
+| Reminders | Morning, afternoon, evening — each adjustable |
+| This week | Formation review — pauses, waits, estimated reflection time |
+| Settings | Screen time threshold, intercept pause timer, export journal |
 
 ---
 
-## Technical details
+## Visual Identity
 
-**Platform:** Android (API 26+, Oreo and above)  
+The UI is built to feel like morning light through a window — warm, unhurried.
+
+| Token | Colour | Usage |
+|-------|--------|-------|
+| Background | `#FAF7F2` | All screen backgrounds |
+| Surface | `#F2EDE4` | Cards and containers |
+| Primary | `#C8956C` | Buttons, accents, active states |
+| Text | `#3D2C1E` | Body text — warm dark brown, not harsh black |
+| Text secondary | `#8C7B6E` | Timestamps, labels, secondary copy |
+
+**Typography:** Lora (serif) for verses and display headings &ensp;·&ensp; Nunito Sans (sans-serif) for all UI text.
+
+---
+
+## Technical Details
+
+**Platform:** Android API 26+ (Oreo and above)  
 **Language:** Kotlin  
 **UI:** Jetpack Compose  
-**License:** MIT
+**Architecture:** Single-module, feature-packaged, Hilt DI
 
 ### How app blocking works
 
-Maneo uses Android's `AccessibilityService` — the only Android API that reliably detects which app is in the foreground from a background service. When `onAccessibilityEvent` fires a `TYPE_WINDOW_STATE_CHANGED` event, it checks the package name against an in-memory set of blocked apps. If there's a match, `InterceptActivity` launches immediately. No heavy work happens in the event callback — just a single set lookup.
+Maneo uses Android's `AccessibilityService` — the only API that reliably detects which app is in the foreground from a background service. When a `TYPE_WINDOW_STATE_CHANGED` event fires, it does a single in-memory set lookup against blocked packages. If there's a match, `InterceptActivity` launches immediately. The service runs as a foreground service with a low-priority notification for reliability on aggressive OEM battery managers.
 
 ### How reminders work
 
-Three `WorkManager` periodic workers — one each for morning, afternoon, and evening. Each is scheduled with a calculated `setInitialDelay` so it fires at the user's chosen time. On fire, it picks a verse from the local library for that slot and sends a notification. Tapping the notification deep-links into the journal with the matching slot's prompt pre-loaded.
-
-### How screen time warnings work
-
-A separate `WorkManager` worker runs every 15 minutes (Android's minimum interval). It queries `UsageStatsManager` for today's foreground time on each blocked app. If any app crosses the threshold, a single gentle notification is sent — once per app per day. Nothing runs as a foreground service.
+Three `WorkManager` periodic workers — one each for morning, afternoon, and evening — scheduled with a calculated `setInitialDelay` so they fire at the user's chosen time. Each picks a verse by slot and tone, marks it seen in a 14-day rolling de-dup window, and posts a notification. Tapping deep-links into the journal with the matching prompt pre-loaded.
 
 ### Verse library
 
-~240 WEB (World English Bible) verses bundled as a local JSON asset — public domain, no network dependency. Each verse is tagged by slot (`morning`, `afternoon`, `evening`, `intercept`) and tone (`inviting`, `grounding`). The daily verse is picked deterministically from the date so the same verse doesn't repeat on the same day.
+316 WEB (World English Bible) verses bundled as a local JSON asset — public domain, no network dependency. Each verse is tagged by slot (`morning`, `afternoon`, `evening`, `intercept`) and tone (`inviting`, `grounding`). Verses are picked deterministically from the date within a de-duplicated pool, so the same verse doesn't repeat within 14 days.
 
 ### Storage
 
-- **Room** — journal entries only
-- **DataStore** — everything else (blocked apps, reminder times, thresholds, onboarding state)
-- No remote database, no user accounts, no cloud sync
+| Store | Contents |
+|-------|----------|
+| **Room** (SQLite) | Journal entries, encrypted at rest via Android Keystore |
+| **DataStore** | Blocked apps, reminder times, thresholds, seen-verse windows, weekly counts, onboarding state |
 
 ### Dependencies
 
@@ -101,10 +127,7 @@ A separate `WorkManager` worker runs every 15 minutes (Android's minimum interva
 | AndroidX Room | Journal database |
 | AndroidX DataStore | Preferences |
 | AndroidX WorkManager | Reminders and screen time polling |
-| AndroidX Navigation | In-app navigation |
-| kotlinx.serialization | Parsing verse and prayer JSON assets |
-| Lora | Serif display font — verse and headline text |
-| Inter | Sans-serif body font — UI text |
+| kotlinx.serialization | Local JSON assets |
 
 ---
 
@@ -113,25 +136,17 @@ A separate `WorkManager` worker runs every 15 minutes (Android's minimum interva
 | Permission | Why |
 |-----------|-----|
 | `BIND_ACCESSIBILITY_SERVICE` | Detect which app is in the foreground |
-| `PACKAGE_USAGE_STATS` | Screen time warning feature |
+| `PACKAGE_USAGE_STATS` | Screen time nudge feature |
 | `POST_NOTIFICATIONS` | Reminders and daily verse |
-| `RECEIVE_BOOT_COMPLETED` | Restart WorkManager jobs after device reboot |
+| `RECEIVE_BOOT_COMPLETED` | Restart WorkManager jobs after reboot |
+| `FOREGROUND_SERVICE_SPECIAL_USE` | Keep the accessibility service alive on aggressive OEMs |
+| `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS` | Optional — prevents the service being killed overnight |
 
-The first two require the user to grant them manually in Android Settings. They are explained plainly during onboarding — what they do, what Maneo uses them for, and how to skip them if you'd rather not grant them.
+The first two require manual grant in Android Settings. Each is explained plainly during onboarding — what it does, what Maneo uses it for, and how to skip it if you'd rather not grant it.
 
 ---
 
-## Contributing
-
-One feature per PR. A few things to keep in mind:
-
-- **Tone is everything.** All copy — from button labels to empty states — should be warm, honest, and non-preachy. Sentence case. No exclamation marks. Read what's already there before writing anything new.
-- **Features don't import each other.** Each `feature/` package is self-contained. Cross-feature communication goes through `core/domain` models only.
-- **New verses** go in `app/src/main/assets/verses.json` — follow the existing schema with `id`, `reference`, `text`, `slots`, and `tone`.
-- **No analytics, no network calls, no tracking** — not without explicit discussion in an issue first.
-- Test on API 26 (minimum target) and the latest Android release.
-
-### Build
+## Build
 
 ```bash
 git clone https://github.com/maneo-app/maneo.git
@@ -139,25 +154,38 @@ cd maneo
 ./gradlew assembleDebug
 ```
 
-Requires JDK 17 or later and Android Studio Ladybug or newer.
+Requires **JDK 17** or later and **Android Studio Meerkat** or newer.
 
 ---
 
-## Visual identity
+## Contributing
 
-The UI is built to feel like morning light through a window. Warm, unhurried.
+One feature per PR. A few things worth keeping in mind:
 
-| Token | Colour | Usage |
-|-------|--------|-------|
-| Background | `#FAF7F2` | All screen backgrounds |
-| Surface | `#F2EDE4` | Cards and containers |
-| Primary | `#C8956C` | Buttons, accents, active states |
-| Text | `#3D2C1E` | Body text — warm dark brown, not harsh black |
-| Text secondary | `#8C7B6E` | Timestamps, labels, secondary copy |
-
-Typography: **Lora** (serif) for verses and display headings. **Inter** (sans-serif) for all UI text.
+- **Tone is everything.** All copy — button labels, empty states, notifications — should be warm, honest, and non-preachy. Sentence case. No exclamation marks. Read what's already there before writing anything new.
+- **Features don't import each other.** Each `feature/` package is self-contained. Cross-feature communication goes through `core/domain` models only.
+- **New verses** go in `app/src/main/assets/verses.json` — follow the existing schema: `id`, `reference`, `text`, `slots`, `tone`.
+- **No analytics, no network calls, no tracking** — not without explicit discussion in an issue first.
+- Test on API 26 (minimum) and the latest Android release.
 
 ---
 
-*"I am the vine; you are the branches. Whoever abides in me and I in him, he it is that bears much fruit, for apart from me you can do nothing."*
-— John 15:5
+## What Maneo is not
+
+- Not a Bible app — [YouVersion](https://www.youversion.com) does that better
+- Not a productivity tracker or habit builder
+- Not a guilt machine — no streaks to break, no scores to lose
+- Not a subscription product — free, forever, no in-app purchases
+- Not a social platform
+
+---
+
+<div align="center">
+
+*"I am the vine; you are the branches.*<br/>
+*Whoever abides in me and I in him, he it is that bears much fruit,*<br/>
+*for apart from me you can do nothing."*
+
+**— John 15:5**
+
+</div>
