@@ -23,10 +23,13 @@ class ManeoAccessibilityService : AccessibilityService() {
 
     @Volatile private var blockedPackages: Set<String> = emptySet()
 
-    // After the user taps Amen, hold the package name here so the service
-    // doesn't immediately re-intercept when the blocked app returns to focus.
-    // Cleared as soon as any *other* package comes to the foreground.
+    // After the user taps Continue anyway, hold the package name so the service
+    // doesn't re-intercept during the same session. Cleared when the user
+    // genuinely leaves to a different non-system app.
     @Volatile private var interceptedPackage: String? = null
+
+    // Cache system-app lookups to avoid repeated PackageManager calls on every event.
+    private val systemPackageCache = mutableMapOf<String, Boolean>()
 
     private val serviceScope = CoroutineScope(Dispatchers.Default + SupervisorJob())
 
@@ -51,7 +54,12 @@ class ManeoAccessibilityService : AccessibilityService() {
         val pkg = event.packageName?.toString() ?: return
         if (pkg == packageName) return  // ignore our own activity
 
-        // A different app came to the foreground — user has moved on, reset the exemption.
+        // System UI, keyboard, and other system apps fire window events during
+        // in-app navigation and back-gesture animations. Letting them clear the
+        // exemption causes false re-intercepts (e.g. scrolling Reels → back).
+        if (isSystemPackage(pkg)) return
+
+        // A real user-facing app came to the foreground — clear the exemption.
         if (pkg != interceptedPackage) interceptedPackage = null
 
         if (pkg in blockedPackages && interceptedPackage == null) {
@@ -59,6 +67,16 @@ class ManeoAccessibilityService : AccessibilityService() {
             launchInterceptActivity()
         }
     }
+
+    private fun isSystemPackage(pkg: String): Boolean =
+        systemPackageCache.getOrPut(pkg) {
+            try {
+                val flags = packageManager.getApplicationInfo(pkg, 0).flags
+                (flags and android.content.pm.ApplicationInfo.FLAG_SYSTEM) != 0
+            } catch (_: Exception) {
+                false
+            }
+        }
 
     private fun launchInterceptActivity() {
         startActivity(
